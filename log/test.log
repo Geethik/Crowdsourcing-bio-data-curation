@@ -1,0 +1,630 @@
+  [1m[36m (12.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (7.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160406033429)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160406033429"]]
+  [1m[35m (10.7ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160408023130)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160408023130"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160408024006)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160408024006"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Migrating to CreateDiseases (20160409041052)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "disease" varchar, "accession" varchar, "questions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409041052"]]
+  [1m[35m (6.2ms)[0m  commit transaction
+Migrating to AddRememberDigestToUsers (20160420201115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "remember_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160420201115"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+Migrating to AddAdminToUsers (20160430213457)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160430213457"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+Migrating to AddRelatedToDiseases (20160501024826)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "diseases" ADD "related" integer DEFAULT 0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160501024826"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+Migrating to AddUnrelatedToDiseases (20160501024842)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "diseases" ADD "unrelated" integer DEFAULT 0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160501024842"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+Migrating to AddClosedToDiseases (20160502010257)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "diseases" ADD "closed" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160502010257"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Migrating to AddAccuracyToUsers (20160513015026)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "accuracy" float DEFAULT 0.0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160513015026"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+Migrating to AddProviderToUser (20161016215244)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "provider" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215244"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+Migrating to AddUidToUser (20161016215345)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "uid" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215345"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+Migrating to AddOauthTokenToUser (20161016215502)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "oauth_token" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215502"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+Migrating to AddOauthExpiresAtToUser (20161016215539)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "oauth_expires_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215539"]]
+  [1m[35m (10.4ms)[0m  commit transaction
+Migrating to CreateGroups (20161109224431)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "group_level" varchar DEFAULT 'graduate', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin_uid" integer, "data_set" text) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161109224431"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+Migrating to AddGroupAdmintoUsers (20161109225056)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "group_admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161109225056"]]
+  [1m[35m (6.7ms)[0m  commit transaction
+Migrating to Addusersandgroups (20161109230038)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users_groups" ("user_id" integer, "group_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_groups_on_user_id" ON "users_groups" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_groups_on_group_id" ON "users_groups" ("group_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161109230038"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+Migrating to Changejointablename (20161110001628)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users_groups" RENAME TO "groups_users"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_groups_users_on_group_id" ON "groups_users" ("group_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  DROP INDEX "index_users_groups_on_group_id"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_groups_users_on_user_id" ON "groups_users" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mDROP INDEX "index_users_groups_on_user_id"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161110001628"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddQuestionAdmintoUsers (20161118071915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "addquestion_admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161118071915"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFullquestions (20161202064320)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "fullquestions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064320"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFullsubmissions (20161202064400)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "fullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064400"]]
+  [1m[36m (18.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePartsearchresults (20161202064734)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "partsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064734"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Migrating to FormingFullquestions (20161202154752)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "fullquestions" ADD "qcontent" text DEFAULT 'Default question description' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "qanswer" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullquestions" ADD "ds_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "ds_accession" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullquestions" ADD "closed" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "yes_users" integer DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullquestions" ADD "no_users" integer DEFAULT 0[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202154752"]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Migrating to FormingFullsubmissions (20161202160917)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_fullsubmissions_on_user_id" ON "fullsubmissions" ("user_id")
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "fullquestion_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_fullquestion_id" ON "fullsubmissions" ("fullquestion_id")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullsubmissions" ADD "choice" boolean
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "reason" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202160917"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+Migrating to FormingPartsearchresult (20161202171406)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "partsearchresults" ADD "keyword" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "partsearchresults" ADD "data_set_results" text
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161202171406"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Migrating to CreateDatasets (20161202175256)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "datasets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "Data_set" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161202175256"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+Migrating to Changenameonpartial (20161202181938)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "apartsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "keyword" varchar, "Data_set_results" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "partsearchresults"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "partsearchresults"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "partsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "keyword" varchar, "Data_set_results" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "apartsearchresults"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "apartsearchresults"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202181938"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+Migrating to Changechoiceinfullsubmission (20161203033617)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "afullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "fullquestion_id" integer, "choice" boolean, "reason" text) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_afullsubmissions_on_fullquestion_id" ON "afullsubmissions" ("fullquestion_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_afullsubmissions_on_user_id" ON "afullsubmissions" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "fullsubmissions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "fullsubmissions"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "fullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "fullquestion_id" integer, "choice" varchar, "reason" text) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_afullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_afullsubmissions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_afullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_afullsubmissions_on_fullquestion_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_user_id" ON "fullsubmissions" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_fullquestion_id" ON "fullsubmissions" ("fullquestion_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "afullsubmissions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "afullsubmissions"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161203033617"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:35', '2017-03-24 19:18:35', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "partsearchresults"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "partsearchresults" ("created_at", "updated_at", "id") VALUES ('2017-03-24 19:18:36', '2017-03-24 19:18:36', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addquestions"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
