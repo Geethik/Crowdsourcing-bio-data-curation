@@ -8,13 +8,25 @@
     <div class = "row">
       <ul class="list-group">
         <li class="list-group-item text-right">
-          <span class="pull-left"><strong>search information</strong></span>
+          <span class="pull-left"><strong>Experiment Information</strong></span>
+          
           <p>
-           <%= form_tag :action => 'performsearch'  do %>
-           <%= text_field_tag :search, params[:search], placeholder: "Search dataset" %>
-           <%= submit_tag "Search", :name => "submit", class: "btn btn-success" %>
-           <%= submit_tag "Search for all result", :name => "submit", class: "btn btn-success" %>
-          <% end %>
+            <br/>
+             <%= form_tag :action => 'performsearch'  do %>
+             
+             <span class="pull-left">By Experiment Type:</span> 
+             <%= select :attr, :exper, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)  %>
+             <br/>
+             <br/>
+             
+             <%= select :attr, :tech, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
+             <br/>
+             <br/>
+             <%= text_field_tag :search, params[:search], placeholder: "Search by keyword" %>
+             <br/>
+             <br/>
+             <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success" %>
+            <% end %>
           </p>
       </ul>
     </div>
