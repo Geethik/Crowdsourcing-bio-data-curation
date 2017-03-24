@@ -13,12 +13,18 @@ class FullquestionsController < ApplicationController
     end
     
     def performsearch
+        
         @dataset=Hash.new
+        
         @poweradmin = current_user
         #This func do two things: get result back from API 
         #+ save result to DB[partsearchresult]
+        assay_Molecule=params[:attr][:exper]
+        technology = params[:attr][:tech]
+        
         if(params[:search])
             #debugger
+            #params[:search] =x
             n_keyword = params[:search]
             @previous_record = Partsearchresult.where(:keyword => n_keyword)
             if @previous_record.count > 0
@@ -65,7 +71,79 @@ class FullquestionsController < ApplicationController
         end
         render 'search'
     end
-    
+
+
+
+
+
+
+=begin
+    def performsearch
+        @dataset=Hash.new
+        
+        @poweradmin = current_user
+        #This func do two things: get result back from API 
+        #+ save result to DB[partsearchresult]
+        @attr_exper = params[:attr][:exper]
+        @attr_tech = params[:attr][:tech]
+        assay_Molecule=params[:attr][:exper]
+        technology = params[:attr][:tech]
+        n_keyword = params[:search]
+        
+        if(assay_Molecule=="All assays by Molecule" and technology=="All technologies" and n_keyword=="")
+            flash[:warning] = "Invalid search"
+            redirect_to full_search_path
+            return
+        else
+            if(assay_Molecule!="All assays by Molecule")
+                key1 = assay_Molecule  
+            else
+                key1=''
+            end
+            if(technology!="All technologies")
+                key2 = technology
+            else
+                key2 =''
+            end
+            
+            if(key1!='' and key2!='' and n_keyword!='')
+                #keys = (@dataset1.keys & @dataset2.keys & @dataset3.keys)
+                #@dataset = Hash[keys.zip(@dataset1.values_at(*keys))]
+                
+                key = key1+'+'+key2+'+'+n_keyword
+            elsif (key1!='' and key2!='' and n_keyword=='')
+                #keys = (@dataset1.keys & @dataset2.keys )
+                #@dataset = Hash[keys.zip(@dataset1.values_at(*keys))]
+                key = key1+'+'+key2
+            elsif (key1!='' and key2=='' and n_keyword!='')
+                key = key1+'+'+n_keyword
+            elsif (key1=='' and key2!='' and n_keyword!='')
+                #keys = ( @dataset2.keys & @dataset3.keys)
+                #@dataset = Hash[keys.zip(@dataset2.values_at(*keys))]
+                key = key2+'+'+n_keyword
+            elsif (key1!='')
+                key=key1
+            elsif (key2!='')
+                key=key2
+            elsif (n_keyword!='')
+                key=n_keyword
+            end
+            @dataset = search_from_arrayexpress(key)
+        end
+        render 'search'
+    end
+=end    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
     
     def groupselect
         #debugger
