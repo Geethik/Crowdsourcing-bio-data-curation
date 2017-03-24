@@ -19,18 +19,27 @@ class FullquestionsController < ApplicationController
         @poweradmin = current_user
         #This func do two things: get result back from API 
         #+ save result to DB[partsearchresult]
-        assay_Molecule=params[:attr][:exper]
-        technology = params[:attr][:tech]
+        @attr_exper=params[:attr][:exper]
+        @attr_tech = params[:attr][:tech]
+        n_keyword = params[:search]
         
-        if(params[:search])
+        if(@attr_exper!='All assays by Molecule')
+            n_keyword=n_keyword+'+'+@attr_exper
+        end
+        
+        if(@attr_tech!='All technologies')
+            n_keyword=n_keyword+'+'+@attr_tech
+        end
+        
+        if(n_keyword!='')
             #debugger
             #params[:search] =x
-            n_keyword = params[:search]
+            #n_keyword = params[:search]
             @previous_record = Partsearchresult.where(:keyword => n_keyword)
             if @previous_record.count > 0
                 @new_temp_record = @previous_record.first
                 @all_dataset = @previous_record.first.Data_set_results
-                @previous_dataset= Dataset.find_by_name(params[:search]).Data_set
+                @previous_dataset= Dataset.find_by_name(n_keyword).Data_set
                 @all_dataset.each do |k,v|
                     if !@previous_dataset.has_key?(k)
                         @dataset[k]=v
@@ -40,10 +49,10 @@ class FullquestionsController < ApplicationController
                     end
                 end
             else
-                @dataset_raw = search_from_arrayexpress(params[:search])
+                @dataset_raw = search_from_arrayexpress(n_keyword)
                 if(n_keyword != "")
                     @new_temp_record = Partsearchresult.create(keyword: n_keyword, Data_set_results: @dataset_raw)
-                    Dataset.create(name: params[:search])
+                    Dataset.create(name: n_keyword)
                     @previous_dataset=nil
                 else
                     flash[:warning] = "invalid search term"
@@ -61,6 +70,7 @@ class FullquestionsController < ApplicationController
                 @dataset = dataset_foruse    
             end
         else
+            flash[:warning] = "Invalid search"
             redirect_to full_search_path
             return
         end

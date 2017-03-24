@@ -1,0 +1,531 @@
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (7.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160406033429)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160406033429"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20160408023130)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160408023130"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20160408024006)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160408024006"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Migrating to CreateDiseases (20160409041052)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "diseases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "disease" varchar, "accession" varchar, "questions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160409041052"]]
+  [1m[35m (6.8ms)[0m  commit transaction
+Migrating to AddRememberDigestToUsers (20160420201115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "remember_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160420201115"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+Migrating to AddAdminToUsers (20160430213457)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160430213457"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Migrating to AddRelatedToDiseases (20160501024826)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "diseases" ADD "related" integer DEFAULT 0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160501024826"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+Migrating to AddUnrelatedToDiseases (20160501024842)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "diseases" ADD "unrelated" integer DEFAULT 0
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160501024842"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+Migrating to AddClosedToDiseases (20160502010257)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "diseases" ADD "closed" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160502010257"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+Migrating to AddAccuracyToUsers (20160513015026)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "accuracy" float DEFAULT 0.0
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160513015026"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+Migrating to AddProviderToUser (20161016215244)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "provider" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215244"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+Migrating to AddUidToUser (20161016215345)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "uid" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215345"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+Migrating to AddOauthTokenToUser (20161016215502)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "oauth_token" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215502"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+Migrating to AddOauthExpiresAtToUser (20161016215539)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "oauth_expires_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161016215539"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+Migrating to CreateGroups (20161109224431)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "group_level" varchar DEFAULT 'graduate', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin_uid" integer, "data_set" text) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161109224431"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+Migrating to AddGroupAdmintoUsers (20161109225056)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "group_admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161109225056"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+Migrating to Addusersandgroups (20161109230038)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users_groups" ("user_id" integer, "group_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_groups_on_user_id" ON "users_groups" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_groups_on_group_id" ON "users_groups" ("group_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161109230038"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+Migrating to Changejointablename (20161110001628)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users_groups" RENAME TO "groups_users"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_groups_users_on_group_id" ON "groups_users" ("group_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "index_users_groups_on_group_id"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_groups_users_on_user_id" ON "groups_users" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_groups_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mDROP INDEX "index_users_groups_on_user_id"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161110001628"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddQuestionAdmintoUsers (20161118071915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "addquestion_admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161118071915"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFullquestions (20161202064320)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "fullquestions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064320"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFullsubmissions (20161202064400)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "fullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064400"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePartsearchresults (20161202064734)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "partsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202064734"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+Migrating to FormingFullquestions (20161202154752)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "fullquestions" ADD "qcontent" text DEFAULT 'Default question description' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "qanswer" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullquestions" ADD "ds_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "ds_accession" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullquestions" ADD "closed" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullquestions" ADD "yes_users" integer DEFAULT 0
+  [1m[36m (3.8ms)[0m  [1mALTER TABLE "fullquestions" ADD "no_users" integer DEFAULT 0[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202154752"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+Migrating to FormingFullsubmissions (20161202160917)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_fullsubmissions_on_user_id" ON "fullsubmissions" ("user_id")
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "fullquestion_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_fullquestion_id" ON "fullsubmissions" ("fullquestion_id")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "fullsubmissions" ADD "choice" boolean
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "fullsubmissions" ADD "reason" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202160917"]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+Migrating to FormingPartsearchresult (20161202171406)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "partsearchresults" ADD "keyword" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "partsearchresults" ADD "data_set_results" text
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161202171406"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+Migrating to CreateDatasets (20161202175256)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "datasets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "Data_set" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161202175256"]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Migrating to Changenameonpartial (20161202181938)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "apartsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "keyword" varchar, "Data_set_results" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "partsearchresults"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "partsearchresults"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "partsearchresults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "keyword" varchar, "Data_set_results" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "apartsearchresults"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "apartsearchresults"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161202181938"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+Migrating to Changechoiceinfullsubmission (20161203033617)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "afullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "fullquestion_id" integer, "choice" boolean, "reason" text) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_afullsubmissions_on_fullquestion_id" ON "afullsubmissions" ("fullquestion_id")
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_afullsubmissions_on_user_id" ON "afullsubmissions" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "fullsubmissions"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "fullsubmissions"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "fullsubmissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "fullquestion_id" integer, "choice" varchar, "reason" text) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_afullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_afullsubmissions_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_afullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_afullsubmissions_on_fullquestion_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_user_id" ON "fullsubmissions" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_fullsubmissions_on_fullquestion_id" ON "fullsubmissions" ("fullquestion_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "afullsubmissions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "afullsubmissions"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161203033617"]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('666@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "666"], ["email", "666@gmail.com"], ["password_digest", "$2a$10$yBjD5hFGuw.a19kciRNcEeeOlmlBrbEi22jK4.YVPsIGEH5qDiaxa"], ["admin", "t"], ["created_at", "2017-03-24 20:41:20.898726"], ["updated_at", "2017-03-24 20:41:20.898726"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('flyer1@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "group_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "flyer1"], ["email", "flyer1@gmail.com"], ["password_digest", "$2a$10$8ilXgA62wL4epagr6ME/fudzbDsaeWW5xL8zYQmUErvGWpl9dQ08e"], ["admin", "t"], ["group_admin", "t"], ["created_at", "2017-03-24 20:41:20.985591"], ["updated_at", "2017-03-24 20:41:20.985591"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('flyer2@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "group_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "flyer2"], ["email", "flyer2@gmail.com"], ["password_digest", "$2a$10$iG5b6Y8rsAeG1zThxJdGUe6fuMR.OD4wlGNOl8SPGk2/406aMXnAu"], ["admin", "t"], ["group_admin", "t"], ["created_at", "2017-03-24 20:41:21.067616"], ["updated_at", "2017-03-24 20:41:21.067616"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('flyer3@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "group_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "flyer3"], ["email", "flyer3@gmail.com"], ["password_digest", "$2a$10$T9sNNOI3WrOw/gs1UIRgvOI8El3Du6yqKxA5WFMczCWIGEaasheLG"], ["admin", "t"], ["group_admin", "t"], ["created_at", "2017-03-24 20:41:21.153260"], ["updated_at", "2017-03-24 20:41:21.153260"]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("name", "description", "admin_uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "TestGroup1"], ["description", "Testing..."], ["admin_uid", 2], ["created_at", "2017-03-24 20:41:21.174188"], ["updated_at", "2017-03-24 20:41:21.174188"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups" ("name", "description", "group_level", "admin_uid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "TestGroup2"], ["description", "Still testing..."], ["group_level", "undergraduate"], ["admin_uid", 3], ["created_at", "2017-03-24 20:41:21.183149"], ["updated_at", "2017-03-24 20:41:21.183149"]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("name", "admin_uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "TestGroup3"], ["admin_uid", 4], ["created_at", "2017-03-24 20:41:21.191399"], ["updated_at", "2017-03-24 20:41:21.191399"]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups_users" ("user_id", "group_id") VALUES (?, ?)  [["user_id", 2], ["group_id", 1]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups_users" ("user_id", "group_id") VALUES (?, ?)[0m  [["user_id", 3], ["group_id", 2]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups_users" ("user_id", "group_id") VALUES (?, ?)  [["user_id", 4], ["group_id", 3]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 50.24.129.25 at 2017-03-24 20:41:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (28.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.129.25 at 2017-03-24 20:41:34 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oqbt8SRBWbohMRspfcReprq3NJq67rBrz/dXLRpehFGQN+pIPtlRRk27PpLf6ZXGordZnsf9hI+oH4x2Vc1cKQ==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://project-with-heroku-geethik.c9users.io/admin
+Completed 302 Found in 121ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 50.24.129.25 at 2017-03-24 20:41:34 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-24 20:41:35 +0000
+Processing by FullquestionsController#search as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fullquestions/search.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 164ms (Views: 161.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-24 20:41:38 +0000
+Processing by FullquestionsController#performsearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kkNxHqSXHUhbYxRCOm0gm5iS+TxRO6nKvCS6zDR8T2040nanvg8VtDfpMfmYQOv7gJKUOCwonS7bzGGXe++XFQ==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"ear", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "ear"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "partsearchresults" ("keyword", "Data_set_results", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["keyword", "ear"], ["Data_set_results", "---\nE-GEOD-84925: RT quantitative PCR analysis of Rosveratrol plus N-acetylcysteine of\n  oxidative stress and inflammation genes in rat choclea\nE-GEOD-84738: Gene expression analysis of pulmonary artery in a rabbit model of pulmonary\n  thromboembolism\nE-GEOD-84735: Transcription profiling by array of mouse treated with normal chow or\n  that containing 0.15% germanium dioxide for four months\nE-GEOD-83357: RNA-seq analysis of neonatal mouse cochlear supporting cells\nE-GEOD-83356: RNA-seq analysis of neonatal mouse cochlear supporting cells [NonTreated_JM]\nE-GEOD-83340: RNA-seq analysis of neonatal mouse cochlear supporting cells [Treated\n  AK]\nE-GEOD-79638: Arid3a is required for mammalian placenta development\nE-MTAB-3826: RNA-seq of coding RNA from 6 different maize tissues (ear, embryo, endosperm,\n  pollen, root and tassel) from B73 strain\nE-GEOD-80665: RNA-seq of porcine inner ear stria vascularis\nE-GEOD-81461: Gene Expression from hair cells and supporting cells in chick utricle\nE-GEOD-72985: Accelerated cartilage differentiation distinguishes the lower from the\n  upper vertebrate face\nE-GEOD-73829: Inner ear expression data from pooled inner ear tissue from stages 56,57,58\n  Xenopus laevis larval inner ears\nE-GEOD-69701: RNA-Seq and microarray analysis of the Xenopus inner ear transcriptome\n  discloses orthologous OMIM® genes for hereditary disorders of hearing and balance\nE-MTAB-3737: Analysis of RNA associated with the RISC complex (Ago2) in four day old\n  mice carrying a mutation in miR-96\nE-MTAB-3735: Microarray analysis of newborn mice carrying a mutation in miR-96, compared\n  to wildtype sex-matched littermate controls\nE-GEOD-78057: Expression data from IMQ-induced psoriasis-like skin inflammation in\n  miR-146a-/- and C57BL6J mice\nE-GEOD-73435: 'Sweet corn: low- vs. high-yielding hybrids'\nE-GEOD-64945: miRNA expression data from mouse fetus ear (pinnae) and back tissues\nE-GEOD-63349: Mouse T-cell lymphomas induced by irradiation at different ages\nE-GEOD-51742: Transcription profiling by high throughput sequencing of maize transgenic\n  plants expressing a truncated AtHB17 protein\n"], ["created_at", "2017-03-24 20:41:45.121411"], ["updated_at", "2017-03-24 20:41:45.121411"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "datasets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ear"], ["created_at", "2017-03-24 20:41:45.142728"], ["updated_at", "2017-03-24 20:41:45.142728"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+  Rendered fullquestions/search.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6566ms (Views: 14.8ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-24 20:41:50 +0000
+Processing by FullquestionsController#performsearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xEP80PIMER0olweJx4UK9h+PLI1mpAP5OIq7MnX/XKRu0vtp6JQZ4UQdIjJlqMGWB49BiRu3Nx1fYmBpOmyE3A==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://project-with-heroku-geethik.c9users.io/admin/fullquestion_addquestion_s
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-24 20:41:50 +0000
+Processing by FullquestionsController#search as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fullquestions/search.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-24 20:41:55 +0000
+Processing by FullquestionsController#performsearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mo/2yU/sxRK3qTnO5sC0NNAD5cfmpOt+frVvtPwcT0owHvFwVXTN7tsjHHVE7X9UyAOIw5u335oZXbTvs4+XMg==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"Array assay"}, "search"=>"ear", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "ear+Array assay"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "partsearchresults" ("keyword", "Data_set_results", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["keyword", "ear+Array assay"], ["Data_set_results", "---\nE-GEOD-84738: Gene expression analysis of pulmonary artery in a rabbit model of pulmonary\n  thromboembolism\nE-GEOD-84735: Transcription profiling by array of mouse treated with normal chow or\n  that containing 0.15% germanium dioxide for four months\nE-GEOD-81461: Gene Expression from hair cells and supporting cells in chick utricle\nE-GEOD-73829: Inner ear expression data from pooled inner ear tissue from stages 56,57,58\n  Xenopus laevis larval inner ears\nE-GEOD-69701: RNA-Seq and microarray analysis of the Xenopus inner ear transcriptome\n  discloses orthologous OMIM® genes for hereditary disorders of hearing and balance\nE-MTAB-3737: Analysis of RNA associated with the RISC complex (Ago2) in four day old\n  mice carrying a mutation in miR-96\nE-MTAB-3735: Microarray analysis of newborn mice carrying a mutation in miR-96, compared\n  to wildtype sex-matched littermate controls\nE-GEOD-78057: Expression data from IMQ-induced psoriasis-like skin inflammation in\n  miR-146a-/- and C57BL6J mice\nE-GEOD-73435: 'Sweet corn: low- vs. high-yielding hybrids'\nE-GEOD-64945: miRNA expression data from mouse fetus ear (pinnae) and back tissues\nE-GEOD-63349: Mouse T-cell lymphomas induced by irradiation at different ages\nE-GEOD-66141: Mouse Middle Ear Infection with NTHi\nE-GEOD-49299: CGH analyses for the Chinese indigenous pig breeds and commercial pig\n  breeds [Agilent]\nE-GEOD-69941: Placental changes caused by food restriction during early pregnancy\n  in mice are reversible\nE-GEOD-69831: A biphasic epigenetic switch controls immunoevasion, virulence and niche\n  adapatation in non-typeable Haemophilus influenzae\nE-GEOD-59416: Neural Stem/Progenitor Cell Properties of Glial Cells in the Adult Auditory\n  Nerve [ouabain]\nE-GEOD-59415: Neural Stem/Progenitor Cell Properties of Glial Cells in the Adult Auditory\n  Nerve [development]\nE-GEOD-65249: Neural Stem/Progenitor Cell Properties of Glial Cells in the Adult Auditory\n  Nerve [cultured auditory nerve cells]\nE-GEOD-57108: Expression data from Spade/Spade mutant and wild type littermates whole\n  ear tissue\nE-GEOD-62173: Expression data of mice cochlea treated with L-methionine and valproic\n  acid\n"], ["created_at", "2017-03-24 20:41:57.740882"], ["updated_at", "2017-03-24 20:41:57.740882"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "datasets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "ear+Array assay"], ["created_at", "2017-03-24 20:41:57.761213"], ["updated_at", "2017-03-24 20:41:57.761213"]]
+  [1m[36m (11.3ms)[0m  [1mcommit transaction[0m
+  Rendered fullquestions/search.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 2172ms (Views: 15.0ms | ActiveRecord: 26.7ms)
