@@ -9,16 +9,15 @@
       <ul class="list-group">
         <li class="list-group-item text-right">
           <span class="pull-left"><strong>Experiment Information</strong></span>
-          
           <p>
             <br/>
-             <%= form_tag :action => 'performsearch'  do %>
+             <%= form_tag :action => 'performsearch' do %>
              
-             <span class="pull-left">By Experiment Type:</span> 
-             <%= select :attr, :exper, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)  %>
+             <label for='attr_exper' class="pull-left">Experiment type</label>
+             <%= select :attr, :exper, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
              <br/>
              <br/>
-             
+              <label for='attr_tech' class="pull-left">Technology type</label>
              <%= select :attr, :tech, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
              <br/>
              <br/>
