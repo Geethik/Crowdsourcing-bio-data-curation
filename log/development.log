@@ -587,3 +587,61 @@ Processing by FullquestionsController#search as HTML
   Rendered layouts/_header.html.erb (0.5ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 50.24.129.25 at 2017-03-27 02:40:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (32.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.129.25 at 2017-03-27 02:40:45 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D8Dp8+s2pv/BExug7+ERuMZAoCNMgfkxyHe3W34lPaLRro1LnNngx+WaEIlkmE9QRS55NcHvIQWB+kdBLkI1SQ==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+Redirected to https://project-with-heroku-geethik.c9users.io/admin
+Completed 302 Found in 126ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 50.24.129.25 at 2017-03-27 02:40:45 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.1ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-27 02:40:47 +0000
+Processing by FullquestionsController#search as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fullquestions/search.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/fullquestion_addquestion_s" for 50.24.129.25 at 2017-03-27 02:40:54 +0000
+Processing by FullquestionsController#performsearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FGbCzpmlXghEB7Cz9ohsWKofKqVLxoZwFRi6mFRvWhvKCKZ27koYMGCOu5p98TKwKXHzs8aoXkRclUqCBAhS8A==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"Array assay"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye+Array assay"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "partsearchresults" ("keyword", "Data_set_results", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["keyword", "eye+Array assay"], ["Data_set_results", "---\nE-MTAB-5070: 'Gene expression profile of experimentally Deformed wing virus (DWV)-infected\n  honey bees: Naive control vs. DWV-infected pupae'\nE-GEOD-76340: Gene expression analysis of hematological malignancies and healthy (non-)hematopoietic\n  cell types\nE-GEOD-72663: Human Corneal Epithelial Cells (SV40-HCEC) 6h Treatment with 100nM Vitamin\n  D (1,25D3) vs. Vehicle Control\nE-GEOD-72662: Human Corneal Epithelial Cells (hTCEpi) 6h Treatment with 100nM Vitamin\n  D (1,25D3) vs. Vehicle Control\nE-GEOD-85408: 'Dry age-related macular degeneration like pathology in aged 5XFAD mice:\n  Ultrastructure and microarray analysis'\nE-GEOD-49872: In vivo Gene Expression Profiling of RPE/choroid Post-Intravitreal Injections\n  of Dexamethasone and Triamcinolone at Clinically Relevant Time Points for Patient\n  Care\nE-GEOD-77824: Multivalent Influenza DNA vaccine induces cross-reactive polyfunctional\n  T lymphocytes and promotes rapid clearance of heterologous challenge strain in non-human\n  primates\nE-GEOD-83985: 'Mouse iPS cells-derived 3D-retinas: Vehicle control- vs. 4-hydroxytamoxifen\n  (4-OHT)-treated 3D-retinas'\nE-GEOD-83984: 'Mouse iPS cells-derived 3D-retinas: Vehicle control- vs. 4-hydroxytamoxifen\n  (4-OHT)-treated 3D-retinas w/o supplements'\nE-GEOD-65268: ChIP-on-Chip for the Ciliary derived stem/progenitor cells and their\n  differentiated progeny\nE-MTAB-4315: Transcriptional profiling of Drosophila neoplastic tumors to identify\n  Ets21C dependent target genes\nE-GEOD-70049: Transcriptional profiling of setb morphants\nE-GEOD-77403: Comparison of wild-type and Mfsd2a KO eye cups\nE-GEOD-73971: Expression data from human iPSC-derived corneal epithelial cells\nE-GEOD-73389: Identification of a circulating miRNA that is involved in meat yield\n  and connects exosomes and longissimus dorsi muscle in Korean cattle steers\nE-GEOD-74695: The alarmin IL-33 amplifies an immune response in the degenerating retina\nE-MTAB-3976: Transcription profiling by array of mouse retinas from rodless, coneless,\n  or rodless/coneless mice compared with wild type controls\nE-MTAB-3515: RNA-seq of retinoblastoma samples to evaluate aCGH and NGS methods in\n  genetic diagnosis of the disease\nE-MTAB-3492: Comparative genomic hybridization by array of retinoblastoma samples\n  against control DNA from healthy individuals to evaluate aCGH and NGS methods in\n  genetic diagnosis of the disease\nE-GEOD-64264: Functional Retinal Pigment Epithelium-like Cells from Human Fibroblasts\n"], ["created_at", "2017-03-27 02:40:56.790333"], ["updated_at", "2017-03-27 02:40:56.790333"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "datasets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "eye+Array assay"], ["created_at", "2017-03-27 02:40:56.811308"], ["updated_at", "2017-03-27 02:40:56.811308"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  Rendered fullquestions/search.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2742ms (Views: 13.8ms | ActiveRecord: 21.9ms)
