@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include UsersHelper
+  
   def show
     if session[:user_id] == nil
       flash[:warning] = "please login"
@@ -38,7 +40,77 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
+  
+  def searchAll
+    #debugger
+    @poweradmin = current_user
+  end
+  
+   def saveSearch
+        @dataset=Hash.new
+        @poweradmin = current_user
+        #This func do two things: get result back from API 
+        #+ save result to DB[partsearchresult]
+        @attr_exper=params[:attr][:exper]
+        @attr_tech = params[:attr][:tech]
+        n_keyword = params[:search]
+        
+        if(@attr_exper!='All assays by Molecule')
+            n_keyword=n_keyword+'+'+@attr_exper
+        end
+        
+        if(@attr_tech!='All technologies')
+            n_keyword=n_keyword+'+'+@attr_tech
+        end
+        
+        if(n_keyword!='')
+            #debugger
+            #n_keyword = params[:search]
+            @previous_record = Partsearchresult.where(:keyword => n_keyword)
+            if @previous_record.count > 0
+                @new_temp_record = @previous_record.first
+                @all_dataset = @previous_record.first.Data_set_results
+                @previous_dataset= Dataset.find_by_name(n_keyword).Data_set
+                @all_dataset.each do |k,v|
+                    if !@previous_dataset.has_key?(k)
+                        @dataset[k]=v
+                    end
+                    if params[:submit]=="Search"&&@dataset.length >= 20
+                        break
+                    end
+                end
+            else
+                @dataset_raw = search_data_arrayexpress(n_keyword)
+                if(n_keyword != "")
+                    @new_temp_record = Partsearchresult.create(keyword: n_keyword, Data_set_results: @dataset_raw)
+                    Dataset.create(name:n_keyword)
+                    @previous_dataset=nil
+                else
+                    flash[:warning] = "invalid search term"
+                    redirect_to search_save_path
+                    return  
+                end
+                dataset_foruse = Hash.new
+                @dataset_raw.each do |k,v|
+                    dataset_foruse[k] = v
+                    
+                  if params[:submit]=="Search"&&dataset_foruse.length >= 20
+                    break
+                  end
+                end                
+                @dataset = dataset_foruse    
+            end
+        else
+            redirect_to search_save_path
+            return
+        end
+        if @dataset==nil||@dataset.empty?
+            flash[:warning] = "No more dataset"
+            redirect_to search_save_path
+            return   
+        end
+        render 'searchAll'
+    end
 
   private
 

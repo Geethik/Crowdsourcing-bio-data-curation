@@ -7,9 +7,6 @@ class FullquestionsController < ApplicationController
     def search
         #debugger
         @poweradmin = current_user
-    
-    
-    
     end
     
     def performsearch

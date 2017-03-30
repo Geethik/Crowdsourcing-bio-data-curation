@@ -1,0 +1,91 @@
+<div class = "row">
+  <h1>Search Datasets</h1><hr>    
+</div>
+
+<div class = "row">
+  <div class = "col-sm-4"> </div>
+  <div class = "col-sm-4">
+    <div class = "row">
+      <ul class="list-group">
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Experiment Information</strong></span>
+          <p>
+            <br/>
+             <%= form_tag :action => 'saveSearch' do %>
+             
+             <label for='attr_exper' class="pull-left">Experiment type</label>
+             <%= select :attr, :exper, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
+             <br/>
+             <br/>
+              <label for='attr_tech' class="pull-left">Technology type</label>
+             <%= select :attr, :tech, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
+             <br/>
+             <br/>
+             <%= text_field_tag :search, params[:search], placeholder: "Search by keyword" %>
+             <br/>
+             <br/>
+             <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success" %>
+            <% end %>
+          </p>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class = "col-sm-2"> </div>
+<div>
+  <%= form_for @poweradmin, :url => full_group_path, :method => :post do |f| %> 
+  <% if @new_temp_record %>
+    <%= f.hidden_field :temppsr_id, :value => @new_temp_record.id %>
+  <% end %>  
+  <div style="border:1px solid black; width:1150px;height:500px; overflow-y:auto;" class="pull-center">
+    <div>
+  
+      <div style="border:1px solid white; width:1150px; height:500px; float:left;">
+        <div class = "row">
+          <div class = "col-sm-12">
+            <div class="table-responsive">
+                
+                <table class = "table-bordered">
+                  <thead>
+                    <tr>
+                      <th class = "col-md-2" style="padding:10px">Accession</th>
+                      <th class = "col-md-8" style="padding:10px">Name</th>
+                      <th class = "col-md-2" style="padding:10px">Type</th>
+                      <th class = "col-md-2" style="padding:10px">Organism</th>
+                      <th class = "col-md-1" style="padding:10px">Relevance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <% if @dataset %>            
+                      <% @dataset.each do |k,v| %>            
+                    <tr>
+                      <td class = "col-md-2"> <%= link_to k, "http://www.ebi.ac.uk/arrayexpress/experiments/#{k}", :target => '_blank' %></td>
+                      <td class = "col-md-8"> <%= v[0] %> </td>
+                      <td class = "col-md-2"> <%= v[1][0] %> </td>
+                      <td class = "col-md-2"> <%= v[2][0] %> </td>
+                      <td class = "col-md-1"> <%= check_box_tag 'selected_keys[]', k-%></td>
+                    </tr>
+                      <%end %> 
+                    <% end %>   
+                  </tbody>
+                </table>
+                             
+   
+            </div>        
+          </div>
+        </div>
+      </div>
+      
+      <div style="clear:both"></div>
+  
+    </div>
+  </div>
+  <hr>
+  <div style="text-align:center;">
+    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit", :value => 'save_back') do %>
+      <i class="glyphicon glyphicon-refresh"></i>Save and Back
+    <% end %>
+    </div>
+  <% end %>
+</div>

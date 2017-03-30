@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'profile' => 'users#show'
   post 'profile', to: 'users#show'
+  get 'searchAll' => 'users#searchAll'
+  post 'searchAll', to: 'users#saveSearch', as: 'search_save' 
   resources :users
 
   # Admin

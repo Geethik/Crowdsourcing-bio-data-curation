@@ -13,6 +13,7 @@
 
 
       <%= link_to "START!", '/diseases', class: "btn btn-primary center-block" %>
+      <%= link_to "Search Datasets",search_save_path , class: "btn btn-primary center-block" %>
       <% if current_user.admin? %>
         <%= link_to "Admin", '/admin', class: "btn btn-success center-block" %>
         <%= link_to "All Users", '/admin/allusers', class: "btn btn-info center-block" %>
