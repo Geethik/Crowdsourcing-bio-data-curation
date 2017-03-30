@@ -51,9 +51,9 @@ class UsersController < ApplicationController
         @poweradmin = current_user
         #This func do two things: get result back from API 
         #+ save result to DB[partsearchresult]
-        @attr_exper=params[:attr][:exper]
-        @attr_tech = params[:attr][:tech]
-        n_keyword = params[:search]
+        @attr_exper = params[:attr][:experSave]
+        @attr_tech = params[:attr][:techSave]
+        n_keyword = params[:searchSave]
         
         if(@attr_exper!='All assays by Molecule')
             n_keyword=n_keyword+'+'+@attr_exper

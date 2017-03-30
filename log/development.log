@@ -4268,3 +4268,512 @@ Processing by UsersController#saveSearch as HTML
   Rendered layouts/_header.html.erb (0.7ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 99ms (Views: 33.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/searchAll.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 121ms (Views: 50.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:28 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PCXY1UZCOZu0rUpet5WOGHdyLYE6M8RYr7tPWpQadpH60yXc50AePZx+cshUALCyHzdxzv1eBG0K6NVmdR/jDg==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.3ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (26.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 64ms (Views: 35.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:32 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Vzsb60XsLHxqg6HDFJTCg7cyb5CROUqkx7VEchPGfMbqhFmDBWXF9l5NhHvx22gZpmV8YUpJR82TU8tKUqMbA==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.1ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:36 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sc7Z5BX8+SPOzbY8WxXFFyDMSvOv6hRlqDgbdvm/IEJ3OCTttP7eheYejqq4gPu9SIkWvGiH1FANa4FKGLq13Q==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"ear", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "ear"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "ear"]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "ear"]]
+  Rendered users/searchAll.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 20.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:40 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nn3BUrxYNUWL3U9Cj3hnJZ0WpGSd00xYaS+B02Yho33wizxbHVoS46MOd9Rs7VmP9VP4K1q+jG3MfBvvhyQ24g==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:49:44 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FwZGcClUUCz9AZIWkwTaf4AknPXQczEpbfWqAT1xXMjR8Lt5iFZ3itXSqoBwkeTV6GHAuhce8RzIpjA93HTJVw==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"ear", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "ear"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "ear"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "ear"]]
+  Rendered users/searchAll.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:50:39 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KV9xg2igbl0Usrye0NmVIBc59WHEDiDEWrKNtdaQ0PDvqYyKyaJJ+zxhhAgzTKuKf3ypLgNj4PH/4ReJN5VFbw==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (27.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 38.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:54:04 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KV9xg2igbl0Usrye0NmVIBc59WHEDiDEWrKNtdaQ0PDvqYyKyaJJ+zxhhAgzTKuKf3ypLgNj4PH/4ReJN5VFbw==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/users_controller.rb:59:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (38.8ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:54:47 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KV9xg2igbl0Usrye0NmVIBc59WHEDiDEWrKNtdaQ0PDvqYyKyaJJ+zxhhAgzTKuKf3ypLgNj4PH/4ReJN5VFbw==", "attr"=>{"exper"=>"All assays by Molecule", "tech"=>"All technologies"}, "search"=>"eye", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/users_controller.rb:59:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (38.9ms)
+
+
+Started GET "/" for 50.24.129.25 at 2017-03-30 16:57:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://project-with-heroku-geethik.c9users.io/profile
+Completed 302 Found in 65ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/profile" for 50.24.129.25 at 2017-03-30 16:57:01 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 42.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-03-30 16:57:02 +0000
+Processing by UsersController#searchAll as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/searchAll.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:57:21 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OQxdCJERjrXGVU/TLpJLF43MZvZ9dHsZXCyi7gvr9/v/+qABMBOpE+6Gd0XNB3W95Yk6uboZuyz5fzjS6u5iZA==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.5ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.3ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (43.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 98ms (Views: 53.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:57:26 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vwf5iDwJGMpmlttPcsDvAAuXv8/w1TLoAY1owGeFUSiR8QSBnQs/bE5F49mRVdGqY9LjgDe48t2k3vL8hoDEtw==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"ear", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "ear"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "ear"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "ear"]]
+  Rendered users/searchAll.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 20.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:58:44 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vwf5iDwJGMpmlttPcsDvAAuXv8/w1TLoAY1owGeFUSiR8QSBnQs/bE5F49mRVdGqY9LjgDe48t2k3vL8hoDEtw==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"ear", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "ear"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "ear"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "ear"]]
+  Rendered users/searchAll.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 22.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 16:58:51 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BzdVlqgl8SR6NLFfPJSUclz9/lLydgm8BzZFxFh2ocPBwaifCSfWglLnicnfAarYNLiiHTUbyYmiZd/4uXM0XA==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"eye", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "eye"]]
+  [1m[36mPartsearchresult Load (0.1ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "eye"]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "eye"]]
+  Rendered users/searchAll.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:00:00 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEJuXxY5uPjQ/xb/ALP2/u1Amd4ympFsYCDhmOSMrNWWtJNWtzufXvgsLmnjJshUhQXFkfX3UVnFc3ukBYk5Sg==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"nose", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "nose"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "partsearchresults" ("keyword", "Data_set_results", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["keyword", "nose"], ["Data_set_results", "---\nE-MTAB-5179:\n- In vitro assessment of acute exposure of ths2.2 aerosol on organotypic acute human\n  bronchial tissue cultures\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-4164:\n- Transcription profiling by array of rotenone treated olfactory cells derived from\n  patients with Parkinson’s disease and healthy controls\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-4493:\n- Systems toxicological assessment of a mentholated heat-not-burn modified risk tobacco\n  product in a 90-day OECD 413 rat inhalation study demonstrates reduced exposure\n  effects and provides mechanistic insights\n- - transcription profiling by array\n- - Rattus norvegicus\nE-MTAB-4492:\n- 'Evaluation of the Tobacco Heating System 2.2. Part 3: 90-day OECD 413 rat inhalation\n  study with systems toxicology endpoints demonstrates reduced exposure effects for\n  modified risk tobacco product, THS 2.2'\n- - transcription profiling by array\n- - Rattus norvegicus\nE-MTAB-4740:\n- In vitro assessment of acute exposure of THS2.2 aerosol on organotypic acute human\n  nasal tissue cultures\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-75759:\n- Expression data from male cynomolgus macaques exposed to 6 ppm formaldehyde\n- - transcription profiling by array\n- - Macaca fascicularis\nE-MTAB-5142:\n- Evidence of Late Pleistocene origin of Astyanax mexicanus cavefish\n- - RNA-seq of coding RNA\n- - Astyanax mexicanus\n  - Hyphessobrycon anisitsi\nE-MTAB-4594:\n- Microarray analysis of differences in miRNA expression between human mesenchymal\n  stem cells isolated from olfactory mucosa and bone\n- - microRNA profiling by array\n- - Homo sapiens\nE-GEOD-75011:\n- Transcriptional profiling of TH2 cells identifies pathogenic features associated\n  with asthma\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-70049:\n- Transcriptional profiling of setb morphants\n- - transcription profiling by array\n- - Danio rerio\nE-GEOD-71126:\n- Sequence Features Accurately Predict Genome-wide MeCP2 Binding in vivo\n- - ChIP-seq\n  - methylation profiling by high throughput sequencing\n  - RNA-seq of coding RNA\n- - Mus musculus\nE-ERAD-438:\n- The neuronal transcriptome of PDE1C deficient mice\n- - RNA-seq of coding RNA\n- - Mus Musculus\nE-ERAD-433:\n- RNA seq on olfactory epithelium cryosections\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-47910:\n- Staphylococcus aureus ST398 gene expression profiling during ex vivo colonization\n  of porcine nasal epithelium\n- - transcription profiling by array\n- - Staphylococcus aureus\nE-GEOD-67999:\n- Secreted frizzled related protein 3 (SFRP3) is required for tumorigenesis of PAX3-FOXO1-positive\n  alveolar rhabdomyosarcoma\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-75413:\n- Single-cell transcriptomics reveals receptor transformations during olfactory neurogenesis\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-69853:\n- Genome-wide screen reveals rhythmic regulation of genes involved in odor processing\n  in the olfactory epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-ERAD-402:\n- Transcriptome of the vomeronasal organ in Vmn2r1 knock out mice\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-59324:\n- Molecular profiling of activated olfactory neurons identifies odorant receptors\n  for odors in vivo\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-59369:\n- Formaldehyde exposure alters miRNAs expression profiles in olfactory bulb\n- - transcription profiling by array\n- - Mus musculus\nE-MTAB-3732:\n- A comprehensive human expression map\n- - transcription profiling by array\n- - Homo sapiens\nE-ERAD-373:\n- Olfactory transcriptomics in humans\n- - RNA-seq of coding RNA\n- - Human\nE-MTAB-4015:\n- Transcription profiling by array of nasal gene expression in smokers, former smokers,\n  and COPD subjects\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-65388:\n- Ion Transporter NKCC1 - Modulator of Neurogenesis in Murine Olfactory Neurons\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-ERAD-354:\n- RNAseq of mouse olfactory sensory neurons populations\n- - RNA-seq of coding RNA\n- - House mouse\nE-MTAB-3358:\n- RNA-Seq CAGE (Cap Analysis of Gene Expression) analysis of human tissues in RIKEN\n  FANTOM5 project\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-MTAB-2325:\n- Gene expression profiles in motor cortex of Control and Sporadic Amyotrphic Lateral\n  Sclerosis patients\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-3288:\n- Allele-specific expression in liver, hypothalamus and vomeronasal organ of Mus.m.musculus\n  and M.m. domesticus\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-MTAB-3150:\n- COPD-MouseExperiment\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-53793:\n- Deep sequencing of the murine olfactory receptor neuron transcriptome\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-ERAD-320:\n- Olfactory transcriptomics in mammals\n- - RNA-seq of coding RNA\n- - Bos taurus\n  - Callithrix jacchus\n  - Homo sapien\n  - Macaca mulatta\nE-GEOD-56294:\n- Comparative genomics of Staphylococcus aureus and the application of a “pan-genome”\n  for assigning RNA-Seq transcript reads from divergent strains and in vivo human\n  nasal samples\n- - RNA-seq of coding RNA\n- - Staphylococcus aureus\nE-MTAB-1812:\n- Transcription profiling by array of Rainbow trout with or without nasal vaccination\n  of infectious haematopoietic necrosis virus (IHNV)\n- - transcription profiling by array\n- - Oncorhynchus mykiss\nE-ERAD-318:\n- Parent of origin allelic expression bias in mouse vomernasal organ\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-55174:\n- Epigenetic landscape of olfactory receptor enhancers\n- - ChIP-seq\n- - Mus musculus\nE-GEOD-52464:\n- Epigenetic and transcriptional landscapes of Dnmt3a-deficient olfactory sensory\n  neurons\n- - ChIP-seq\n  - methylation profiling by high throughput sequencing\n  - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-61396:\n- Identification of candidate rhinovirus C (RV-C) receptors by gene expression analysis\n- - transcription profiling by array\n- - Homo sapiens\nE-ERAD-300:\n- Transcriptome of the CAST MOE\n- - RNA-seq of coding RNA\n- - Mouse\nE-ERAD-307:\n- Single cell transcriptomics in olfactory sensory neurons\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-ERAD-268:\n- Transcriptome of the MOE in odour exposed mice\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-MTAB-2250:\n- The Response of Human Respiratory Organotypic Cultures to Repeated Cigarette Smoke\n  Exposure\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-53945:\n- Diurnal transcriptome dynamics of Japanese cedar in summer and winter\n- - transcription profiling by array\n- - Cryptomeria japonica\nE-ERAD-269:\n- Transcriptome of the MOE in odour exposed mice\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-46591:\n- CHD7 regulates gene networks involved in neural crest cell migration and axon guidance\n- - transcription profiling by array\n- - Mus musculus\nE-MTAB-1842:\n- 28d Rat Inhalation Study with Prototypic MRTP\n- - transcription profiling by array\n- - Rattus norvegicus\nE-ERAD-239:\n- Detecting parent of origin allelic expression bias in mouse olfaction system\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-57567:\n- Identification of Novel Post-Transcriptional Features in Olfactory Receptor Family\n  mRNAs\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-49998:\n- 'Gene Level Expression Profiling: Activity dependent genes in the olfactory epithelium'\n- - transcription profiling by array\n- - Mus musculus\nE-ERAD-231:\n- Transcriptome of the MOE in different mouse strains\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-55967:\n- A superseries of gene expression in early craniofacial development in mouse embryos\n  at stages E8.5, E9,5, and E10.5\n- - transcription profiling by array\n  - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-55966:\n- Gene expression of early craniofacial development through RNA-seq\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-55965:\n- A gene expression atlas of early craniofacial development\n- - transcription profiling by array\n- - Mus musculus\nE-MTAB-1500:\n- RNA-seq of coding RNA of adult male and female Heliconius melpomene rosina chemosensory\n  tissues to identify tissue- and sex-specific differences in gustatory and olfactory\n  gene expression\n- - RNA-seq of coding RNA\n- - Heliconius melpomene rosina\nE-GEOD-54468:\n- Social odors conveying dominance and reproductive information induce rapid physiological\n  and neuromolecular changes in a cichlid fish\n- - transcription profiling by array\n- - Oreochromis mossambicus\nE-GEOD-51795:\n- Neuroligin-associated microRNA-932 targets actin and regulates memory\n- - transcription profiling by array\n- - Apis mellifera\nE-GEOD-52800:\n- Profiling data on the developing olfactory/GnRH system reveal cellular and molecular\n  pathways potentially relevant for the Kallmann syndrome\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-53876:\n- Statistical analysis of differential gene expression relative to a fold change threshold\n  on NanoString data of mouse odorant receptor genes\n- - other\n- - Mus musculus\nE-GEOD-42395:\n- Formaldehyde-induced changes in microRNA signaling\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-42394:\n- Formaldehyde-induced changes in microRNA signaling [Affymetrix]\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-42393:\n- Formaldehyde-induced changes in microRNA signaling [Agilent]\n- - transcription profiling by array\n- - Rattus norvegicus\nE-MTAB-2156:\n- Whole-genome array CGH evaluation for replacing prenatal karyotyping in Hong Kong\n- - comparative genomic hybridization by array\n- - Homo sapiens\nE-GEOD-53657:\n- 'Bovine nose tissues: Yellow nose vs. Black nose'\n- - transcription profiling by array\n- - Bos taurus\nE-MTAB-2163:\n- Transcriptional profile of the main olfactory epithelium (MOE) and the vomeronasal\n  organ (VNO) of male wild type mice\n- - transcription profiling by array\n- - Mus musculus\nE-MTAB-1721:\n- Transcription profiling by array of two different types of human organotypical tissues\n  (bronchial and nasal epithelia) to investigate the effect of repeated whole cigarette\n  smoke (3R4F)\n- - transcription profiling by array\n- - Homo sapiens\nE-ERAD-200:\n- Zebrafish olfactory transcriptomics\n- - RNA-seq of coding RNA\n- - Danio rerio\nE-ERAD-199:\n- Single cell transcriptomics in olfactory sensory neurons\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-MTAB-1390:\n- Transcription profiling by array of pulmonary and nasal tissues from ApoE-/- mice\n  to study the effect of cessation after initial exposure to cigarette smoke\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-51392:\n- Expression data from airway epithelial cells stimulated with Poly(I:C) from patients\n  with asthma, rhinitis, and healthy controls\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-43617:\n- Gene body 5-hydroxymethylcytosine facilitates transcription in olfactory neurons\n- - methylation profiling by high throughput sequencing\n  - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-38604:\n- The developmental patterning of 5-hydroxymethylcytosine during neuronal differentiation\n- - methylation profiling by high throughput sequencing\n  - RNA-seq of coding RNA\n- - Mus musculus\nE-ERAD-182:\n- RNA-Seq of Rat olfactory\n- - RNA-seq of coding RNA\n- - Rattus norvegicus\nE-ERAD-169:\n- RNA-seq of the olfactory system of newborn mice\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-46901:\n- Microarray-based gene expression profiling of peripheral blood mononuclear cells\n  in dairy cows with experimental hypocalcaemia and milk fever\n- - transcription profiling by array\n- - Bos taurus\nE-GEOD-45931:\n- 'Exon Level Expression Profiling: Induced adult neurogenesis  in the olfactory epithelium'\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-40445:\n- Gene expression in CF-vs-non CF human airway epithelial cell samples obtained by\n  nasal brushing\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-45780:\n- Time-dependent toxic effects of dietary TCDD in juvenile rainbow trout\n- - transcription profiling by array\n- - Oncorhynchus mykiss\nE-GEOD-45779:\n- Dose-dependent effects of TCDD in juvenile rainbow trout\n- - transcription profiling by array\n- - Oncorhynchus mykiss\nE-MTAB-1272:\n- Exposure of NHBE cells to cell cycle inhibitor specific for CDK4 / CDK6 (PD-0332991)\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-44037:\n- Expression data from airway epithelial cells from patients with asthma, rhinitis,\n  and helathy controls\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-1217:\n- Transcription profiling by array of human olfactory neurosphere derived (ONS) cells\n  to investigate a patient-specific olfactory stem cell disease model for ataxia-telangiectasia\n- - transcription profiling by array\n- - Homo sapiens\nE-TABM-1180:\n- Transcription profiling by array of olfactory neurosphere-derived cells obtained\n  from cohorts of hereditary spastic paraplegia patients with, and without, mutations\n  in SPG4 and from healthy controls\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-25336:\n- Gene expression from lamina propria of olfactory mucosa from Human\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-37609:\n- Transcription profiling by array of olfactory epithelium from Atf5+/+ and Atf5-/-\n  mice\n- - transcription profiling by array\n- - Mus musculus\nE-BUGS-131:\n- Survival of Staphylococcus aureus ST398 in the Human Nose after Artificial Inoculation\n- - comparative genomic hybridization by array\n- - Staphylococcus aureus\nE-GEOD-39674:\n- The activity-dependent histone variant H2BE modulates the life span of olfactory\n  neurons\n- - transcription profiling by array\n  - ChIP-chip by tiling array\n- - Mus musculus\nE-GEOD-39517:\n- Genome-wide location analysis of FLAG-H2BE\n- - ChIP-chip by tiling array\n- - Mus musculus\nE-GEOD-39516:\n- Effects of H2be loss of function on gene expression changes in the main olfactory\n  epithelium (MOE) as a result of activity deprivation through unilateral naris occlusion\n  (UNO)\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-39515:\n- Effects of H2be loss of function on gene expression in the main olfactory epithelium\n  (MOE) of 6-month old mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-39514:\n- Effects of H2be ectopic over-expression on gene expression in the main olfactory\n  epithelium (MOE) of 5-week old mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-34978:\n- Epigenetics effects of formaldehyde inhalation exposure\n- - transcription profiling by array\n- - Macaca fascicularis\nE-GEOD-33833:\n- Effect of unilateral naris occlusion on gene profile in mouse olfactory mucosa\n- - transcription profiling by array\n- - Mus musculus\nE-ERAD-160:\n- Olfactory transcriptomics in a mouse model of Alzheimer s disease\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-37581:\n- Global expression profiling of globose basal cells and neurogenic progression within\n  the olfactory epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-35171:\n- Effect of VEGF on expressions of C2H2 zinc finger proteins in human umbilical vein\n  endothelial cells\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-19190:\n- Distinct epithelial gene expression phenotypes in childhood respiratory allergy\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-19187:\n- Nasal epithelium gene expression profiling in child respiratory allergic disease\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-28804:\n- Synergism of Iraqi Sand/Cigarette Smoke Co-Exposure in Rats\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-31972:\n- Transcriptional profiling of ICAM-positive and -negative cells from the mouse olfactory\n  epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-24467:\n- Gene expression in the olfactory epithelia of parasitic and reproductive adult sea\n  lampreys\n- - RNA-seq of coding RNA\n- - Petromyzon marinus\nE-GEOD-33368:\n- Gene expression atlas for mouse olfactory sensory neurons\n- - transcription profiling by array\n- - Mus musculus\nE-MTAB-360:\n- Sample Validation Study_microarrays\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-27927:\n- Transcription profiling by array of Drosophila after fasting\n- - transcription profiling by array\n- - Drosophila melanogaster\nE-TABM-879:\n- Transcriptional profiling of human olfactory neurosphere-derived cell lines from\n  healthy and idiopathic Parkinsons disease individuals\n- - transcription profiling by array\n- - Homo sapiens\nE-MEXP-3002:\n- Identification of FOXO3 and PRDM1 as tumor suppressor gene candidates in NK cell\n  neoplasms by the combination of genomic and functional analyses -CGH\n- - comparative genomic hybridization by array\n- - Homo sapiens\nE-MEXP-2996:\n- Transcription profiling by array of human natural killer cell lines, normal donors\n  and clinical samples of natural killer cell neoplasms to detect tumor-specific genes\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-698:\n- RNA-seq of vomeronasal tissue from adult male and female mice\n- - RNA-seq of coding RNA\n- - Mus musculus\nE-GEOD-26373:\n- High-throughput mapping of he promoters of the mouse olfactory receptor genes reveals\n  a new type of mammalian promoters\n- - other\n- - Mus musculus\nE-GEOD-26064:\n- Gene Expression Analysis of Fezf1 Mutant Main Olfactory Epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-24420:\n- Chip-chip from mouse olfactory epithelium (OE) and liver with antibodies against\n  H3K9me3 and H4K20me3\n- - ChIP-chip by tiling array\n- - Mus musculus\nE-MEXP-436:\n- Transcription profiling of human nasal brushing cells from 19 cystic fibrosis (CF)\n  patients and 19 healthy controls\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-28926:\n- Microarray screening of RNA samples from the olfactory epithelium from wild type\n  and beta3GnT1 mutant mice\n- - transcription profiling by array\n- - Mus musculus\nE-BUGS-102:\n- Genomic comparisons of USA300 Staphylococcus aureus colonizating the nose and rectum\n  of children with skin abscesses\n- - transcription profiling by array\n- - Staphylococcus aureus\nE-GEOD-16008:\n- Gene expression from bronchial and nasal epithelial cell samples of healthy current\n  and never smokers\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-281:\n- Transcription profiling by array of human olfactory ecto-mesenchymal stem cells\n  in familial dysautonomia\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-25486:\n- Nanoemulsion-Specific Gene Expression Data in Bone Marrow Derived Dendritic Cells\n  and in Murine Nasal Epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-25438:\n- Gene expression data in murine nasal mucosa following nanoemulsion adjuvant exposure\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-24598:\n- The human nose harbours a niche of olfactory ecto-mesenchymal stem cells displaying\n  neurogenic and osteogenic properties\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-21544:\n- An Atlas of Bovine Gene Expression Reveals Novel Distinctive Tissue Characteristics\n  and Evidence for Improving Genome Annotation\n- - RNA-seq of coding RNA\n- - Bos taurus\nE-GEOD-23179:\n- Gene expression microarray analysis of rat nasal tissue with time and dose following\n  formaldehyde inhalation\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-9260:\n- Inflammation and degeneration of the olfactory epithelium in an immuno-deficient\n  zebrafish\n- - transcription profiling by array\n- - Danio rerio\nE-GEOD-5969:\n- Characterizing the expression of human olfactory receptor genes\n- - unknown experiment type\n- - Homo sapiens\nE-GEOD-5189:\n- Expression data from adult male and female Drosophila melanogaster antenna, proboscis,\n  and front leg\n- - transcription profiling by array\n- - Drosophila melanogaster\nE-TABM-724:\n- Transcription profiling of neurosphere-derived cell lines from patients with brain\n  disorders\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-19984:\n- Transcription profiling by array of Drosophila mutant for poxn\n- - transcription profiling by array\n- - Drosophila melanogaster\nE-MEXP-2005:\n- Comparative genomic hybridization of non-sequenced strains of S. aureus against\n  the sequenced Mu50 strain\n- - comparative genomic hybridization by array\n- - Staphylococcus aureus\nE-MTAB-27:\n- Transcription profiling of mouse samples - re-analysis of data on the MG_U74Av2\n  platform\n- - transcription profiling by array\n- - Mus musculus\n  - Mus spretus\nE-GEOD-17919:\n- Expression profiling of different adult female tissues isolated from Anopheles gambiae\n  females\n- - transcription profiling by array\n- - Anopheles gambiae\nE-GEOD-5349:\n- Transcription profiling of rat nasal respiratory epithelium laser capture microdissected\n  after exposure to hydrogen sulfide\n- - transcription profiling by array\n- - Rattus rattus\nE-GEOD-16524:\n- Expression data from skin fibroblasts derived from Setleis Syndrome patients and\n  normal controls\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-17:\n- Transcription profiling of nose epithelial cells from people who are birch pollen\n  allergic or non-allergic after exposure to natural pollen in spring and winter\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-8987:\n- Transcription profiling of human buccal and nasal epithelium of current and never\n  smokers\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-12135:\n- Expression data from Emx2 wildtype and knockout olfactory epithelium\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-11156:\n- Characterizing the expression of Pan troglodytes olfactory receptor genes\n- - transcription profiling by array\n- - Pan troglodytes\nE-GEOD-9150:\n- Transcription profiling of human primary nasal epithelium exposed to house dust\n  mite extract shows activated expression in allergics\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-6540:\n- Transcription profiling of mouse olfactory epithelium of Lip-C-treated vs. Lip-O-treated\n  controls\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-6485:\n- Transcription profiling of mouse olfactory epithelium frpm Harlequin mutants compared\n  to littermate controls\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-5019:\n- Transcription profiling of rat nasal respiratory and olfactory epithelium\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-4927:\n- Transcription profiling of mouse olfactory epithelium from heterozygous and homozygouse\n  OMP-GFP animals\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-4915:\n- Transcription profiling of mouse olfactory sensory neurons\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-11348:\n- Transcription profiling by array of human nasal epithelium from patients infected\n  with HRV-16 rhinovirus\n- - transcription profiling by array\n- - Homo sapiens\nE-MEXP-1548:\n- Transcription profiling of S. aureus isolates from different locations and associated\n  with different diseases\n- - transcription profiling by array\n- - Staphylococcus aureus\nE-GEOD-3595:\n- Transcription profiling of olfactory epithelia isolated from wild type and KLF7\n  null mice to identify potential KLF7 target genes in olfactory sensory neurons\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-3455:\n- Transcription profiling of olfactory epithelium isolated from wild type and SR-A\n  mutant mice at different time points after bilateral olfactory bulbectomy to understand\n  the temporal gene expression patterns\n- - transcription profiling by array\n- - Mus musculus\nE-TABM-185:\n- Transcription profiling by array of integrated human experiments involving the hgu133a\n  platform to investigate a global map of human gene expression\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-7002:\n- Transcription profiling by array of rat nasal epithelial cells after treatment with\n  formaldehyde\n- - transcription profiling by array\n- - Rattus norvegicus\nE-GEOD-2395:\n- Transcription profiling of nasal epithelium from CF patients with mild and severe\n  cystic fibrosis lung disease to identify candidate genes that influence the severity\n  of pulmonary disease and to identify genes indicative of CF disease progression\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-1680:\n- Transcription profiling of mouse olfactory epithelium to determine the identity\n  of genes regulated at 3 d post-olfactory bulbectomy in the olfactory mucosa of carrier-injected\n  Ccl3-/- mice compared with carrier-injected C57BL/6 mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-2437:\n- Transcription profiling by array of olfactory epithelium from mice after surgical\n  removal of olfactory bulb\n- - transcription profiling by array\n- - Mus musculus\nE-BUGS-33:\n- Transcription profiling of community-acquired invasive and nasal carriage S.aureus\n  isolates to identify genes associated with invasion, genomic variability and population\n  structure\n- - transcription profiling by array\n- - Staphylococcus aureus\nE-AFMX-4:\n- Transcription profiling by array of mouse cell types and tissues (GNF/Novartis)\n- - transcription profiling by array\n- - Mus musculus\n"], ["created_at", "2017-03-30 17:00:13.494939"], ["updated_at", "2017-03-30 17:00:13.494939"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "datasets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "nose"], ["created_at", "2017-03-30 17:00:13.592399"], ["updated_at", "2017-03-30 17:00:13.592399"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  Rendered users/searchAll.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12913ms (Views: 21.3ms | ActiveRecord: 21.8ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:00:13 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEJuXxY5uPjQ/xb/ALP2/u1Amd4ympFsYCDhmOSMrNWWtJNWtzufXvgsLmnjJshUhQXFkfX3UVnFc3ukBYk5Sg==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"nose", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "nose"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "nose"]]
+  [1m[35mDataset Load (0.1ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "nose"]]
+  Rendered users/searchAll.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 22.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:00:41 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEJuXxY5uPjQ/xb/ALP2/u1Amd4ympFsYCDhmOSMrNWWtJNWtzufXvgsLmnjJshUhQXFkfX3UVnFc3ukBYk5Sg==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"nose", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "nose"]]
+  [1m[36mPartsearchresult Load (0.3ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "nose"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "nose"]]
+  Rendered users/searchAll.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 29.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:18:22 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1JhDORpDIU5Sufn4BcykSPmX5GTukpwMNkJ3xrj5qe5pJwFRWsrIxGZ33EDggw7S6MD3lTXikWVipPj++ZzOA==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "psoriasis"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "partsearchresults" ("keyword", "Data_set_results", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["keyword", "psoriasis"], ["Data_set_results", "---\nE-MTAB-5262:\n- Investigation of gene expression in biopsies from psoriasis patients before and\n  after adalimumab treatment. Paired biopsies from non-lesional and lesional before\n  treatment start and from psoriatic skin four and 14 days treatment start were included\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-72246:\n- 'Effect of Itolizumab on gene expression profiles of patients enrolled in phase\n  2 psoriasis clinical trial study (Study number: T1hAb‐CT1‐001‐07)'\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-4453:\n- Transcription profiling by array of three T-cell populations isolated from the ears\n  of mice treated with Imiquimod\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-80047:\n- Based on Molecular Profiling of Gene Expression, Palmoplantar Pustulosis and Palmoplantar\n  Pustular Psoriasis are Highly Related Diseases that Appear to Be Distinct from Psoriasis\n  Vulgaris\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-69967:\n- 'Pathologic Immune Pathways in Psoriasis are Rapidly Attenuated by Tofacitinib Treatment:\n  A Randomized Phase 2 Study in Patients with Moderate to Severe Psoriasis'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-82140:\n- 'Sebaceous gland atrophy in psoriasis: An explanation for psoriatic alopecia?'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-77719:\n- IL-17A plays a central role in the expression of psoriasis signature genes through\n  induction of IkappaB-zeta in keratinocytes\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-75890:\n- Distinct molecular signatures of mild extrinsic and intrinsic atopic dermatitis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-78057:\n- Expression data from IMQ-induced psoriasis-like skin inflammation in miR-146a-/-\n  and C57BL6J mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-67853:\n- Exploring Molecular Determinants of Disease Progression in Psoriasis by Comparing\n  Different Clinical Subtypes Having Similar Core Transcriptomes\n- - transcription profiling by array\n  - unknown experiment type\n- - Homo sapiens\nE-GEOD-74761:\n- Extensive alopecia areata is reversed by IL-23 cytokine antagonism\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-75343:\n- Molecular and cellular profilling of scalp psoriasis reveals differences and similarities\n  compared to skin psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-74876:\n- Long-term exposure to cold plasma-generated ROS –an in vitro model for redox-related\n  diseases of the  skin\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-50598:\n- AMPK epidermal inhibition promotes HuR cytoplasmic localization eliciting post-transcriptional\n  inflammatory response in psoriasis\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-67785:\n- Proteogenomic analysis of psoriasis reveals discordant and concordant changes in\n  mRNA and protein abundance\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-MTAB-3732:\n- A comprehensive human expression map\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-70327:\n- Chronic psoriatic skin inflammation leads to increased monocyte adhesion and aggregation\n- - transcription profiling by RT-PCR\n- - Homo sapiens\nE-GEOD-66511:\n- Transcriptional Landscape of Psoriasis Identifies the Involvement of IL36 and IL36RN\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-67762:\n- Tissue-engineered human psoriatic skin as an in vitro model to study the impact\n  of cytokines\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-63315:\n- Narrow-band UVB phototherapy reverses DNA methylation changes in psoriatic epidermis\n- - methylation profiling by array\n- - Homo sapiens\nE-GEOD-57012:\n- Laser capture microdissection followed by next-generation sequencing identifies\n  disease-related microRNAs in psoriatic skin that mirror the systemic psoriatic miRNome\n- - RNA-seq of non coding RNA\n- - Homo sapiens\nE-MTAB-2325:\n- Gene expression profiles in motor cortex of Control and Sporadic Amyotrphic Lateral\n  Sclerosis patients\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-50614:\n- A Randomized, Placebo-Controlled Study to Evaluate SRT2104, a Selective SIRT1 Activator,\n  in Patients with Moderate to Severe Psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-57405:\n- Gene expression of CD14- cells from RA, PsA and PsO patients with Infliximab treatment\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-57386:\n- Gene expression of biopsies, CD14+ and CD14- cells from RA, PsA and PsO patients\n  with Infliximab treatment\n- - transcription profiling by array\n- - \"  \"\n  - Homo sapiens\nE-GEOD-57383:\n- Gene expression of CD14+ cells from RA, PsA and PsO patients with Infliximab treatment\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-57376:\n- Synovial biopsies from RA and PsA patients and skin biopsies from Psoriasis patients\n  under Infliximab treatment\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-62408:\n- Expression profiles of long non-coding RNAs located in autoimmune disease-associated\n  regions reveal immune cell type specificity\n- - RNA-seq of coding RNA\n  - RNA-seq of non coding RNA\n- - Homo sapiens\nE-GEOD-59384:\n- Expression data from mouse adult epidermis in response to physical or immune mediated\n  damage\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-53795:\n- Transcription profiling of lesional and non-lesional skin from acne patients to\n  study the role of inflammation in early acne lesions\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-61281:\n- 'Human Whole Blood: Psoriatic Arthritis [PsA] vs. Cutaneous Psoriasis Without Arthritis\n  [PsC] vs. Controls'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-52648:\n- Grhl3 is essential for epidermal barrier repair from both physical and immune injury,\n  relevance to lesional skin disease\n- - ChIP-seq\n- - Mus musculus\nE-GEOD-60804:\n- Epigenetic silencing of SFRP4 contributes to epidermal hyperplasia in psoriasis\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-58749:\n- Human proliferating and differentiating keratinocytes treated with retinoic acid\n  or 3,4-didehydroretinoic acid\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-47944:\n- Environmental factors transmitted by aryl hydrocarbon receptor influence severity\n  of psoriatic skin inflammation [RNA-Seq]\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-47607:\n- Environmental factors transmitted by aryl hydrocarbon receptor influence severity\n  of psoriatic skin inflammation [Affymetrix]\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-55515:\n- MicroRNA-223 and miR-143 are important systemic biomarkers for disease activity\n  in psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-47751:\n- Early tissue responses to etanercept in psoriasis lesions\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-58121:\n- Clinically non-involved skin of patients with psoriasis, lichen planus, and healthy\n  individuals\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-57939:\n- Gene expression profiling in THP1 cells after PAPD5 or GLD2 knockdown\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-51440:\n- Guselkumab (interleukin-23-specific monoclonal antibody) demonstrates clinical and\n  molecular response in moderate-to-severe psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-57225:\n- Intra-individual genome expression analysis reveals a specific molecular signature\n  of psoriasis and eczema\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-54884:\n- Human blood monocyte response to IL-17A in culture\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-55201:\n- Suppression of inflammation in psoriasis blood after IL-17 treatment with ixekizumab\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-53552:\n- Gene expression profiling in psoriatic lesional and non-lesional skin [brodalumab\n  treatment]\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-52361:\n- IL-17 induces an expanded range of downstream genes in reconstituted human epidermis\n  model\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-54456:\n- 'Transcriptome analysis of psoriasis in a large case-control sample:  RNA-seq provides\n  insights into disease mechanisms'\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-50400:\n- Suppression of molecular inflammatory pathways by Toll-like Receptor 7, 8, and 9\n  antagonists in a model of IL-23-induced skin inflammation\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-50099:\n- Comparative miRNA expression of normal skin from control and lesional skin from\n  mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-53431:\n- Narrow-band UVB phototherapy for psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-50790:\n- Gene expression in psoriasis lesions and uninvolved skin\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-47598:\n- Activated T cell gene expression profile associated with Psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-52471:\n- Dominant Th1 and Minimal Th17 Skewing in Discoid Lupus Revealed by Transcriptomic\n  Comparison with Psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-48586:\n- 'Intense THz pulses down-regulate genes associated with skin cancer and psoriasis:\n  a new therapeutic avenue?'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-46889:\n- Temporal Gene Expression Patterns in the skin of D6 null and wild type mice after\n  inflammation with the chemical irritant TPA\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-41664:\n- Comparison of Gene Expression in Psoriatic Skin from Different Sources\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-41663:\n- Re-analysis by microarray using cDNA target of samples from psoriasis patients enrolled\n  in an etanercept trial\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-41662:\n- Gene expression profiling in psoriatic lesional and non-lesional skin [Set 2]\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-34248:\n- Gene expression profiling in psoriatic lesional and non-lesional skin [Set 1]\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-42634:\n- methylation profile of dermal MSCs derived from psoriasis patients and normal control\n- - methylation profiling by array\n- - Homo sapiens\nE-GEOD-42633:\n- microRNA expression profile of dermal MSCs derived from psoriasis patients and normal\n  control\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-42632:\n- mRNA expression profile of dermal MSCs derived from psoriasis patients and normal\n  control\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-42305:\n- TREM-1 is a novel therapeutic target in Psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-41905:\n- A global transcriptome analysis of keratinocytes upon suppression of endogenous\n  microRNA-31\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-41745:\n- Transcriptional Profiling of Psoriasis Using RNA-seq Reveals Previously Unidentified\n  Differentially Expressed genes\n- - RNA-seq of coding RNA\n- - Homo sapiens\nE-GEOD-38039:\n- ZNF750 in late keratinocyte differentiation\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-40263:\n- Novel antioxidative peptides with potential to reduce psoriatic changes in PBMCs\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-40033:\n- The gene expression pattern of bone marrow mesenchymal stem cells from patients\n  with psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-30999:\n- Expression data from skin biopsy samples from patients with moderate-to-severe psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-MTAB-728:\n- mRNA expression of Atopic Dermatitis keratinocytes\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-36387:\n- PSORS2 is due to mutations in CARD14\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-36381:\n- Rare and common variants in CARD14, an epidermal regulator of NF-kappaB, in psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-28729:\n- Comparison of microRNA expression using different preservation methods of matched\n  psoriatic skin samples\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-35582:\n- The characteristics of genome-wide DNA methylation in naïve CD4+ T cells of patients\n  with psoriasis and atopic dermatitis\n- - methylation profiling by high throughput sequencing\n- - Homo sapiens\nE-GEOD-36287:\n- Expression data from primary human keratinocytes exposed to cytokines in vitro (IL-4,\n  IL-13, IL-17A, IFN-alpha, IFN-gamma, TNF)\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-31652:\n- IL-17A is an essential cytokine to sustain pathogenic cell activation and inflammatory\n  gene circuits in psoriasis vulgaris\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-30768:\n- Post-therapeutic relapse of psoriasis associated with CD11a blockade is associated\n  with T cells and inflammatory myeloid DCs\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-26866:\n- Combined Use of Laser Capture Microdissection and Microarray Analysis Identifies\n  Locally Expressed Disease-Related Genes in Focal Regions of Psoriasis Vulgaris Skin\n  Lesions\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-32245:\n- Fiorentino 2006-7 dermatomyositis, lupus, control skin\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-32407:\n- A single intradermal injection of IFN-gamma induces a psoriasis-like state in both\n  non-lesional psoriatic and healthy skin\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-31408:\n- Diagnostic microRNA profiling in cutaneous T-cell lymphoma (CTCL)\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-31835:\n- Global methylation analysis of psoriatic (involved and uninvolved) and control skin\n- - methylation profiling by array\n- - Homo sapiens\nE-GEOD-32620:\n- Human keratinocytes stimulated with IL-17C\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-30355:\n- Human keratinocytes have a response to injury that upregulates CCL20 and other genes\n  linking innate and adaptive immunity\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-31037:\n- Small RNA sequencing in normal and psoriatic skin\n- - RNA-seq of non coding RNA\n- - Homo sapiens\nE-GEOD-27887:\n- Transcription profiling by array of skin from patients with atopic dermatitis before\n  and after treatment with narrow-band UVB radiation\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-27628:\n- Expression data from affected skin from psoriasis mouse models and normal skin from\n  control mice\n- - transcription profiling by array\n- - Mus musculus\nE-GEOD-26952:\n- Expression data for human epithelium from subjects with atopic dermatitis, psoriasis\n  and nonatopic controls\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-23113:\n- Transcriptome Signatures of Sezary Cells from Patients and Cultured Hut 78, Hut\n  102 and Jurkat Cells\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-24767:\n- Integrative responses to IL-17 and TNF-α in human keratinocytes account for key\n  inflammatory pathogenic circuits in psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-25400:\n- Reconstituted human epidermis cultures treated with IL-1 family cytokines for 24\n  hours\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-18948:\n- 'Personalized medicine in psoriasis: developing a genomic classifier to predict\n  histological response to Alefacept'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-20264:\n- Transcription profiling by array of human inflammatory myeloid dendritic cells from\n  patients with psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-11903:\n- Transcription profiling of human response to etanercept treatment in patients with\n  Psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-16161:\n- Broad defects in epidermal cornification in atopic dermatitis (AD) identified through\n  genomic analysis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-6932:\n- Transcription profiling of human keratinocytes used in a small molecule screen to\n  identify inducers of epidermal keratinocyte differentiation\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-14905:\n- 'Transcription profiling of human psoriasis patient matched lesion and normal tissue\n  vs. normal controls - type i interferon: potential therapeutic target for psoriasis?'\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-13355:\n- Transcription profiling by array of human skin from patients with psoriasis\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-6710:\n- Transcription profiling of human skin biposies (lesional and uninvolved) from psoriasis\n  patients\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-11308:\n- Quantification of vascular lineage-specific differentiation\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-11307:\n- Quantification of vascular lineage-specific differentiation, psoriasis (chronic\n  inflammation) study\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-11306:\n- Quantification of vascular lineage-specific differentiation (cell type comparison)\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-9120:\n- Transcription profiling of human epidermal keratinocytes treated with IL-1\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-7216:\n- Transcription profiling by array of human epidermal keratinocytes after treatment\n  with interleukin 20 subfamily cytokines\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-4828:\n- Transcription profiling of human keratinocytes treated with JNK inhibitor vs. control\n  reveals inhibition of JNK in keratinocyte cultures in vitro induces virtually all\n  aspects of epidermal differentiation in vivo\n- \n- - Homo sapiens\nE-GEOD-440:\n- Transcription profiling of human epidermal keratinocytes treated with IFN-gamma\n  reveals IFN-gamma suppressed the expression of over 100 genes responsible for cell\n  cycle, DNA replication and RNA metabolism\n- - transcription profiling by array\n- - Homo sapiens\nE-GEOD-2737:\n- Transcription profiling of human affected and unaffected skin of 4 psoriatic patients\n  and normal skin of 3 psoriasis free individuals to reveal a complex regulation of\n  molecular stress and immune gene responses\n- - transcription profiling by array\n- - Homo sapiens\nE-MEXP-1123:\n- MicroRNA profiling of human healthy, psoriasis and atopic eczema skin samples\n- - microRNA profiling by array\n- - Homo sapiens\n"], ["created_at", "2017-03-30 17:18:28.486213"], ["updated_at", "2017-03-30 17:18:28.486213"]]
+  [1m[36m (17.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "datasets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "psoriasis"], ["created_at", "2017-03-30 17:18:28.547609"], ["updated_at", "2017-03-30 17:18:28.547609"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  Rendered users/searchAll.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 6464ms (ActiveRecord: 30.8ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:65:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146890587220'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146890587220'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146890587220'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (12.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (46.0ms)
+
+
+Started PUT "/console/repl_sessions/1" for 50.24.129.25 at 2017-03-30 17:19:21 +0000
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:21:41 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1JhDORpDIU5Sufn4BcykSPmX5GTukpwMNkJ3xrj5qe5pJwFRWsrIxGZ33EDggw7S6MD3lTXikWVipPj++ZzOA==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  [["keyword", "psoriasis"]]
+  [1m[36mPartsearchresult Load (0.2ms)[0m  [1mSELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1[0m  [["keyword", "psoriasis"]]
+  [1m[35mDataset Load (0.2ms)[0m  SELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.8ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:69:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-03-30 17:21:43 +0000
+Processing by UsersController#searchAll as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/searchAll.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:21:44 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.1ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:69:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146887652360'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:22:19 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:70:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_35156740'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_35156740'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_35156740'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (11.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:23:06 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:70:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.3ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:23:09 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.1ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:70:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146892201420'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (117.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (151.3ms)
+
+
+Started PUT "/console/repl_sessions/6" for 50.24.129.25 at 2017-03-30 17:23:24 +0000
+
+
+Started PUT "/console/repl_sessions/6" for 50.24.129.25 at 2017-03-30 17:23:30 +0000
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:23:46 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:71:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (47.6ms)
+
+
+Started PUT "/console/repl_sessions/7" for 50.24.129.25 at 2017-03-30 17:23:50 +0000
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:23:54 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:71:in `block (2 levels) in _app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/views/users/searchAll.html.erb:61:in `each'
+  app/views/users/searchAll.html.erb:61:in `block in _app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/views/users/searchAll.html.erb:37:in `_app_views_users_search_ll_html_erb__3313116271442180778_70146891784840'
+  app/controllers/users_controller.rb:112:in `saveSearch'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (10.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (50.9ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:24:13 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.1ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:24:26 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.1ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_header.html.erb (96.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 126ms (Views: 117.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-03-30 17:25:42 +0000
+Processing by UsersController#saveSearch as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsVsQbeeUk2AmplQ1lndAe//L6Q3FVO/UDqL7v/ui4rQM5FIFpx166hJocY1zOOrh7pz6/B4k4r1aRHSHuseFQ==", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "searchSave"=>"psoriasis", "submit"=>"Search Array Express"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?[0m  [["keyword", "psoriasis"]]
+  [1m[35mPartsearchresult Load (0.2ms)[0m  SELECT  "partsearchresults".* FROM "partsearchresults" WHERE "partsearchresults"."keyword" = ?  ORDER BY "partsearchresults"."id" ASC LIMIT 1  [["keyword", "psoriasis"]]
+  [1m[36mDataset Load (0.2ms)[0m  [1mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."name" = ? LIMIT 1[0m  [["name", "psoriasis"]]
+  Rendered users/searchAll.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 25.4ms | ActiveRecord: 0.7ms)
