@@ -43,71 +43,72 @@ class UsersController < ApplicationController
   
   def searchAll
     #debugger
-    @poweradmin = current_user
+    #@poweradmin = current_user
   end
   
-   def saveSearch
-        @dataset=Hash.new
-        @poweradmin = current_user
+   def save_search
+        @dataset_results=Hash.new
+        #@poweradmin = current_user
         #This func do two things: get result back from API 
         #+ save result to DB[partsearchresult]
         @attr_exper = params[:attr][:experSave]
         @attr_tech = params[:attr][:techSave]
         n_keyword = params[:searchSave]
         
-        if(@attr_exper!='All assays by Molecule')
-            n_keyword=n_keyword+'+'+@attr_exper
+        if(@attr_exper=='All assays by Molecule')
+            @attr_exper=''
         end
         
-        if(@attr_tech!='All technologies')
-            n_keyword=n_keyword+'+'+@attr_tech
+        if(@attr_tech=='All technologies')
+            @attr_tech=''
         end
         
         if(n_keyword!='')
             #debugger
             #n_keyword = params[:search]
-            @previous_record = Partsearchresult.where(:keyword => n_keyword)
-            if @previous_record.count > 0
-                @new_temp_record = @previous_record.first
-                @all_dataset = @previous_record.first.Data_set_results
-                @previous_dataset= Dataset.find_by_name(n_keyword).Data_set
-                @all_dataset.each do |k,v|
-                    if !@previous_dataset.has_key?(k)
-                        @dataset[k]=v
-                    end
-                    if params[:submit]=="Search"&&@dataset.length >= 20
-                        break
-                    end
-                end
+            @previous_results = Savesearchresult.where("keyword=? AND filter_exper=? AND filter_tech=?",n_keyword,@attr_exper,@attr_tech)
+            #p @previous_results.count
+            if @previous_results.count > 0
+                
+                @dataset_results =  @previous_results.first.data_hash
+                #p @dataset_results
             else
-                @dataset_raw = search_data_arrayexpress(n_keyword)
-                if(n_keyword != "")
-                    @new_temp_record = Partsearchresult.create(keyword: n_keyword, Data_set_results: @dataset_raw)
-                    Dataset.create(name:n_keyword)
-                    @previous_dataset=nil
-                else
-                    flash[:warning] = "invalid search term"
-                    redirect_to search_save_path
-                    return  
-                end
-                dataset_foruse = Hash.new
-                @dataset_raw.each do |k,v|
-                    dataset_foruse[k] = v
-                    
-                  if params[:submit]=="Search"&&dataset_foruse.length >= 20
-                    break
-                  end
-                end                
-                @dataset = dataset_foruse    
+                @dataset_results = search_data_arrayexpress(n_keyword,@attr_exper,@attr_tech)
+                @previous_results=nil    
             end
         else
+            flash[:warning] = "Invalid search! Please enter the search term"
             redirect_to search_save_path
             return
         end
-        if @dataset==nil||@dataset.empty?
+        
+        if @dataset_results==nil||@dataset_results.empty?
             flash[:warning] = "No more dataset"
             redirect_to search_save_path
             return   
+        end
+        
+        if params[:commit_save]=="save_back"
+          @storage = Hash.new
+          i=0
+          @dataset_results.each do |k,v|
+            if (!params[:selected_keys_save].nil? and params[:selected_keys_save].include?(k))
+              @storage[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
+            else
+              if v[5]!="checked"
+                @storage[k] = [v[0],v[1],v[2],v[3],v[4],"unchecked",params[:reasons][i]]
+              else
+                @storage[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
+              end
+            end
+            i=i+1
+          end
+          #p @storage
+          Savesearchresult.where("keyword=? AND filter_exper=? AND filter_tech=?",n_keyword,@attr_exper,@attr_tech).first_or_create(keyword: n_keyword,
+          filter_exper: @attr_exper, filter_tech: @attr_tech, data_hash: @storage).update(data_hash: @storage)
+          flash[:warning] = "Curated results saved successfully!"
+          redirect_to search_save_path
+          return
         end
         render 'searchAll'
     end

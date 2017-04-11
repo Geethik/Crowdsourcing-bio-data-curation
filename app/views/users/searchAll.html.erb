@@ -1,7 +1,11 @@
+<%= javascript_include_tag 'searchAll.js' %>
+
 <div class = "row">
   <h1>Search Datasets</h1><hr>    
 </div>
 
+
+<%= form_tag :action => 'save_search' do %>
 <div class = "row">
   <div class = "col-sm-4"> </div>
   <div class = "col-sm-4">
@@ -11,21 +15,19 @@
           <span class="pull-left"><strong>Experiment Information</strong></span>
           <p>
             <br/>
-             <%= form_tag :action => 'saveSearch' do %>
              
+             <%= text_field_tag :searchSave, params[:searchSave], placeholder: "Search by keyword" %>
+             <br/>
+             <br/>
              <label for='attr_experSave' class="pull-left">Experiment type</label>
              <%= select :attr, :experSave, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
-             <br/>
              <br/>
               <label for='attr_techSave' class="pull-left">Technology type</label>
              <%= select :attr, :techSave, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
              <br/>
              <br/>
-             <%= text_field_tag :searchSave, params[:searchSave], placeholder: "Search by keyword" %>
-             <br/>
-             <br/>
              <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success" %>
-            <% end %>
+            
           </p>
       </ul>
     </div>
@@ -33,50 +35,79 @@
 </div>
 
 <div class = "col-sm-2"> </div>
+<hr>
+<div style="text-align:center">
+  <%if params[:submit]=="Search Array Express"%>
+    <h2>Displaying <span style="background-color:#4682b4;padding:5px;border-radius:5px"><%=@dataset_results.size%></span> results</h2>
+  <% end %>
+</div>
+<br/>
+
 <div>
-  <%= form_for @poweradmin, :url => full_group_path, :method => :post do |f| %> 
-  <% if @new_temp_record %>
-    <%= f.hidden_field :temppsr_id, :value => @new_temp_record.id %>
-  <% end %>  
-  <div style="border:1px solid black; width:1150px;height:500px; overflow-y:auto;" class="pull-center">
+  <div  class="pull-center container-fluid">
     <div>
-  
-      <div style="border:1px solid white; width:1150px; height:500px; float:left;">
+      <div >
         <div class = "row">
-          <div class = "col-sm-12">
+          <div class = "col-md-12">
             <div class="table-responsive">
                 
-                <table class = "table-bordered">
+                <table class = "table table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th class = "col-md-2" style="padding:10px">Accession</th>
-                      <th class = "col-md-8" style="padding:10px">Name</th>
-                      <th class = "col-md-2" style="padding:10px">Type</th>
-                      <th class = "col-md-2" style="padding:10px">Organism</th>
-                      <th class = "col-md-1" style="padding:10px">Relevance</th>
+                      <th>S.No</th>
+                      <th>Accession</th>
+                      <th class="col-md-3">Name</th>
+                      <th class="col-md-1">Type</th>
+                      <th class="col-md-1">Organism</th>
+                      <th>Release Date</th>
+                      <th>Assays</th>
+                      <th>Relevance</th>
+                      <th>Reason</th>
                     </tr>
                   </thead>
                   <tbody>
-                   <% if @dataset %>            
-                      <% @dataset.each do |k,v| %>            
+                   <% if @dataset_results %>  
+                      <% i=0 %>
+                      <% @dataset_results.each do |k,v| %>
+                      <% i=i+1 %>
                     <tr>
-                      <td class = "col-md-2"> <%= link_to k, "http://www.ebi.ac.uk/arrayexpress/experiments/#{k}", :target => '_blank' %></td>
-                      <td class = "col-md-8"> 
+                      <td style="text-align:center"><%= i %><span>.</span></td>
+                      <td > <%= link_to k, "http://www.ebi.ac.uk/arrayexpress/experiments/#{k}", :target => '_blank' %></td>
+                      <td > 
                         <%if !v[0].nil? %>
                             <%= v[0] %> 
                         <% end %>
                       </td>
-                      <td class = "col-md-2"> 
+                      <td > 
                         <%if !v[1].nil? %>
-                            <%= v[1][0] %> 
+                            <%= v[1] %> 
                         <% end %> 
                       </td>
-                      <td class = "col-md-2"> 
+                      <td > 
                         <%if !v[2].nil? %>
-                            <%= v[2][0] %> 
+                            <%= v[2] %> 
                         <% end %>    
                       </td>
-                      <td class = "col-md-1"> <%= check_box_tag 'selected_keys[]', k-%></td>
+                      <td > 
+                        <%if !v[3].nil? %>
+                            <%= v[3] %> 
+                        <% end %>    
+                      </td>
+                      <td style="text-align:center"> 
+                        <%if !v[4].nil? %>
+                            <%= v[4] %> 
+                        <% end %>    
+                      </td>
+                      <td >
+                        <%if !v[5].nil? and v[5]=="checked" %>
+                          <%= check_box_tag 'selected_keys_save[]',"checked", k-%>
+                        <% else %>
+                          <%=check_box_tag 'selected_keys_save[]',k-%>
+                        <% end %>  
+                      </td>
+                      <td > 
+                        <textarea id="reason_notes", name="reasons[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
+                      </td>
                     </tr>
                       <%end %> 
                     <% end %>   
@@ -95,9 +126,12 @@
   </div>
   <hr>
   <div style="text-align:center;">
-    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit", :value => 'save_back') do %>
+    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save", :value => 'save_back') do %>
       <i class="glyphicon glyphicon-refresh"></i>Save and Back
     <% end %>
     </div>
-  <% end %>
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
+
+<% end %>
+

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'profile' => 'users#show'
   post 'profile', to: 'users#show'
   get 'searchAll' => 'users#searchAll'
-  post 'searchAll', to: 'users#saveSearch', as: 'search_save' 
+  post 'searchAll', to: 'users#save_search', as: 'search_save' 
   resources :users
 
   # Admin

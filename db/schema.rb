@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203033617) do
+ActiveRecord::Schema.define(version: 20170410224246) do
 
   create_table "datasets", force: :cascade do |t|
     t.string   "name"
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 20161203033617) do
     t.datetime "updated_at",       null: false
     t.string   "keyword"
     t.text     "Data_set_results"
+  end
+
+  create_table "savesearchresults", force: :cascade do |t|
+    t.string   "keyword"
+    t.string   "filter_exper"
+    t.string   "filter_tech"
+    t.text     "data_hash"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
