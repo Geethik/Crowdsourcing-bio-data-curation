@@ -35,11 +35,12 @@
 </div>
 
 <div class = "col-sm-2"> </div>
+<%if params[:submit]=="Search Array Express"%>
 <hr>
 <div style="text-align:center">
-  <%if params[:submit]=="Search Array Express"%>
+  
     <h2>Displaying <span style="background-color:#4682b4;padding:5px;border-radius:5px"><%=@dataset_results.size%></span> results</h2>
-  <% end %>
+  
 </div>
 <br/>
 
@@ -124,14 +125,15 @@
   
     </div>
   </div>
-  <hr>
+  <br/>
   <div style="text-align:center;">
     <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save", :value => 'save_back') do %>
       <i class="glyphicon glyphicon-refresh"></i>Save and Back
     <% end %>
-    </div>
+  </div>
+   
   <!--<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
 </div>
-
+<% end %>
 <% end %>
 

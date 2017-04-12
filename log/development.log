@@ -7508,3 +7508,169 @@ Processing by UsersController#save_search as HTML
   Rendered layouts/_header.html.erb (1.0ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 28ms (Views: 12.0ms | ActiveRecord: 2.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 50.24.129.25 at 2017-04-11 00:54:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://project-with-heroku-geethik.c9users.io/profile
+Completed 302 Found in 67ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/profile" for 50.24.129.25 at 2017-04-11 00:54:43 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-04-11 00:54:44 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-04-11 00:54:50 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YC4/1i+QN6twZVUCRrMkZmdpNuPKOmSNEUhe9Yclh9/dpstkgAQzwAsQtLpZ2/DofD8cz0pssmeuNe7aDuhNBw==", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  [1m[35mSavesearchresult Load (0.2ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 11.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 50.24.129.25 at 2017-04-12 00:33:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.129.25 at 2017-04-12 00:33:55 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5LK8iprBZKvYf7MVfnCNAkHzG1S1Pn4kLc7FHAcEGimHNpqYQAA3c3ziyXjH+I2kg7ofaArgYscf89b/x9tdcg==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://project-with-heroku-geethik.c9users.io/admin
+Completed 302 Found in 122ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 50.24.129.25 at 2017-04-12 00:33:55 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-04-12 00:33:57 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (4.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-04-12 00:35:03 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-04-12 00:35:11 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaK83hrE2MwQ8cg8WHMV9giGpgSvjwKIdzDozZR7/RFKJprMwAWLFLRsslHh+xVQys+iOBBRHmtFDfsuVKS6Sg==", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  [1m[36mSavesearchresult Load (1.0ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 11.9ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-04-12 00:35:57 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaK83hrE2MwQ8cg8WHMV9giGpgSvjwKIdzDozZR7/RFKJprMwAWLFLRsslHh+xVQys+iOBBRHmtFDfsuVKS6Sg==", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  [1m[35mSavesearchresult Load (0.2ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-04-12 00:36:10 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWjE7C/+mtTlQs24TuVO9uidz5Iud62TmDDGi53AkK8q7OL+9T/JDEHft9X3bU5QKtTLrpGpsXCqDdVoXR/X9A==", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "selected_keys_save"=>["checked"], "reasons"=>["relevant ", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  [1m[36mSavesearchresult Load (0.2ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.5ms)
