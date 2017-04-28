@@ -101,7 +101,7 @@
                       </td>
                       <td >
                         <%if !v[5].nil? and v[5]=="checked" %>
-                          <%= check_box_tag 'selected_keys_save[]',"checked", k-%>
+                          <%= check_box_tag 'selected_keys_save[]',k, k-%>
                         <% else %>
                           <%=check_box_tag 'selected_keys_save[]',k-%>
                         <% end %>  
