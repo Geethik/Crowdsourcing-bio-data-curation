@@ -34,8 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'chartkick'
 gem "omniauth-google-oauth2"
+gem 'jquery-turbolinks'
 
-
+gem 'jquery-datatables-rails', github:'rweng/jquery-datatables-rails'
 
 
 group :development, :test do

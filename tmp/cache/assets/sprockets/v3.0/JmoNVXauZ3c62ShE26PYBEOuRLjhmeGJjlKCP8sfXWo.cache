@@ -1,0 +1,13 @@
+I"·(function() {
+  var ready;
+
+  ready = function() {
+    return $("results_table").dataTable();
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET
