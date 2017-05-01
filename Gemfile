@@ -37,7 +37,7 @@ gem "omniauth-google-oauth2"
 gem 'jquery-turbolinks'
 
 gem 'jquery-datatables-rails', github:'rweng/jquery-datatables-rails'
-
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'sqlite3'
