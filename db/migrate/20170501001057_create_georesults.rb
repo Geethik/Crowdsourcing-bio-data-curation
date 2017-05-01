@@ -1,4 +1,4 @@
-class CreateGeoresult < ActiveRecord::Migration
+class CreateGeoresults < ActiveRecord::Migration
   def change
     create_table :georesults do |t|
       t.string :keyword
