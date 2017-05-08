@@ -13365,3 +13365,773 @@ Completed 200 OK in 28ms (Views: 14.0ms | ActiveRecord: 0.7ms)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_fullquestion_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fullsubmissions_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_groups_users_on_group_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 50.24.129.25 at 2017-05-01 07:24:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://pagination-geethik.c9users.io/profile
+Completed 302 Found in 103ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/profile" for 50.24.129.25 at 2017-05-01 07:24:03 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 58.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:24:05 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (19.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:25:45 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:25:46 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NSta1zOG7oUML0MejzdNF4B9uiAfgePeWKy/5QJ2dHDhzgy2mLCLtqDuz0wx3+7p1n8cfJqF0WTNWOkqiAsm+A==", "searchSave_geo"=>"", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+Redirected to https://pagination-geethik.c9users.io/searchAll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:25:46 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:25:49 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"006q5TrJjCNPpsa3sX/GcToO1UjPBkuweGrdg3VV95YHq/yEkf/pEONnSuUPl2WPbAxzFEoCeQrtnotM/yilHg==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (0.2ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 19.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:27:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (14.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (63.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 118ms (Views: 102.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:04 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M24QChGzuQtbPyLqLTFj+hlTXxgAtOVYHLod1j96LBXni0ZruoXcOPf+rriT2cAET1H5RIWw1+KJTksZtQd+nQ==", "searchSave_geo"=>"", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "submit"=>"Search Array Express"}
+Redirected to https://pagination-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:04 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:09 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hn1iATz5WbIgCIQU6A0/18CdnuSHPxFJ7t6Eufn5NHJSmDRgl888gYzJCEZW5Zwplp84uAI7I/N7KtJ2c4Rm+g==", "searchSave_geo"=>"", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+Redirected to https://pagination-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:11 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UjAIRtSIx+QrDzXfGGw/MzFgLPEepxniMeEY9FYTCDmG1V4nf76i14fOuY2mhJzNZ2KKrZujK1ikFU473G5asQ==", "searchSave_geo"=>"", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+Redirected to https://pagination-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:11 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:14 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8LNUVR70lxtP9RntbsLOOQvsVjbwzYY0+joklapBxHEkVgI0tcLyKOM0lb/QKm3HXe7wanXJtI5vznJaIDyW+Q==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')
+  [1m[36mGeosearchresult Load (0.2ms)[0m  [1mSELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (8.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 17.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:28:33 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aisk+MJ6prp6zIBIWBGvRZvT6WOfLduKn5iy5s+i+aC+znKZaUzDidYNDBrm+Qy7zdFPPxop6TAKbOQpRd+rKA==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "re_length"=>"10", "selected_keys_save"=>["5420"], "reasons"=>["relevant", "", "", "", "", "", "", "", "", ""]}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (0.2ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 26.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-01 07:30:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (16.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (52.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 109ms (Views: 95.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:30:22 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IeaGq5H9VfqCjBVnDKVzsJPAWqGpR/BqQAUT1zQTJdD1A9DKOsswyS5NmTWyTdBOxcL8/SxDwtDV8UUYvm53WA==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (0.4ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (25.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 66ms (Views: 36.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-01 07:30:36 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETRYvRP63nQ/n8LWhe9Tpvq5S3ESUKEqSBMW7eOCRgDF0Q7cuMy7R5NeToQ7B/BYrLvtLZdUk5Dd50Aiaf8UiA==", "searchSave_geo"=>"psoriasis", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"All technologies"}, "submit"=>"Search Array Express", "re_length"=>"10", "selected_keys_save"=>["5420"], "reasons"=>["relevant", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (15.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6240ms (Views: 28.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 128.194.142.185 at 2017-05-01 16:13:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (47.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 105ms (Views: 90.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 128.194.142.185 at 2017-05-01 16:13:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sNJhEKPZjp532if7nFgxrOQwpDrH7YLGMqnAmxZTuIUxTXkU+igQehrXU3F6CGs6fTcthLv6jAfM8XLQg3lsTw==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/admin
+Completed 302 Found in 177ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/admin" for 128.194.142.185 at 2017-05-01 16:13:17 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.4ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 64.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/searchAll" for 128.194.142.185 at 2017-05-01 16:13:20 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (7.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searchAll" for 128.194.142.185 at 2017-05-01 16:13:30 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ff74vfgdwFs0lpV9B3KPVHETRnkgBRSirBRuYc04UCKUYeC5oexev1mb4ffhItXC6BTPx1wSGmNSTNwqWBKE6A==", "searchSave_geo"=>"", "searchSave"=>"tuberculosis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (13.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1766ms (Views: 30.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/newcsv" for 128.194.142.185 at 2017-05-01 16:13:35 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (5.1ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 128.194.142.185 at 2017-05-01 16:13:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LzE1g/mbDLf0KQwfYHr9cGn5HRlMkMCA4niuRpoIPnSuri2HoGqSU5kkeJWGKqfm8P6UpzCHzkEcIBwNDyLqvg==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.4ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 30.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/newcsv" for 128.194.142.185 at 2017-05-01 16:13:48 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.1ms)
+Sent data  (0.8ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 128.194.155.25 at 2017-05-01 21:57:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 128.194.155.25 at 2017-05-01 21:57:20 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qhg+ULb3/cxNJU9rYNT/O8b3Fe1X3qxENIuPa+vlrsgFZEetRy5e+ShgmELni7E5rgCi9wmhEL4ix0OQan1/A==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/admin
+Completed 302 Found in 136ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/admin" for 128.194.155.25 at 2017-05-01 21:57:20 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 17.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 128.194.155.25 at 2017-05-01 21:57:24 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (8.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 21:57:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABFC1RwwrnUyx6hvkPhDbZsBbkk20I0c7CC9uKCivS3yrLMy6/fI+edSvzM25T5VkqKwlV+pc+8EeY6LTqTeag==", "searchSave_geo"=>"", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "submit"=>"Search Array Express"}
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.4ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 18.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 21:57:45 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLkoVOSPTkr/bnHpW5S6RskxKGe3dnPvyN+HPhNnAw92BNmzE0goxir7ZrX9icd+wJL2u94PjRwghrQN/WFgSA==", "searchSave_geo"=>"", "searchSave"=>"tuberculosis", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "DataTables_Table_0_length"=>"10"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1044ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/newcsv" for 128.194.155.25 at 2017-05-01 21:57:50 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.1ms)
+Sent data  (41.1ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 21:58:03 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rSu5shFFTtO/Ywv4Q0S4UoIDt+1nD8fOgIKf0p59q7ZflkhV5oIoX2r2HKTlWcVqi6BpMQ52OT1o26zhcHvI8Q==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"tuberculosis", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", ""]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')
+  [1m[36mGeosearchresult Load (0.7ms)[0m  [1mSELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (13.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 28.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/newcsv" for 128.194.155.25 at 2017-05-01 21:58:08 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 21:58:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"liver", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='liver' AND filter_exper='' AND filter_tech='')[0m
+Completed 500 Internal Server Error in 120879ms (ActiveRecord: 0.3ms)
+
+Net::ReadTimeout (Net::ReadTimeout):
+  app/helpers/users_helper.rb:21:in `search_data_arrayexpress'
+  app/controllers/users_controller.rb:141:in `save_search'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (61.3ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:00:30 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"liver", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='liver' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (39.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13439ms (Views: 52.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:00:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"cholera", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='cholera' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 777ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:00:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"eye", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='eye' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1322ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:00:46 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"eye", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='eye' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1261ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:00:47 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWRoamxzKfYxrMOeCid+Zbqs6erLsrhpeoofhXZQgJ+f2ZmNm7RPeuQ51MKsOgNdsw83NqLLRpqS0yy2mFbj2A==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"eye", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='eye' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1398ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/newcsv" for 128.194.155.25 at 2017-05-01 22:00:54 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (0.5ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 128.194.155.25 at 2017-05-01 22:01:08 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NU1ZvGeBMy4ppbLLs2M37q0F4V6v1vROaBkDNNwnl4nH8KhbkEZVovwwpZcVfkrWpKY/gsavCr2AQDAHMiH0zg==", "searchSave_geo"=>"eye", "submit"=>"Search GEO", "searchSave"=>"eye", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='eye')
+  Rendered users/searchAll.html.erb within layouts/application (12.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2334ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/newcsv" for 128.194.155.25 at 2017-05-01 22:01:14 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (0.7ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 128.194.155.25 at 2017-05-01 22:01:33 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UhFw2ez8PtlAoxFnqOTJ9dAheMQ6fud7so26eiiE8CWgrIE+GztYVZU2BjsO+bTN2YKmGFMHGYha1IlJxoKTYg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 128.194.155.25 at 2017-05-01 22:01:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 128.194.5.248 at 2017-05-02 22:20:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (77.3ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 152ms (Views: 131.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 128.194.5.248 at 2017-05-02 22:20:19 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xCO7xgAy+nlIm5XHuKzwiATdDFuVKn6VeLWPPZJSiTTKyycbezoWnFmWSsKJlBL4UgSK1s/1jKIuZSLH4/akzg==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/admin
+Completed 302 Found in 322ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/admin" for 128.194.5.248 at 2017-05-02 22:20:19 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 20.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searchAll" for 128.194.5.248 at 2017-05-02 22:20:22 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (8.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 128.194.5.248 at 2017-05-02 22:20:27 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GoIzzujNWZh0DayqHdrjxhlKd+3Ww9006ftWfmQILLkUaq8Tk8W1fWUAc68s4gG2T5PxYIwcLwO/K/uEFawBQw==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (3.0ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 133ms (Views: 40.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/newcsv" for 128.194.5.248 at 2017-05-02 22:20:29 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (4.0ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 128.194.5.248 at 2017-05-02 22:21:01 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dOJ8m8xKh0UQx8adi/mSzc3zOJSPa2Yr5/x2ZQIQuvV6CuBGt0JroAHKGZi6wXC9myq+GdW0lByxLNufc7SXDw==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Array assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (3.4ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='DNA Assay' AND filter_tech='Array assay')
+  Rendered users/searchAll.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 906ms (Views: 14.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/newcsv" for 128.194.5.248 at 2017-05-02 22:21:04 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.1ms)
+Sent data  (0.9ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.24.147.175 at 2017-05-05 05:28:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (43.0ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 92ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.147.175 at 2017-05-05 05:28:05 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yxR8PDuQvq8aMsGZM9LhwCwd1DtmVZLiMtJKxTESbSL1lE0yeg5AU2jsT1lYeWhajukGV/uBTD0A6UrlsxkEA==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/admin
+Completed 302 Found in 134ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/admin" for 50.24.147.175 at 2017-05-05 05:28:05 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.147.175 at 2017-05-05 05:28:07 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (8.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 50.24.147.175 at 2017-05-05 05:31:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://pagination-geethik.c9users.io/profile
+Completed 302 Found in 61ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/profile" for 50.24.147.175 at 2017-05-05 05:31:33 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.5ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 44.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/searchAll" for 50.24.147.175 at 2017-05-05 05:31:37 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (20.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/searchAll" for 50.24.147.175 at 2017-05-05 05:32:55 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+yH5HPPCcmev97GW7oCbS+gvxLdt4wH9bDr1BuhjoS2b2/nYysQJnF48y63vLjVtgqQX/t+UUoYQ8hkGamuMiQ==", "searchSave_geo"=>"", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+Redirected to https://pagination-geethik.c9users.io/searchAll
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.147.175 at 2017-05-05 05:32:55 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searchAll" for 50.24.147.175 at 2017-05-05 05:33:06 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"52+ihanPmyi0ALNwJUTPAej6IpSyS6krV5mERRT2k1qHlaJBkMng00XLyUsk6mEngnHx3QA8+lArUWhFlv6+/g==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[35m (2.7ms)[0m  SELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')
+  [1m[36mGeosearchresult Load (4.2ms)[0m  [1mSELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (11.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 25.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 50.24.147.175 at 2017-05-05 06:17:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://pagination-geethik.c9users.io/profile
+Completed 302 Found in 77ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/profile" for 50.24.147.175 at 2017-05-05 06:17:09 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.3ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 74ms (Views: 47.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searchAll" for 50.24.147.175 at 2017-05-05 06:17:12 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.147.175 at 2017-05-05 06:17:33 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VS2b/ZHSm2OTb12+dn4qKuyCa0Se2wYERbrtOLcj2ok115s5qNTgmGKkJ4V30IQMhgm4DSysVX85cgE4NSv3LQ==", "searchSave_geo"=>"", "searchSave"=>"tuberculosis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[36m (6.6ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (7.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1864ms (Views: 19.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 50.24.129.25 at 2017-05-08 18:35:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (47.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 115ms (Views: 97.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.129.25 at 2017-05-08 18:35:56 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"csAdvmQ163lNgRYkfX+OeFDizW8mg47rnaaXxhMPnwfrYFmkTuQ9P2Ixxb7tcSMuEcEaoGtv9MDo72qQ/Ts2mQ==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://pagination-geethik.c9users.io/admin
+Completed 302 Found in 150ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/admin" for 50.24.129.25 at 2017-05-08 18:35:56 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.4ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 20.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-08 18:35:58 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (8.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-08 18:36:01 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xjJ3bObt1UmdQ7YyCbVZSqEiAuaHzY9qQOYPhDpYIc1fkjN2zDwDD7LzZaiZu/Qc4AHVKcoh9UE1r/LS1GyIUw==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (4.0ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 110.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/users/newcsv" for 50.24.129.25 at 2017-05-08 18:36:07 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.1ms)
+Sent data  (4.8ms)
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 0.0ms)

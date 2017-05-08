@@ -39,6 +39,8 @@ gem 'jquery-turbolinks'
 gem 'jquery-datatables-rails', github:'rweng/jquery-datatables-rails'
 gem 'responders', '~> 2.0'
 
+ gem 'simplecov', :require => false
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug',      '3.4.0'
@@ -53,7 +55,7 @@ group :test do
   gem 'guard-minitest',     '2.3.1'
   
   
-  gem 'simplecov', :require => false
+ 
    #BDD
   gem 'cucumber-rails', :require =>false
   gem 'cucumber-rails-training-wheels'

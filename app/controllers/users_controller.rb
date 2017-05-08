@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     end  
     
     if params[:submit] == "Search GEO" or params[:commit_save_GEO]=="save_back"
-      $reference = "GEO"
+      
       n_keyword=''
       params[:searchSave]=''
       params[:attr][:experSave] = 'All assays by Molecule'
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     
       geo_keyword=''
       params[:searchSave_geo]=''
-      $reference = "Array Express"
+      
       
       if n_keyword==''
         flash[:warning] = "Invalid search! Please enter the search term"
@@ -107,6 +107,7 @@ class UsersController < ApplicationController
         @previous_results_geo = nil
       end
       $set = @result_datasets
+      $reference = "GEO"
       if params[:commit_save_GEO]=="save_back"
         @storage_geo = Hash.new
         i=0
@@ -147,6 +148,7 @@ class UsersController < ApplicationController
         @previous_results=nil    
       end
       $set = @users
+      $reference = "Array Express"
       if params[:commit_save]=="save_back"
         @storage = Hash.new
         i=0

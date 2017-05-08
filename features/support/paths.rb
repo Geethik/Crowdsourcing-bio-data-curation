@@ -15,7 +15,34 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+      
+     when /^the "login page"$/
+       '/login'
+    
+     when /^the admin page$/
+       '/admin'
+       
+     when /^the users page$/
+       '/users'
+     
+     when /^the signup page$/
+       '/signup'
+       
+     when /^the profile page$/
+       '/profile'
+    
+     when /^the SearchAll page$/
+       '/searchAll'
+       
+    when /^Facebook$/
+      get 'auth/:Facebook/callback'
+      
+    when /^the "SearchArrayExpress" page/
+      full_search_path
+       
+    #when /^"Sign in with Facebook"$/
+     # '/v2.6/dialog/oauth'
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
