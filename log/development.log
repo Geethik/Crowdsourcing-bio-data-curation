@@ -14135,3 +14135,87 @@ Processing by UsersController#jsr as CSV
   Rendered text template (0.1ms)
 Sent data  (4.8ms)
 Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-08 18:45:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (28.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (101.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 208ms (Views: 188.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-08 18:45:56 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c49Kj+fVjmGzuyzxrFNGErvmOlM23VfWAx3bQKbVbPbqLw6VzQRYJ5wL/2s8XetE+sXtnHsxLf12VCYWSOHFaA==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (5.9ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (5.1ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (44.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (12.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 126ms (Views: 78.8ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/users/newcsv" for 50.24.129.25 at 2017-05-08 18:45:58 +0000
+Processing by UsersController#jsr as CSV
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/users_controller.rb:203:in `block in jsr'
+  app/controllers/users_controller.rb:199:in `jsr'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+
+
+Started GET "/searchAll" for 50.24.129.25 at 2017-05-08 18:47:21 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (122.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 184ms (Views: 180.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-08 18:47:25 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SldZu1mBK83zR1/WSP4fNPefStMZmmyjwPL+m0kCBUXT9x2hc1D9i9z3jEzY8LJitrydHFR2Foi1uwPNpzas2w==", "searchSave_geo"=>"psoriasis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='psoriasis')[0m
+  [1m[35mGeosearchresult Load (0.5ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='psoriasis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (22.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 145ms (Views: 37.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/newcsv" for 50.24.129.25 at 2017-05-08 18:47:27 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (10.4ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 50.24.129.25 at 2017-05-08 18:47:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5iSbQyDg5FgJAzvAB/2hpT5WESuPGM7+fVMOA5/axTx/hN9ZCjEyHiaz6FqX8wzzf3XG5ML0tNUIGvNVce5sog==", "searchSave_geo"=>"psoriasis", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"All technologies"}, "submit"=>"Search Array Express", "re_length"=>"10", "selected_keys_save"=>["5420"], "reasons"=>["relevant", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (4.6ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (35.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 6074ms (Views: 65.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/newcsv" for 50.24.129.25 at 2017-05-08 18:47:52 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (1.5ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.0ms)

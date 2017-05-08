@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   
   def save_search
     
-    $set = Hash.new
+    @@set = Hash.new
     @users=Hash.new
     @result_datasets = Hash.new
     geo_keyword = params[:searchSave_geo]
@@ -106,8 +106,8 @@ class UsersController < ApplicationController
         end
         @previous_results_geo = nil
       end
-      $set = @result_datasets
-      $reference = "GEO"
+      @@set = @result_datasets
+      @@reference = "GEO"
       if params[:commit_save_GEO]=="save_back"
         @storage_geo = Hash.new
         i=0
@@ -147,8 +147,8 @@ class UsersController < ApplicationController
         end
         @previous_results=nil    
       end
-      $set = @users
-      $reference = "Array Express"
+      @@set = @users
+      @@reference = "Array Express"
       if params[:commit_save]=="save_back"
         @storage = Hash.new
         i=0
@@ -181,9 +181,9 @@ class UsersController < ApplicationController
 def jsr
 
 @data = Hash.new
-@data = $set
+@data = @@set
 
-if($reference == "GEO")
+if(@@reference == "GEO")
   column_names = %w(GSE_ID Title Organism Release_Date Number_of_Samples Relevance Reason)
    
  csv_string = CSV.generate do |csv|
