@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   include UsersHelper
   
     respond_to :csv
-   @@set = Hash.new
-  
+   @@set ||= Hash.new
+   @@reference ||=''
+   
    def show
     if session[:user_id] == nil
       flash[:warning] = "please login"
