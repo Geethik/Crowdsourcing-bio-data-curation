@@ -176,6 +176,8 @@ class UsersController < ApplicationController
       end
       
     end
+    p @@set
+    p @@reference
     render 'searchAll'
   end
 

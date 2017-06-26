@@ -14513,3 +14513,173 @@ Processing by UsersController#jsr as CSV
   Rendered text template (0.0ms)
 Sent data  (0.4ms)
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-06-26 00:41:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 49ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-06-26 00:41:45 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-06-26 00:41:47 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (14.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-06-26 00:41:50 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yZcZU/eCONA4J4MNOVBlEA8gIICxoQljXRWAWvfLrz1jujs+9h6qxDt/7Yhd1UkmpVTVZz2Oe8E4ZXYaJwojWQ==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.2ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (11.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 22.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-06-26 00:41:52 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (2.2ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-06-26 00:42:09 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r9i0NU2LJ8nUglXuGkjZt2YFt6MjEzKAB7w1+4Xs7hsF9ZZYTBe13dfaO2t+zfWBzHFCRK88QCJizMO7VS1ifw==", "searchSave_geo"=>"tuberculosis", "searchSave"=>"tuberculosis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express", "re_length"=>"10", "reasons"=>["", "", "", "", "", "B", "", "", "", ""], "selected_keys_save"=>["4966"]}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1875ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-06-26 00:42:13 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (0.4ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-06-26 21:59:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 83ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 50.24.132.134 at 2017-06-26 21:59:20 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lZVWXJ+XvorBQ9pOfSbtKFU68q0yIHG7lBlYg81iuVCfnglrdyAPhTVbK1mJqHqpUmQEOAA1Vf0qxsRVK5Og5Q==", "session"=>{"email"=>"666@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "666@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://ds-summer-geethik.c9users.io/admin
+Completed 302 Found in 115ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/admin" for 50.24.132.134 at 2017-06-26 21:59:20 +0000
+Processing by AdminsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.1ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admins/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-06-26 21:59:21 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-06-26 21:59:27 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WY1sINF86QodHP7gkdN/Yjv4QRhgtTIiM+aHm/1cNPpThjMXOctYBekED/dlXejjPKa3jVKgFmSNORtNG60tTw==", "searchSave_geo"=>"", "searchSave"=>"psoriasis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "submit"=>"Search Array Express"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  [1m[35mSavesearchresult Load (0.1ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='psoriasis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 14.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-06-26 21:59:29 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (2.7ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-06-26 22:01:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 81ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-06-26 22:01:26 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (17.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 93ms (Views: 59.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-06-26 22:01:28 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-06-26 22:01:34 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WiWaY+P5YA2JpvwejeW3tGcQpV3EdQUEZWO4ibvsQJ5QLsVUC07RAn2+DQl5ayA1YE5TyPZgIULbvCRfXR1ZKw==", "searchSave_geo"=>"tuberculosis", "submit"=>"Search GEO", "searchSave"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.3ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 181ms (Views: 160.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-06-26 22:01:54 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (3.5ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.0ms)
