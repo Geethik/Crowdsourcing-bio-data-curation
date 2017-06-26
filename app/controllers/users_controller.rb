@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   include UsersHelper
- 
+  
     respond_to :csv
+   @@set = Hash.new
+  
    def show
     if session[:user_id] == nil
       flash[:warning] = "please login"
@@ -49,7 +51,6 @@ class UsersController < ApplicationController
   
   def save_search
     
-    @@set = Hash.new
     @users=Hash.new
     @result_datasets = Hash.new
     geo_keyword = params[:searchSave_geo]
