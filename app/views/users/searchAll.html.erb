@@ -1,12 +1,11 @@
 
-
 <div class = "row">
   <h1>Search Datasets</h1><hr>    
+  
 </div>
 
-
 <%= form_tag :action => 'save_search' do %>
-<div class = "row">
+<div class = "row GEO_div">
   <div class = "col-sm-4"> </div>
   <div class = "col-sm-4">
     <div class = "row">
@@ -16,7 +15,30 @@
           <p>
             <br/>
              
-             <%= text_field_tag :searchSave, params[:searchSave], placeholder: "Search by keyword" %>
+             <%= text_field_tag :searchSave_geo, params[:searchSave_geo], placeholder: "Search GEO by keyword" %>
+             <br/>
+             <br/>
+             <%= submit_tag "Search GEO", :name => "submit", class: "btn btn-success", id:"geo_submit_btn " %>
+            
+          </p>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class = "row AE_div">
+  <div class = "col-sm-4"> </div>
+  <div class = "col-sm-4">
+    <div class = "row">
+      <ul class="list-group">
+        <li class="list-group-item text-right">
+          <span class="pull-left"><strong>Experiment Information</strong></span>
+          <p>
+            <br/>
+             
+             <%= text_field_tag :searchSave, params[:searchSave], placeholder: "Search ArrayExpress by keyword" %>
              <br/>
              <br/>
              <label for='attr_experSave' class="pull-left">Experiment type</label>
@@ -26,7 +48,7 @@
              <%= select :attr, :techSave, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
              <br/>
              <br/>
-             <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success" %>
+             <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success", id:"ae_submit_btn" %>
             
           </p>
       </ul>
@@ -34,17 +56,28 @@
   </div>
 </div>
 
+
 <div class = "col-sm-2"> </div>
 <%if params[:submit]=="Search Array Express"%>
 <hr>
 <div style="text-align:center">
   
-    <h2>Displaying <span style="background-color:#4682b4;padding:5px;border-radius:5px"><%=@dataset_results.size%></span> results</h2>
+    <h2>Displaying <span style="background-color:#4682b4;padding:5px;border-radius:5px"><%=@users.size%></span> results</h2>
   
 </div>
 <br/>
 
-<div>
+  
+<p>
+  Download:
+  <div style="text-align:center;">
+    <div class = "col-sm-2">
+      <%= link_to "Download", "/users/newcsv", :class => "btn btn-success btn-block" %>
+  </div>
+  </div>
+</p>
+ 
+<div id = "searchtable">
   <div  class="pull-center container-fluid">
     <div>
       <div >
@@ -52,7 +85,8 @@
           <div class = "col-md-12">
             <div class="table-responsive">
                 
-                <table class = "table table-hover table-bordered">
+                <table  class = "table table-hover table-bordered special">
+                
                   <thead>
                     <tr>
                       <th>S.No</th>
@@ -65,11 +99,13 @@
                       <th>Relevance</th>
                       <th>Reason</th>
                     </tr>
+                    
                   </thead>
+                  
                   <tbody>
-                   <% if @dataset_results %>  
+                   <% if @users %>  
                       <% i=0 %>
-                      <% @dataset_results.each do |k,v| %>
+                      <% @users.each do |k,v| %>
                       <% i=i+1 %>
                     <tr>
                       <td style="text-align:center"><%= i %><span>.</span></td>
@@ -100,8 +136,10 @@
                         <% end %>    
                       </td>
                       <td >
+                        <checkbox id="Relevance">
                         <%if !v[5].nil? and v[5]=="checked" %>
-                          <%= check_box_tag 'selected_keys_save[]',"checked", k-%>
+                          
+                          <%= check_box_tag 'selected_keys_save[]',k, k-%>
                         <% else %>
                           <%=check_box_tag 'selected_keys_save[]',k-%>
                         <% end %>  
@@ -110,21 +148,25 @@
                         <textarea id="reason_notes", name="reasons[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
                       </td>
                     </tr>
+                 
                       <%end %> 
-                    <% end %>   
+                    <% end %> 
+                     
                   </tbody>
                 </table>
                              
-   
+               
             </div>        
           </div>
         </div>
       </div>
-      
+   
       <div style="clear:both"></div>
   
     </div>
   </div>
+<div class = "row">
+</div>
   <br/>
   <div style="text-align:center;">
     <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save", :value => 'save_back') do %>
@@ -134,6 +176,105 @@
    
   <!--<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
 </div>
+
 <% end %>
+
+<%if params[:submit]=="Search GEO" %>
+
+<hr>
+<div style="text-align:center">
+  
+<h2>Displaying <span style="background-color:#4682b4;padding:5px;border-radius:5px"><%=@result_datasets.size%></span> results</h2>
+  
+</div>
+<br/>
+<div id = "searchtable">
+  <p>
+  Download:
+  <div style="text-align:center">
+    <div class = "col-sm-2">
+      <%= link_to "Download", "/users/newcsv", :class => "btn btn-success btn-block" %>
+  </div>
+  </div>
+</p>
+  <div  class="pull-center container-fluid">
+    <div>
+      <div >
+        <div class = "row">
+          <div class = "col-md-12">
+            <div class="table-responsive">
+                
+                <table id="re" class = "table table-hover table-bordered special">
+                  <thead>
+                    <tr>
+                      <th>S. No.</th>
+                      <th style="text-align:center" class="col-md-1">GSE ID</th>
+                      <th style="text-align:center" class="col-md-3">Title</th>
+                      <th style="text-align:center" >Platform</th>
+                      <th style="text-align:center" class="col-md-1">Organism</th>
+                      <th style="text-align:center" >Release Date</th>
+                      <th style="text-align:center" >No. of Samples</th>
+                      <th style="text-align:center" >Relevance</th>
+                      <th style="text-align:center" >Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% i=0 %>
+                      <% @result_datasets.each do |k,v| %>
+                      <% i=i+1 %>
+                    <tr>
+                      <td style="text-align:center"><%= i %><span>.</span></td>
+                      <td style="text-align:center" > <%= link_to v[0], "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=#{v[0]}", :target => '_blank' %></td>
+                      <td> <%= v[1] %> </td>
+                      <td >  </td>
+                      <td style="text-align:center" > <%= v[2] %> </td>
+                      <td style="text-align:center" > <%= v[3] %> </td>
+                      <td style="text-align:center" > <%= v[4] %> </td>
+                      <td >
+                        <checkbox id="Relevance">
+                        <%if !v[5].nil? and v[5]=="checked" %>
+                          
+                          <%= check_box_tag 'selected_keys_save[]',k, k-%>
+                        <% else %>
+                          <%=check_box_tag 'selected_keys_save[]',k-%>
+                        <% end %>  
+                      </td>
+                      <td > 
+                        <textarea id="reason_notes", name="reasons[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
+                      </td>
+                    </tr>
+                      <%end %> 
+                 
+                  </tbody>
+                </table>
+                           
+            </div>        
+          </div>
+        </div>
+      </div>
+   
+      <div style="clear:both"></div>
+  
+    </div>
+  </div>
+<div class = "row">
+</div>
+  <br/>
+  <div style="text-align:center;">
+    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save_GEO", :value => 'save_back') do %>
+      <i class="glyphicon glyphicon-refresh"></i>Save and Back
+    <% end %>
+  </div>
+   
+  <!--<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
+</div>
+
 <% end %>
+
+
+<% end %>
+
+
+
+
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410224246) do
+ActiveRecord::Schema.define(version: 20170501002624) do
 
   create_table "datasets", force: :cascade do |t|
     t.string   "name"
@@ -54,6 +54,20 @@ ActiveRecord::Schema.define(version: 20170410224246) do
 
   add_index "fullsubmissions", ["fullquestion_id"], name: "index_fullsubmissions_on_fullquestion_id"
   add_index "fullsubmissions", ["user_id"], name: "index_fullsubmissions_on_user_id"
+
+  create_table "georesults", force: :cascade do |t|
+    t.string   "keyword"
+    t.text     "data_hash"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "geosearchresults", force: :cascade do |t|
+    t.string   "keyword"
+    t.text     "data_hash"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"

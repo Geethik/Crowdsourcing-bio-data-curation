@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   get 'profile' => 'users#show'
   post 'profile', to: 'users#show'
   get 'searchAll' => 'users#searchAll'
-  post 'searchAll', to: 'users#save_search', as: 'search_save' 
+  post 'searchAll', to: 'users#save_search', as: 'search_save'
+  match   'users/newcsv' => 'users#jsr',  via: :get, defaults: { format: :csv }
   resources :users
 
   # Admin

@@ -1,0 +1,92 @@
+I"‹(function() {
+  $(document).on("page:change", function() {
+    var exportTableToCSV;
+    $('#submitBtn').click(function() {
+      $('#updateForm').submit();
+    });
+    $('.btn_clear').click(function() {
+      var id;
+      id = this.id;
+      $('#choose_' + id + '_1').prop('checked', false);
+      $('#choose_' + id + '_0').prop('checked', false);
+      $('#reason_' + id).val("0");
+      $('#reason_' + id).prop('disabled', true);
+    });
+    $('#submit').click(function() {
+      var has_error;
+      has_error = false;
+      $('.radio_input').each(function(i, obj) {
+        var disease_id, id, reason_id;
+        id = this.id;
+        disease_id = id.substring(7, id.length - 2);
+        reason_id = "reason_" + disease_id;
+        if (id[id.length - 1] === '0' && $(this).is(':checked') && $('#' + reason_id).val().length === 0) {
+          alert("Please choose reason for unrelated relationships.");
+          has_error = true;
+          return false;
+        }
+      });
+      if (has_error === false) {
+        $('#questions').submit();
+      }
+    });
+    $('.radio_input').click(function() {
+      var disease_id, id;
+      id = this.id;
+      disease_id = id.substring(7, id.length - 2);
+      if (id[id.length - 1] === '0') {
+        $('#reason_' + disease_id).prop('disabled', false);
+      }
+    });
+    $('#query').on('keypress', function(e) {
+      var code;
+      code = e.keyCode ? e.keyCode : e.which;
+      if (code === 13) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).closest('#query_form').submit();
+      }
+    });
+    $('#query_user').on('keypress', function(e) {
+      var code;
+      code = e.keyCode ? e.keyCode : e.which;
+      if (code === 13) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).closest('#query_user_form').submit();
+      }
+    });
+    exportTableToCSV = function($table, filename) {
+      var $rows, colDelim, csv, csvData, rowDelim, tmpColDelim, tmpRowDelim;
+      $rows = $table.find('tr:has(td)');
+      tmpColDelim = String.fromCharCode(11);
+      tmpRowDelim = String.fromCharCode(0);
+      colDelim = '"\u0009"';
+      rowDelim = '"\u000d\n"';
+      csv = '"' + $rows.map(function(i, row) {
+        var $cols, $row;
+        $row = $(row);
+        $cols = $row.find('td');
+        return $cols.map(function(j, col) {
+          var $col, text;
+          $col = $(col);
+          text = $col.text();
+          return text.replace(/"/g, '""');
+        }).get().join(tmpColDelim);
+      }).get().join(tmpRowDelim).split(tmpRowDelim).join(rowDelim).split(tmpColDelim).join(colDelim) + '"';
+      csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
+      $(this).attr({
+        'download': filename,
+        'href': csvData,
+        'target': '_blank'
+      });
+    };
+    return $('.export').on('click', function(event) {
+      exportTableToCSV.apply(this, [$('#dvData'), 'export.csv']);
+    });
+  });
+
+  return;
+
+}).call(this);
+:ET

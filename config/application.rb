@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'csv'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -19,7 +19,14 @@ module DatasetCuration
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
+    
+    if defined?(Bundler)
+      # If you precompile assets before deploying to production, use this line
+      Bundler.require(*Rails.groups(:assets => %w(development test)))
+     # If you want your assets lazily compiled in production, use this line
+      #Bundler.require(:default, :assets, Rails.env)
+    end
+    
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end

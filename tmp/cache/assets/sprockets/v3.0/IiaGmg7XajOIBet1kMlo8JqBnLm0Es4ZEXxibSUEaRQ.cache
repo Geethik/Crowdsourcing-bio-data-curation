@@ -1,0 +1,17 @@
+I"ï(function() {
+  var ready;
+
+  jQuery(function() {
+    return $("results_table").dataTable();
+  });
+
+  ready = function() {
+    return alert('hello');
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
+
+}).call(this);
+:ET
