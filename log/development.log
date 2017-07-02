@@ -18530,3 +18530,13 @@ Processing by UsersController#searchAll as HTML
   Rendered layouts/_header.html.erb (39.3ms)
   Rendered layouts/_footer.html.erb (0.3ms)
 Completed 200 OK in 83ms (Views: 70.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 18:10:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (40.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 81ms (Views: 70.6ms | ActiveRecord: 0.8ms)

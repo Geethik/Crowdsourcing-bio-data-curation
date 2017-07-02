@@ -52,6 +52,65 @@
                   <label for="GEO_check" style="float:left;"><em>GEO</em></label>
                 </td>
               </tr>
+              <tr style="display:none;" id="GEO_filters">
+                <td colspan="2" style="border:1px solid #ddd">
+                  <label for="GEO_exper" class="pull-left">Experiment type</label>
+                  <table class="table" style="margin-bottom:10px;">
+                    <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_exp_1" name="GEO_exp_1">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_exp_1" style="font-weight:normal;">Expression profiling by array</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_exp_2" name="GEO_exp_2">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_exp_2" style="font-weight:normal;">Expression profiling by high throughput sequencing</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_exp_3" name="GEO_exp_3">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_exp_3" style="font-weight:normal;">Non-coding RNA profiling by array</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_exp_4" name="GEO_exp_4">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_exp_4" style="font-weight:normal;">Non-coding RNA by high throughput sequencing</label>
+                      </td>
+                    </tr>
+                  </table>
+                  <label for='GEO_org' class="pull-left">Organism type</label>
+                  <table class="table"  style="margin-bottom:10px;">
+                     <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_org_1" name="GEO_org_1">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_org_1" style="font-weight:normal;">Homo-sapiens</label>
+                      </td>
+                    </tr>
+                     <tr>
+                      <td width="15%" style="border:none;padding:0px;">
+                        <input type="checkbox" checked id="GEO_org_2" name="GEO_org_2">
+                      </td>
+                      <td style="border:none;padding:0px;text-align:left;">
+                        <label for="GEO_org_2" style="font-weight:normal;">Mouse</label>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </td>
+              </tr>
             </table>
             <%= submit_tag "Search database", :name => "submit", class: "btn btn-success", id:"geo_submit_btn " %>
           </p>
