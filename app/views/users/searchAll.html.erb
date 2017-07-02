@@ -1,60 +1,66 @@
 
 <div class = "row">
   <h1>Search Datasets</h1><hr>    
-  
 </div>
 
 <%= form_tag :action => 'save_search' do %>
-<div class = "row GEO_div">
-  <div class = "col-sm-4"> </div>
+
+<div class = "row Mix_div">
+  <div class = "col-sm-4"></div>
   <div class = "col-sm-4">
-    <div class = "row">
-      <ul class="list-group">
-        <li class="list-group-item text-right">
+    <div class="row">
+      <ul class = "list-group">
+        <li class = "list-group-item text-right">
           <span class="pull-left"><strong>Experiment Information</strong></span>
+          
           <p>
             <br/>
-             
-             <%= text_field_tag :searchSave_geo, params[:searchSave_geo], placeholder: "Search GEO by keyword" %>
-             <br/>
-             <br/>
-             <%= submit_tag "Search GEO", :name => "submit", class: "btn btn-success", id:"geo_submit_btn " %>
-            
+            <%= text_field_tag :csearchBox, params[:cSearchBox], placeholder: "Search by Keyword" %>
+            <br/>
           </p>
+          <span class="pull-left"><strong>Select Database</strong></span>
+          <br/>
+          <p>
+            <table class="table" style="border:none">
+              <tr >
+              <td width="30%" style="border:none;padding:2px 2px 2px 2px">
+                  <input style="display:inline;width:30%" type="radio" id="AE_check" name="AE_check">
+    
+                </td>
+                <td style="border:none;padding:2px 2px 2px 2px">
+                  <label style="float:left;" for="AE_check"><em>Array Express</em></label>
+                </td>
+              </tr>
+              <tr style="display:none;" id="AE_filters">
+                <td colspan="2" style="border:1px solid #ddd">
+                  <label for='attr_experSave' class="pull-left">Experiment type</label>
+                  <%= select :attr, :experSave, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
+                  <br/>
+                  <br/>
+                  <label for='attr_techSave' class="pull-left">Technology type</label>
+                  <%= select :attr, :techSave, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
+                  <br/>
+                  <br/>
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" style="border:none;padding:2px 2px 2px 2px">
+                  <input style="display:inline;width:30%" type="radio" id="GEO_check" name="GEO_check">
+    
+                </td>
+                <td style="border:none;padding:2px 2px 2px 2px">
+                  <label for="GEO_check" style="float:left;"><em>GEO</em></label>
+                </td>
+              </tr>
+            </table>
+            <%= submit_tag "Search database", :name => "submit", class: "btn btn-success", id:"geo_submit_btn " %>
+          </p>
+        </li>
       </ul>
     </div>
   </div>
 </div>
 
-
-
-<div class = "row AE_div">
-  <div class = "col-sm-4"> </div>
-  <div class = "col-sm-4">
-    <div class = "row">
-      <ul class="list-group">
-        <li class="list-group-item text-right">
-          <span class="pull-left"><strong>Experiment Information</strong></span>
-          <p>
-            <br/>
-             
-             <%= text_field_tag :searchSave, params[:searchSave], placeholder: "Search ArrayExpress by keyword" %>
-             <br/>
-             <br/>
-             <label for='attr_experSave' class="pull-left">Experiment type</label>
-             <%= select :attr, :experSave, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
-             <br/>
-              <label for='attr_techSave' class="pull-left">Technology type</label>
-             <%= select :attr, :techSave, options_for_select(['All technologies','Array assay','Mass spectrometry assay','Sequencing assay'] ,selected:@attr_tech) %>
-             <br/>
-             <br/>
-             <%= submit_tag "Search Array Express", :name => "submit", class: "btn btn-success", id:"ae_submit_btn" %>
-            
-          </p>
-      </ul>
-    </div>
-  </div>
-</div>
 
 
 <div class = "col-sm-2"> </div>

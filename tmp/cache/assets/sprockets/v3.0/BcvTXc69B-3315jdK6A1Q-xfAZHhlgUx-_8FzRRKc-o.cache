@@ -1,0 +1,17 @@
+I"@(function() {
+  jQuery(function() {
+    return $("table.special").dataTable();
+  });
+
+  jQuery(function() {
+    return $('#na').change(function() {
+      if (this.checked) {
+        return $('#Ae_block').fadeIn('slow');
+      } else {
+        return $('#Ae_block').fadeOut('fast');
+      }
+    });
+  });
+
+}).call(this);
+:ET
