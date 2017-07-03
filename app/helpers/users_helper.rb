@@ -27,25 +27,26 @@ module UsersHelper
     
     data_result=Hash.new
     data_hash["experiments"]["experiment"].each {|value|
-        
-        if !value["bioassaydatagroup"].nil?
-            #if !value["bioassaydatagroup"]["bioassays"].nil?
-                exper_assays =  value["bioassaydatagroup"][0]["bioassays"]
-            #end
+        if !value["accession"].include?("GEOD")
+            if !value["bioassaydatagroup"].nil?
+                #if !value["bioassaydatagroup"]["bioassays"].nil?
+                    exper_assays =  value["bioassaydatagroup"][0]["bioassays"]
+                #end
+            end
+            
+            if !value["experimenttype"].nil?
+                exper_type = value["experimenttype"][0]
+            end
+            
+            if !value["organism"].nil?
+                exper_org = value["organism"][0]
+            end
+            gse_id=''
+            if !value["secondaryaccession"].nil?
+                gse_id = value["secondaryaccession"][0]
+            end
+            data_result[value["accession"]]=[gse_id,value["name"],exper_type,exper_org,value["releasedate"],exper_assays,"unchecked",""]
         end
-        
-        if !value["experimenttype"].nil?
-            exper_type = value["experimenttype"][0]
-        end
-        
-        if !value["organism"].nil?
-            exper_org = value["organism"][0]
-        end
-        gse_id=''
-        if !value["secondaryaccession"].nil?
-            gse_id = value["secondaryaccession"][0]
-        end
-        data_result[value["accession"]]=[gse_id,value["name"],exper_type,exper_org,value["releasedate"],exper_assays,"unchecked",""]
     }
 
     # Use this for debug

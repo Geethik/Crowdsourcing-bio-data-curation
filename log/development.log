@@ -19999,3 +19999,128 @@ Processing by UsersController#save_search as HTML
   Rendered layouts/_header.html.erb (0.9ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 44731ms (Views: 98.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 05:27:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (40.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 80ms (Views: 69.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 05:27:11 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CVEygaGu5O/g4m94lV6Q/hqnHOvdNhxFR8gP/4GuXB/cdoELb8U5sMGuwm2cTW2aMoiG0V7WFYYvxGU9JYSOrQ==", "csearchBox"=>"prostate", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='prostate' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 43226ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `contains' for "E-MTAB-5647":String
+Did you mean?  constantize):
+  app/views/users/searchAll.html.erb:183:in `block (2 levels) in _app_views_users_search_ll_html_erb___2618701412160891160_70022167061800'
+  app/views/users/searchAll.html.erb:182:in `each'
+  app/views/users/searchAll.html.erb:182:in `block in _app_views_users_search_ll_html_erb___2618701412160891160_70022167061800'
+  app/views/users/searchAll.html.erb:6:in `_app_views_users_search_ll_html_erb___2618701412160891160_70022167061800'
+  app/controllers/users_controller.rb:169:in `save_search'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (11.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.9ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 05:28:52 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 05:28:55 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lylgAzmzzQu/iunMTb8BN72m6oKYOOMsXL6NqF+xTm9CDtOJ99gQVJ7GRNlErPxTlYlwuBvY6u80sudq+5uc3Q==", "csearchBox"=>"prostate", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='prostate' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 49182ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `includes' for "E-MTAB-5647":String
+Did you mean?  include?):
+  app/views/users/searchAll.html.erb:183:in `block (2 levels) in _app_views_users_search_ll_html_erb___2618701412160891160_70022029289940'
+  app/views/users/searchAll.html.erb:182:in `each'
+  app/views/users/searchAll.html.erb:182:in `block in _app_views_users_search_ll_html_erb___2618701412160891160_70022029289940'
+  app/views/users/searchAll.html.erb:6:in `_app_views_users_search_ll_html_erb___2618701412160891160_70022029289940'
+  app/controllers/users_controller.rb:169:in `save_search'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 05:30:33 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 05:30:41 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dWq9Fz37nmVDMO64XgxfyqfO7QHvlA3ivoUB4ofTSsygTQ6d85BDOmJ8Q61XH6Kuj+F3O2x0BCHWiWsgI/mYfg==", "csearchBox"=>"prostate", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='prostate' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (21.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 69215ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 06:08:21 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 06:08:33 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"66pvHNXtSPHSMiPesxSLovoc83c42sVVwnmEVHwsjnw+jdyWG4aVrvN+jsu6B3bG0jNpTbs6zJaqde6W2AZczg==", "csearchBox"=>"prostate", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='prostate' AND filter_exper='' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (111.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 45313ms (Views: 120.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 06:16:33 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (22.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 06:16:38 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jssFy57wlg47fE3ErJVw0YnO2gqQ/f5fJnUTxrh4SRdb7LZBUJtLURow4NGlho21oeFAMBMd95xOeXkEHFKbpQ==", "csearchBox"=>"prostate", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='prostate' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (10.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 49870ms (Views: 18.5ms | ActiveRecord: 0.5ms)

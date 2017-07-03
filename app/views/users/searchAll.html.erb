@@ -180,6 +180,7 @@
                    <% if @users %>  
                       <% i=0 %>
                       <% @users.each do |k,v| %>
+                      
                       <% i=i+1 %>
                     <tr>
                       <td style="text-align:center"><%= i %><span>.</span></td>
@@ -227,7 +228,7 @@
                         <textarea id="reason_notes", name="reasons[]"><%if !v[7].nil? %><%=v[7]%><%end%></textarea> 
                       </td>
                     </tr>
-                 
+                       
                       <%end %> 
                     <% end %> 
                      
