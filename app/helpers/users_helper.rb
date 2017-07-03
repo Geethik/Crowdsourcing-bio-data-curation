@@ -41,7 +41,11 @@ module UsersHelper
         if !value["organism"].nil?
             exper_org = value["organism"][0]
         end
-        data_result[value["accession"]]=[value["name"],exper_type,exper_org,value["releasedate"],exper_assays,"unchecked",""]
+        gse_id=''
+        if !value["secondaryaccession"].nil?
+            gse_id = value["secondaryaccession"][0]
+        end
+        data_result[value["accession"]]=[gse_id,value["name"],exper_type,exper_org,value["releasedate"],exper_assays,"unchecked",""]
     }
 
     # Use this for debug

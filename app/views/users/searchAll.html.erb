@@ -164,6 +164,7 @@
                     <tr>
                       <th>S.No</th>
                       <th>Accession</th>
+                      <th>GSE ID</th>
                       <th class="col-md-3">Name</th>
                       <th class="col-md-1">Type</th>
                       <th class="col-md-1">Organism</th>
@@ -191,26 +192,31 @@
                       <td > 
                         <%if !v[1].nil? %>
                             <%= v[1] %> 
-                        <% end %> 
+                        <% end %>
                       </td>
                       <td > 
                         <%if !v[2].nil? %>
                             <%= v[2] %> 
-                        <% end %>    
+                        <% end %> 
                       </td>
                       <td > 
                         <%if !v[3].nil? %>
                             <%= v[3] %> 
                         <% end %>    
                       </td>
-                      <td style="text-align:center"> 
+                      <td > 
                         <%if !v[4].nil? %>
                             <%= v[4] %> 
                         <% end %>    
                       </td>
+                      <td style="text-align:center"> 
+                        <%if !v[5].nil? %>
+                            <%= v[5] %> 
+                        <% end %>    
+                      </td>
                       <td >
                         <checkbox id="Relevance">
-                        <%if !v[5].nil? and v[5]=="checked" %>
+                        <%if !v[6].nil? and v[6]=="checked" %>
                           
                           <%= check_box_tag 'selected_keys_save[]',k, k-%>
                         <% else %>
@@ -218,7 +224,7 @@
                         <% end %>  
                       </td>
                       <td > 
-                        <textarea id="reason_notes", name="reasons[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
+                        <textarea id="reason_notes", name="reasons[]"><%if !v[7].nil? %><%=v[7]%><%end%></textarea> 
                       </td>
                     </tr>
                  

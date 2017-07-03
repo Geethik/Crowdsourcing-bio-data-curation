@@ -144,10 +144,10 @@ class UsersController < ApplicationController
         i=0
         @users.each do |k,v|
           if (!params[:selected_keys_save].nil? and params[:selected_keys_save].include?(k))
-            @storage[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
+            @storage[k] = [v[0],v[1],v[2],v[3],v[4],v[5],"checked",params[:reasons][i]]
           else
             # if v[5]!="checked"
-            @storage[k] = [v[0],v[1],v[2],v[3],v[4],"unchecked",params[:reasons][i]]
+            @storage[k] = [v[0],v[1],v[2],v[3],v[4],v[5],"unchecked",params[:reasons][i]]
             #else
             # @storage[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
             #end
