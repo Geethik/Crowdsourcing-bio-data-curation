@@ -54,10 +54,11 @@ class UsersController < ApplicationController
     
     @users=Hash.new
     @result_datasets = Hash.new
-    geo_keyword = params[:searchSave_geo]
     @attr_exper = params[:attr][:experSave]
     @attr_tech = params[:attr][:techSave]
-    n_keyword = params[:searchSave]
+    @ae_check =  params[:AE_check]
+    @geo_check = params[:GEO_check]
+    n_keyword = params[:csearchBox]
     
     if(@attr_exper=='All assays by Molecule')
           @attr_exper=''
@@ -67,40 +68,27 @@ class UsersController < ApplicationController
           @attr_tech=''
     end  
     
-    if params[:submit] == "Search GEO" or params[:commit_save_GEO]=="save_back"
-      
-      n_keyword=''
-      params[:searchSave]=''
-      params[:attr][:experSave] = 'All assays by Molecule'
-      params[:attr][:techSave] = 'All technologies'
-      
-      if geo_keyword==''
-        flash[:warning] = "Invalid search! Please enter the search term"
-        redirect_to search_save_path
-        return  
-      end
-      
-    elsif params[:submit]=="Search Array Express" or params[:commit_save]=="save_back"
-    
-      geo_keyword=''
-      params[:searchSave_geo]=''
-      
-      
+    if params[:submit] == "Search database"
       if n_keyword==''
         flash[:warning] = "Invalid search! Please enter the search term"
         redirect_to search_save_path
         return
       end
+      if @ae_check!='on' and @geo_check!='on'
+        flash[:warning] = "Invalid search! Please select a database"
+        redirect_to search_save_path
+        return 
+      end
       
     end
     
-    if params[:searchSave_geo]!=''
-      @previous_results_geo =  Geosearchresult.where("keyword=?",geo_keyword)
+    if @geo_check=='on'
+      @previous_results_geo =  Geosearchresult.where("keyword=?",n_keyword)
         
       if @previous_results_geo.count>0
         @result_datasets = @previous_results_geo.first.data_hash
       else
-        @result_datasets = search_data_GEO(geo_keyword)
+        @result_datasets = search_data_GEO(n_keyword)
         if @result_datasets==nil||@result_datasets.empty?
           flash[:warning] = "No more dataset"
           redirect_to search_save_path
@@ -110,7 +98,7 @@ class UsersController < ApplicationController
       end
       @@set = @result_datasets
       @@reference = "GEO"
-      if params[:commit_save_GEO]=="save_back"
+      if params[:commit_save]=="save_back"
         @storage_geo = Hash.new
         i=0
         @result_datasets.each do |k,v|
@@ -126,13 +114,13 @@ class UsersController < ApplicationController
           i=i+1
         end
         p @storage_geo
-        Geosearchresult.where("keyword=?",geo_keyword).first_or_create(keyword: geo_keyword,data_hash: @storage_geo).update(data_hash: @storage_geo)
+        Geosearchresult.where("keyword=?",n_keyword).first_or_create(keyword: n_keyword,data_hash: @storage_geo).update(data_hash: @storage_geo)
         flash[:warning] = "Curated results saved successfully!"
         redirect_to search_save_path
         return
       end
-          
-    elsif params[:searchSave]!='' 
+    end      
+    if @ae_check=='on' 
     
       #debugger
       @previous_results = Savesearchresult.where("keyword=? AND filter_exper=? AND filter_tech=?",n_keyword,@attr_exper,@attr_tech)
@@ -176,8 +164,8 @@ class UsersController < ApplicationController
       end
       
     end
-    p @@set
-    p @@reference
+    #p @@set
+    #p @@reference
     render 'searchAll'
   end
 

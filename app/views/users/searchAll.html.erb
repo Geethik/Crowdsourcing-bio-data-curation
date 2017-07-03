@@ -15,7 +15,7 @@
           
           <p>
             <br/>
-            <%= text_field_tag :csearchBox, params[:cSearchBox], placeholder: "Search by Keyword" %>
+            <%= text_field_tag :csearchBox, params[:csearchBox], placeholder: "Search by Keyword" %>
             <br/>
           </p>
           <span class="pull-left"><strong>Select Database</strong></span>
@@ -24,8 +24,11 @@
             <table class="table" style="border:none">
               <tr >
               <td width="30%" style="border:none;padding:2px 2px 2px 2px">
-                  <input style="display:inline;width:30%" type="checkbox" id="AE_check" name="AE_check">
-    
+                  <%if params[:AE_check]=="on"%>
+                    <input style="display:inline;width:30%" type="checkbox" id="AE_check" name="AE_check" value="on" checked>
+                  <% else %>
+                    <input style="display:inline;width:30%" type="checkbox" id="AE_check" name="AE_check" >
+                  <%end %>
                 </td>
                 <td style="border:none;padding:2px 2px 2px 2px">
                   <label style="float:left;" for="AE_check"><em>Array Express</em></label>
@@ -45,7 +48,12 @@
               </tr>
               <tr>
                 <td width="30%" style="border:none;padding:2px 2px 2px 2px">
-                  <input style="display:inline;width:30%" type="checkbox" id="GEO_check" name="GEO_check">
+                  <%if params[:GEO_check]=="on"%>
+                    <input style="display:inline;width:30%" type="checkbox" id="GEO_check" name="GEO_check" value="on" checked>
+                  <% else %>
+                    <input style="display:inline;width:30%" type="checkbox" id="GEO_check" name="GEO_check">
+                  <%end %>
+                  
     
                 </td>
                 <td style="border:none;padding:2px 2px 2px 2px">
@@ -123,7 +131,7 @@
 
 
 <div class = "col-sm-2"> </div>
-<%if params[:submit]=="Search Array Express"%>
+<%if params[:submit]=="Search database" and params[:AE_check]=='on'%>
 <hr>
 <div style="text-align:center">
   
@@ -233,18 +241,14 @@
 <div class = "row">
 </div>
   <br/>
-  <div style="text-align:center;">
-    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save", :value => 'save_back') do %>
-      <i class="glyphicon glyphicon-refresh"></i>Save and Back
-    <% end %>
-  </div>
+  
    
-  <!--<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
+ 
 </div>
 
 <% end %>
 
-<%if params[:submit]=="Search GEO" %>
+<%if params[:submit]=="Search database" and params[:GEO_check]=='on' %>
 
 <hr>
 <div style="text-align:center">
@@ -299,9 +303,9 @@
                         <checkbox id="Relevance">
                         <%if !v[5].nil? and v[5]=="checked" %>
                           
-                          <%= check_box_tag 'selected_keys_save[]',k, k-%>
+                          <%= check_box_tag 'selected_keys_save',k, k-%>
                         <% else %>
-                          <%=check_box_tag 'selected_keys_save[]',k-%>
+                          <%=check_box_tag 'selected_keys_save',k-%>
                         <% end %>  
                       </td>
                       <td > 
@@ -325,17 +329,18 @@
 <div class = "row">
 </div>
   <br/>
-  <div style="text-align:center;">
-    <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save_GEO", :value => 'save_back') do %>
-      <i class="glyphicon glyphicon-refresh"></i>Save and Back
-    <% end %>
-  </div>
-   
-  <!--<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="center"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
+  
 </div>
 
 <% end %>
 
+  <%if params[:submit]=="Search database" and (params[:AE_check]=='on' or params[:GEO_check]=='on') %>
+    <div style="text-align:center;">
+      <%= button_tag(:type => "submit",:class => "btn btn-primary", :name => "commit_save", :value => 'save_back') do %>
+        <i class="glyphicon glyphicon-refresh"></i>Save and Back
+      <% end %>
+    </div>
+  <% end %>
 
 <% end %>
 

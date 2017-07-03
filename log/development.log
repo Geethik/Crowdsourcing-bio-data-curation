@@ -18540,3 +18540,1209 @@ Processing by UsersController#searchAll as HTML
   Rendered layouts/_header.html.erb (40.5ms)
   Rendered layouts/_footer.html.erb (0.4ms)
 Completed 200 OK in 81ms (Views: 70.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 18:21:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (40.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 73.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 18:21:37 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aN1xLXOOItjZ6qqkq1l4R0GGGbMUnWpN2tYT8qlZE6y9+sKnveX/h/imB7GiSoUjaamDiZd9Y46y2nkwDXPBHg==", "csearchBox"=>"", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword=NULL)[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+TypeError (no implicit conversion of nil into String):
+  app/helpers/users_helper.rb:57:in `+'
+  app/helpers/users_helper.rb:57:in `search_data_GEO'
+  app/controllers/users_controller.rb:106:in `save_search'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (37.9ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 18:24:44 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 18:25:03 +0000
+Processing by UsersController#searchAll as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `checked' for #<UsersController:0x000000060f4d20>):
+  app/controllers/users_controller.rb:52:in `searchAll'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 18:25:12 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (17.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:32:51 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/DS_summer/app/views/users/searchAll.html.erb:338: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/ubuntu/workspace/DS_summer/app/views/users/searchAll.html.erb:340: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/users/searchAll.html.erb:338: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/users/searchAll.html.erb:340: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (41.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:05 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (24.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:11 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:24 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N40clwHHRotwjqlGstU6uMryzg21AEBwHVaMTCLN5+ziqq8dz6yb1FHCBFO7xsfc4t1UNzbgSbN1WuaOhuc1Xg==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:24 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZC2tx8INRGK6XWbFUi/2b7zFQjoBpy5punsiQOnji9CxCh5NDGaZPZsRy9BbPAsLlOrYAIJHJ6rSd0iCTclZYg==", "csearchBox"=>"", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:29 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:31 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NqkbEIJiMQzd+hiZNCKjTsOw7VwEQBwdOftVkR5YxLzjjqiaTAnsU/y2tYw9MV4q6593ZoegFd5R9z9TunIWDg==", "csearchBox"=>"", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:31 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:43 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C39i4FxUBT4dvagOqsYjjtNW6bRsaPhg3ororH1z4BLeWNFqkj/YYTzxBRuj1d7q+3lzju+I8aO2hoJu2VkyoA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:36:43 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:37:54 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (17.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:38:02 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NgCfbP1KJvJBDOCYtx27WneqsEGye85hNbDS297zyNPjJyzmMyH7rWBATY2+DkY+X4UqezGbx6JdvLgZetkaYQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"Protein assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:38:02 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:39:39 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6smcAeTkuCkex7vGefTcADiNgcB7Mk2RZr9UXHrSX/0/7i+LKo9ldj+LFtNw5yFkEKIb+vjSRFIOsz6e3viNTw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:39:39 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:40:05 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (20.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:40:12 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2B3O9QR5mBD/cSy01/Zm7O3tkHXm8zjXvw82pW+v13+R8SxGno7P2KxaafaTCT/m5gse1R7xSA28FYYMZRt7w==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:41:03 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (19.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:41:10 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CktV7Bxdo2nJrHJWLQPEb7fqrJwq+kL4CfpEgpo++IlDp7dfhqr0oZqHNxRp/J1lvAwiPNL4MiIK4PQrkIpUA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (7.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1701ms (Views: 16.7ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:42:09 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0saIQPyjMLPc8aGRezpJo03/azA3m4rJnyTp4ep4RV8H4TvKMsjt7P29DIRyKbTHZdDxCrR7gwr3KIMjTlKX7Q==", "csearchBox"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["this is relevant", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:42:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:42:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E+VnYsy2P2M1qG2StqFTXNTO3ZwPxfFF/BDd0leMsVLGwtToAt3iPBTkwIe/sq44/OFHpowl+IaUHLcQ86Zj4A==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2211ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:42:42 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aYsdDExHZUntkIKo/4Xo8DZ2oBYtixp76yE3J1SUnFG8rK6Ggiy4FszcL732lhWUHlk6LK5rE7iDLV3l8L5O4w==", "csearchBox"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["fgh", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:42:42 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:47:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (19.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:47:15 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v3jer9g/jpi0wuavsuQt5QeU98/0l7hmBezKvcl1U9NqX20lFlRTx5WOS7q799CBL7tt9Xd3saVt4KB/bV+BYQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (2.8ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1680ms (Views: 11.5ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:47:23 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iBD3Ictt1yz+4ua+W+5iBaPeqRYGtGqR42U/zh9S3fZdN0SrBQYKc9+uS6tS/Z9hi/EzLIVUY1KLaVUMu3gPRA==", "csearchBox"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["hgjhg", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:47:33 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6RJDJeBqzdU5+TaxbmB+d0E9PjShnkFP57vAZWOyU3Q8NfCvLgEQihi1m6Rnc4MTaRKkDiJ+SIyPt6qnx5iBxg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1580ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:53:40 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CKFhVUk1zdrXsDYGfVMpUdF4Bhg8k2C+6gUxvfr3FElBTYPm08KaEoSbc0Q5rHBb2p6IuMSREGTpH4EU8EO4w==", "csearchBox"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["dhgfhfghfg", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (29.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:54:23 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UsFopXvzJBmpW5XxbsYIsGHUFcGftgmTeQsFct/Jwg+H5tsvtZj5RogXOORn1fXUSfuP+xxWAFARB2+we+MQvQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 22052ms (Views: 15.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:54:45 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UsFopXvzJBmpW5XxbsYIsGHUFcGftgmTeQsFct/Jwg+H5tsvtZj5RogXOORn1fXUSfuP+xxWAFARB2+we+MQvQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16665ms (Views: 15.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:55:02 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UsFopXvzJBmpW5XxbsYIsGHUFcGftgmTeQsFct/Jwg+H5tsvtZj5RogXOORn1fXUSfuP+xxWAFARB2+we+MQvQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1747ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:56:05 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UPXLM8c4yhJkKWkLY7Ras5lBzd9tfcUXs1cvpyBQZSuF0ni5CVMXTUVlxB5qp6fXsW5X5e6dzNTbW0VlhHq3mQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 2071ms (Views: 32.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:56:30 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSWAPk0wQDhvXu0DW+3M9L92n2VTi5+HS0QsinSF625IAjO0g1udZ04SQBZS/jGQl1kFX9BrlkQjSEZI0K853A==", "csearchBox"=>"", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["gh", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-02 23:58:17 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (20.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-02 23:58:26 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uhU2aXEPFK2C2/Q1zc+7PL/+XJnmMC2t1veSQsGdqCZvMoXjv2TJ8qOXWSDE3EZYl9HGo2XQJG6++/iAZbd6lA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1595ms (Views: 13.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:00:34 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:00:38 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0QCdeVGRZFfqUBD8iQ7Ktv3u59RcU5T7WZljfZtWi3kEJy7zn/q5CMscvemAHTfS1cF97t+znTgxlQm/P3xZyw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (3.7ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (23.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 31.8ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:00:50 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OMOe+dUGITZ+pbUV1jNNXIk8bPt17m6BRRQMm0k7JU7t5C1zG238aV/pGADfILA4oRP2wfYOZ0ItGGZZ7RH3/A==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677"], "reasons"=>["gjgh", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:00:50 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:06:08 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (17.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:06:18 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (17.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:06:28 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVY8svHk2FIZQF95ac5Z2sgkrprInqhboeCNKrbNaxuUcY84P48FDTgM8mxg3aS+4As0oEt+oZjJ7OfoEue5qQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1762ms (Views: 10.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:06:40 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ErfQEAbcMQY41qryf29NnqNQHNmPtNcJlJziycHRGHHHkGOayLfsWRmaB+d2fLD6i3+G4wxU3sr8kIgLZfvKww==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["fgfgh", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:07:00 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1STsJsLDkDf3V2PHwGp9otijbPXevI9aCuq2wzVFDZ0AA1+sDKhNaNYbztLJeYDG8Iz2z11chpli5twBkW/fLw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1608ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:07:47 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:07:55 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMzJNmxNBYDYgNZNPYycIqolLvbtUnHwDe5UjBVS1olZ63q8oibY3/nMe1g0n2FGggq0zG6yeDNl4j5OsXgEOw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='RNA assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1904ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:08:34 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A7pz4gH1aUiVF344GwbvecuJHY288/EZppwsZ56Od0HWncBoz560F7Rb0y0SFRId46aHtz8T+NrOkEalOqSl8w==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-GEOD-77556"], "reasons"=>["fgfgf", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:09:04 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:09:13 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DfUsHqrXap7Zc3x6/VNbxZOWJmO4nlrh9WnI8X3KHyXY0p+UZLy3wfg/0W/0QKahu7m8WTt+UyKdZaIz2eDNlw==", "csearchBox"=>"tuberculosis", "AE_check"=>"params[:AE_check]", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:09:13 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:09:28 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wBLlHDEj4k6D4A3aaJ37WQFpPBlMixHdxjS1MIKcN/QVNVaW/0g/EaKsoM9hjgY9KUamI89rGB6uON/yJrblRg==", "csearchBox"=>"tuberculosis", "AE_check"=>"params[:AE_check]", "attr"=>{"experSave"=>"RNA assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:09:28 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:16:59 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k5D66gZWg7t1BmFGBwI+2MI2ye4QGBucKNj9yLRFbsVGt0lgyD1e5FRKzFMOEcO86hlT1JP4El9A1JcKEG+8dw==", "csearchBox"=>"tuberculosis", "AE_check"=>"params[:AE_check]", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:17:00 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:18:33 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:18:37 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y695WNd58nYEYPbol8xwhmIX3MIqN6blfoaa+/NfggceiMrSGRIvKSUsW/2e343iSjhG+KnXryYWivA5V3VQtQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"@ae_check", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:18:37 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:21:56 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:22:04 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EaLGlXedk8AGvCWnCDUNbWXBig0cp++57KUwPvnv/yHEhXUfufZOnyfwiLIBJvAJTe4QN59H5nqEqVr8XcUtkw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (3.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (43.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 82ms (Views: 52.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:22:31 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:22:36 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-07-03 00:22:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 50ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-07-03 00:22:59 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:23:01 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:23:10 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FXc3yFdfqrzUkDSkEY76W0J4zlK92niqNhPnu6gmx/zAUIRCmTR34/XcmbEYnQc/aldUaD46cWleH415DAwVTg==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.4ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 112ms (Views: 96.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:23:40 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:23:45 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sh9VIee8EMihG/zkzyzYwHGGg+T5FaJveVwaYweCW4ufOOarKdfNl4BXUfHGPyWkWakZ3nr1q6wRUHCho6iJOQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"{:value=>nil}", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:23:45 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:24:18 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:33:01 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:33:08 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQNds/P3ZOmK9meC79oo+oWuxlPQr/Z9sJK6vQKDBBBMJO45PZy5tqu6ypfmydWerYFcaVNP/77YntB/pqnWog==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.6ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (26.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 34.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:33:27 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:33:31 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pSHF0h1lCjQmrWD5cuKH7F2YV7OZI/XQGzqbIO8rp49wBnZY0w7Xawfhzex78XqIdbfNiRrD/BNzNvHiSwF1PQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"{:value=>nil}", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:33:31 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:34:04 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (30.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:34:08 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7t7fzz0VmrqgHoXv6KimB5rGT0b7JWiH95xpuHMB5ZY7+WxF835H5YFSKPrhu1tjsunVfHjFYUSfkAN61ys3JA==", "csearchBox"=>"tuberculosis", "AE_check"=>"{:value=>nil}", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:34:08 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:35:03 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:35:07 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wRjjIwOH5ECtZeGRVXH4RODlXcuQoOWa3B1mBr17Z+EUP1Cpzew5H4wpTIRcYgUgyMrH8RNA7Fm0EQzEGVG1Uw==", "csearchBox"=>"tuberculosis", "AE_check"=>"{:value=>nil}", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:35:07 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:36:03 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:36:08 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PXbGYbveQQv+XC+W1AM0sdXCq9w1eyfRicu6RBHAR7LoUXXrdbWcVN8QgoPdEMnV/e0x5rabLhLhx9CGteqVAA==", "csearchBox"=>"tuberculosis", "AE_check"=>"session[:AE_check]", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:36:08 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:37:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (17.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:37:13 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKlbBG3/eD4BPOvxfbXrlSTZw9n5yl0EOngza+N9eSeljuiOo5SlYSBwRuR0phbxDPZZ43oqVMdSdFmpR1erlQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.4ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (26.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 35.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:37:39 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0N69Rno2FTg4tLKKtwADipt+TudyOa15/2Mpw3ATyYAF+Q7MtF3IZxn4H5++E/7us1HU3fHZpLqXb0MB1DkbMg==", "csearchBox"=>"tuberculosis", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677"], "reasons"=>["gfhfh", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  Rendered users/searchAll.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:49:44 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/views/users/searchAll.html.erb:28:in `block in _app_views_users_search_ll_html_erb___2333878248142275957_70019619698480'
+  app/views/users/searchAll.html.erb:6:in `_app_views_users_search_ll_html_erb___2333878248142275957_70019619698480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:50:38 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (25.8ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:50:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gAb7Q8LfAWRFUYPfwOvWlCzjdl3DEfdKe/HZATxiM8lVIUjJDLTcO2QdLsrJ+CvwBMzsZ0Dx/okT/bPDmEjhew==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (3.0ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (2.1ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (34.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 44.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:51:43 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (19.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:51:49 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZeK7JEvmYKwyDPgBu4qL9IsE/MDMn4M4fR+zr7AbvtYsDlmX0RE3ZGEnvUP/ddL+gOJyYDSd8+J+BQMGuq8SQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.5ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (29.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 86ms (Views: 39.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:52:30 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (6.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:52:37 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6tkF2CpFE4GLcWsJ6/6YyAjVb0n2MB83q2X2Isimz7k//rZS5C7O3qo9xhzi7WWsIPr1c3XQFvTDaZzgbIwdCw==", "csearchBox"=>"tuberculosis", "AE_check"=>"{:value=>\"on\"}", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:52:37 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:55:28 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:55:32 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XNUTTIhCzaFmCOdpn1Q+XkIOJvKv5f8uXzcchSvoKI4VOfH/ErWaaTUjoivbq2dUSeioUlfnj/RcLawsIVyEA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (27.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 35.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:56:06 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (10.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:56:10 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVbKWxCrmvuAAcOMXpY1Ollhv7Ucuuz8pYd9FeAHCu20cXnR3sBHpKFNbplXhchecU4lj59a5T/NixfXRC3YXw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (28.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 59ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:56:35 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:56:40 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sy46rMM/jGeBSW4prqYhA1todYQRIJCc4WjZUSqgLIRmCYkmDVRROKAFwzyntdxnc0fvvpLAmV+JZLOTjor+Ng==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (27.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 36.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:57:23 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (5.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:57:27 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iETybyA+zQcX+hSGZlzoDbj5ubzdBZDbJOb5gaFpIaVdY0Hl7lUQWDa2uZNvTxVpkNYjhl7lmRhM6pNDBUPzFw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (35.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 70ms (Views: 44.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:57:55 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:58:06 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"onemOmzwYJl26A8ScUNNtbhpG9abfIeDsJMVcV9GfKh3UBWwopu9xlekogd4ULDRkEaB7BicjkDYn3+z+2yuGg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.4ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (30.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 81ms (Views: 39.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:58:19 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hyFQfjrB0SQhgc6GCXdsvl23TWMPXUpVeV3bFDcbLhhSBuP09KoMewDNY5MAZJHadZjXWYy9Q5YRUbHWkzH8qg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677"], "reasons"=>["dgdfd", "", "", "", "", "", "", "", "", ""], "commit_save"=>"save_back"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.3ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  UPDATE "savesearchresults" SET "data_hash" = ?, "updated_at" = ? WHERE "savesearchresults"."id" = ?  [["data_hash", "---\nE-MTAB-5218:\n- 4-week mouse comparative study on effect of neutralizing IL-17A, IL-17F and TNFa\n  antibodies\n- transcription profiling by array\n- Mus musculus\n- '2016-12-02'\n- 75\n- checked\n- dgdfd\nE-BUGS-155:\n- Experiment to determine the effect of deleting the Rv1675c gene on the transcriptome\n  of Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2016-11-15'\n- 12\n- unchecked\n- ''\nE-BUGS-142:\n- Non-Replicating Mycobacterium tuberculosis Elicits a Reduced Infectivity Profile\n  with Corresponding Modifications to the Cell Wall and Extracellular Matrix\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2016-11-14'\n- 38\n- unchecked\n- ''\nE-MTAB-4257:\n- Blood transcriptomic diagnosis of active tuberculosis and discrimination from other\n  febrile illnesses\n- transcription profiling by array\n- Homo sapiens\n- '2016-10-28'\n- 114\n- unchecked\n- ''\nE-GEOD-74050:\n- Developing gene signature against Mycobacterium bovis infection in Cattle\n- transcription profiling by array\n- Bos indicus\n- '2016-10-25'\n- 8\n- unchecked\n- ''\nE-GEOD-62423:\n- Dissecting the immunogenicity of RD1-recombinant live tuberculosis vaccine candidates\n  studying host-pathogen interaction in human primary dendritic cells\n- transcription profiling by array\n- Homo sapiens\n- '2016-07-03'\n- 24\n- unchecked\n- ''\nE-GEOD-77556:\n- Impact of mutations in rv2887, putative transcriptional repressor, on gene expression\n  in Mycobacterium tuberculosis\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2016-07-01'\n- 6\n- checked\n- ''\nE-GEOD-83812:\n- Mycobacterium tuberculosis Phosphate Uptake System Component PstA2 is Not Required\n  for Gene Regulation or Virulence\n- transcription profiling by array\n- Mycobacterium tuberculosis str. Erdman = ATCC 35801\n- '2016-06-29'\n- 6\n- checked\n- ''\nE-GEOD-83677:\n- Transcriptional profile of Beijing/East-Asian Mycobacterium tuberculosis isolates\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2016-06-24'\n- 6\n- checked\n- ''\nE-GEOD-83379:\n- Mapping epigenetic changes to the host cell genome induced by Burkholderia pseudomallei\n  reveals pathogen-specific and pathogen-generic signatures of infection\n- methylation profiling by array\n- Homo sapiens\n- '2016-06-16'\n- 36\n- unchecked\n- ''\nE-GEOD-83188:\n- Pharmacologic inhibition of host phosphodiesterase-4 improves isoniazid mediated\n  clearance of Mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2016-06-10'\n- 12\n- unchecked\n- \nE-GEOD-76499:\n- Transcriptomic approaches in the zebrafish model for tuberculosis – insights into\n  host- and pathogen-specific determinants of the innate immune response\n- RNA-seq of coding RNA\n- Danio rerio\n- '2016-06-01'\n- 72\n- unchecked\n- \nE-GEOD-72745:\n- Transcriptional Response of Mycobacterium tuberculosis to Growth without Detergent\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2016-05-31'\n- 3\n- unchecked\n- \nE-GEOD-78894:\n- Comparison of gene expression in M. tuberculosis TrxB2-DUC mutant treated or not\n  with atc and DTT\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-05-12'\n- 12\n- unchecked\n- \nE-GEOD-72330:\n- Comparison of gene expression in M. tuberculosis TrxB2 mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-05-12'\n- 20\n- unchecked\n- \nE-GEOD-72329:\n- Comparison of gene expression in M. tuberculosis TrxB2-DUC mutant treated or not\n  with atc\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-05-12'\n- 11\n- unchecked\n- \nE-GEOD-72328:\n- Comparison of gene expression in M. tuberculosis TrxB2-TetON-tetO-WT mutant treated\n  or not with atc\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-05-12'\n- 9\n- unchecked\n- \nE-MTAB-3872:\n- Fat, lazy and indifferent - profiling persistent drug-tolerant tubercule bacilli\n  from patient sputa during treatment predicts drug efficacy\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-04-12'\n- 56\n- unchecked\n- \nE-GEOD-67035:\n- Profiling gene expression in M. tuberculosis under different in vitro conditions\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2016-03-30'\n- 70\n- unchecked\n- \nE-MTAB-4093:\n- The effect of growth rate on pyrazinamide activity in Mycobacterium tuberculosis;\n  insights for early bactericidal activity\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-03-25'\n- 30\n- unchecked\n- \nE-GEOD-79362:\n- 'A blood RNA signature for tuberculosis disease risk: a prospective cohort study'\n- RNA-seq of coding RNA\n- Homo sapiens\n- '2016-03-22'\n- 354\n- unchecked\n- \nE-GEOD-78706:\n- RNAseq Reveals Virulence-Specific Host Responses to M. tuberculosis infection\n- RNA-seq of coding RNA\n- Mus musculus\n- '2016-03-01'\n- \n- unchecked\n- \nE-GEOD-71066:\n- Genomic and transcriptomic analysis of the streptomycin-dependent Mycobacterium\n  tuberculosis 18b\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2016-02-17'\n- \n- unchecked\n- \nE-MTAB-3260:\n- Whole blood transcriptional profiling of healthy volunteers and patients with active\n  tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2016-02-09'\n- 31\n- unchecked\n- \nE-MTAB-3254:\n- Molecular profiling of the tuberculin skin test in patients with active tuberculosis\n  with and without HIV-1 co-infection\n- transcription profiling by array\n- Homo sapiens\n- '2016-02-09'\n- 27\n- unchecked\n- \nE-GEOD-75847:\n- Expression analysis of Mycobacterium tuberculosis H37Rv biofilm after treatment\n  with DTT ( Reduced) for 29 hrs\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2016-02-08'\n- 6\n- unchecked\n- \nE-MTAB-4099:\n- Transcritpome analysis of Mycobacterium tuberculosis (Mtb) mutants deficient in\n  ergothioneine, or mycothiol production\n- transcription profiling by array\n- Mycobacterium tuberculosis CDC1551\n- '2016-01-27'\n- 1\n- unchecked\n- \nE-GEOD-76873:\n- Monocyte Transcriptional Networks are Associated with Tuberculin Skin Test Status\n  in Uganda\n- transcription profiling by array\n- Homo sapiens\n- '2016-01-15'\n- 56\n- unchecked\n- \nE-MTAB-2547:\n- Transcriptional profiling of endobronchial ultrasound guided lymph node samples\n  to aid diagnosis of mediastinal lymphadenopathy\n- transcription profiling by array\n- Homo sapiens\n- '2016-01-06'\n- 47\n- unchecked\n- \nE-GEOD-53640:\n- MtrA is involved in progression of Mycobacterium tuberculosis cell cycle\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2015-12-31'\n- 18\n- unchecked\n- \nE-GEOD-74092:\n- TB disease classification\n- transcription profiling by RT-PCR\n- Homo sapiens\n- '2015-12-21'\n- 189\n- unchecked\n- \nE-GEOD-70812:\n- 'MntR(Rv2788): a transcriptional regulator that controls manganese homeostasis in\n  Mycobacterium tuberculosis'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-12-08'\n- 6\n- unchecked\n- \nE-ERAD-409:\n- Mycobacterium transcription survey\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2015-11-17'\n- 76\n- unchecked\n- \nE-GEOD-71200:\n- Mycobacterium tuberculosis H37Rv transcriptional response to antibacterial agents\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-11-11'\n- 106\n- unchecked\n- \nE-GEOD-68206:\n- Cathepsin K Contributes to Cavitation and Collagen Turnover in Pulmonary Tuberculosis\n- RNA-seq of coding RNA\n- Oryctolagus cuniculus\n- '2015-11-03'\n- 36\n- unchecked\n- \nE-MTAB-3192:\n- Genome-wide maps of H3K4me1 in Mycobacterium tuberculosis H37Rv-infected macrophages\n- ChIP-seq\n- Homo sapiens\n- '2015-10-15'\n- 14\n- unchecked\n- \nE-GEOD-67589:\n- Excessive Cytolytic Responses Predict Tuberculosis Relapse After Apparently Successful\n  Treatment\n- transcription profiling by array\n- Homo sapiens\n- '2015-09-10'\n- 57\n- unchecked\n- \nE-GEOD-45386:\n- Comparison of M. tuberculosis and M. bovis BCG in diluted whole blood cultures\n- transcription profiling by array\n- Homo sapiens\n- '2015-09-10'\n- 3\n- unchecked\n- \nE-GEOD-70478:\n- Epigenetics and Proteomics Join Transcriptomics in the Quest for Tuberculosis Biomarkers\n- transcription profiling by array\n- Homo sapiens\n- '2015-08-22'\n- 140\n- unchecked\n- \nE-MTAB-3732:\n- A comprehensive human expression map\n- transcription profiling by array\n- Homo sapiens\n- '2015-07-23'\n- 1\n- unchecked\n- \nE-GEOD-70200:\n- Engagement of the aryl hydrocarbon receptor in M. tuberculosis-infected macrophages\n  has pleiotropic effects on innate immune signaling\n- transcription profiling by array\n- Homo sapiens\n- '2015-07-14'\n- 8\n- unchecked\n- \nE-GEOD-70765:\n- In-vivo Gene Signatures of Mycobacterium tuberculosis In C3HeB/FeJ Mice\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2015-07-11'\n- 12\n- unchecked\n- \nE-ERAD-355:\n- Sequence analysis of Mycobacterium tuberculosis\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2015-06-23'\n- 98\n- unchecked\n- \nE-GEOD-62147:\n- Gene expression in M. tuberculosis and M. africanum infected tuberculosis patients\n  prior to and following treatment\n- transcription profiling by array\n- Homo sapiens\n- '2015-06-05'\n- 52\n- unchecked\n- \nE-GEOD-63917:\n- The carbonic anhydrase inhibitor ethoxzolamide inhibits the Mycobacterium tuberculosis\n  PhoPR regulon and Esx-1 secretion and attenuates virulence\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2015-05-20'\n- 8\n- unchecked\n- \nE-GEOD-68856:\n- Towards understanding the biological function of the unusual chaperonin GroEL1 of\n  Mycobacterium tuberculosis\n- transcription profiling by tiling array\n- Mycobacterium tuberculosis H37Rv\n- '2015-05-14'\n- 168\n- unchecked\n- \nE-GEOD-62152:\n- Transcript 5'-end mapping was used to identify transcriptional start sites and RNA\n  processing sites genome-wide in Mycobacterium tuberculosis\n- other\n- Mycobacterium tuberculosis\n- '2015-05-08'\n- 4\n- unchecked\n- \nE-GEOD-68350:\n- Expression analysis of M.tb H37Rv after treatment with DTT (reduced) for 3 hrs\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2015-04-28'\n- 6\n- unchecked\n- \nE-GEOD-67445:\n- Gene expression analysis of Mycobacterium tuberculosis under arginine conditions\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-04-01'\n- 8\n- unchecked\n- \nE-GEOD-67427:\n- Mycobacterial infection induces a specific human innate immune response\n- RNA-seq of coding RNA\n- Homo sapiens\n- '2015-03-31'\n- 156\n- unchecked\n- \nE-GEOD-58466:\n- Transcriptional Profile of Mycobacterium tuberculosis Replicating in Human Type\n  II Alveolar Epithelial A549 cell line\n- transcription profiling by array\n- Homo sapiens\n- '2015-03-31'\n- 6\n- unchecked\n- \nE-GEOD-63548:\n- Expression profiling of lymph nodes in tuberculosis patients reveal inflammatory\n  milieu at site of infection\n- transcription profiling by array\n- Homo sapiens\n- '2015-03-01'\n- 26\n- unchecked\n- \nE-GEOD-56736:\n- Genome wide expession analysis of mouse bone marrow derive macrophage (Bmdm) cell\n  stimulated with cytokine and infected with mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2015-02-26'\n- 36\n- unchecked\n- \nE-BUGS-151:\n- Transcription profiling by tiling array of Potassium availability triggers Mycobacterium\n  tuberculosis transition to, and resuscitation from, non-culturable (dormant) states\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-02-25'\n- 120\n- unchecked\n- \nE-GEOD-57868:\n- Accumulation of inorganic polyphosphate mediates metabolic downshift and antibiotic\n  tolerance in Mycobacterium tuberculosis\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis CDC1551\n- '2015-02-20'\n- 9\n- unchecked\n- \nE-GEOD-64142:\n- Genome-wide profiling of miRNA expression dynamics in monocyte-derived dendritic\n  cells following infection with a panel of intra-cellular bacteria\n- RNA-seq of non coding RNA\n- Homo sapiens\n- '2015-02-18'\n- 116\n- unchecked\n- \nE-GEOD-59063:\n- LIX75 vs H37Rv under Log phase growth (± 5 mM Nitrate), and during hypoxic growth\n  (48 h)\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-02-09'\n- 6\n- unchecked\n- \nE-GEOD-65517:\n- Comparative analysis of monocytes from healthy donors, patients with metastatic\n  breast cancer, sepsis or tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2015-02-03'\n- 13\n- unchecked\n- \nE-TABM-1163:\n- Transcription profiling by array of human monocyte derived macrophage infected with\n  HIV1 with or without M. tuberculosis or S. pneumoniae stimulation\n- transcription profiling by array\n- Homo sapiens\n- '2015-01-31'\n- 35\n- unchecked\n- \nE-MTAB-3252:\n- Transcription and translation of the rpsJ, rplN and rRNA operons of the tubercle\n  bacillus\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2015-01-23'\n- 1\n- unchecked\n- \nE-GEOD-65036:\n- Common Irf-regulated genomic responses drive pathological inflammation during experimental\n  cerebral malaria as well as protective response against M. tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2015-01-16'\n- 4\n- unchecked\n- \nE-GEOD-64852:\n- Functional heterogeneity of human memory T cell clones primed by pathogens or vaccines\n- other\n- Homo sapiens\n- '2015-01-13'\n- 42\n- unchecked\n- \nE-GEOD-57263:\n- Comparison of gene expression of WT and PerM mutant M. tuberculosis H37Rv grown\n  in high and reduced magnesium\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2015-01-05'\n- 12\n- unchecked\n- \nE-GEOD-64427:\n- Time-dependent global gene expression profile of RAW264.7 cells infected with Mycobacterium\n  tuberculosis H37Rv (Mtb)\n- transcription profiling by array\n- Mus musculus\n- '2014-12-23'\n- 4\n- unchecked\n- \nE-GEOD-57124:\n- Lung-resident myeloid-derived suppressor cells display dual functionality in experimental\n  tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2014-12-21'\n- 18\n- unchecked\n- \nE-GEOD-64167:\n- Analysis of the lung transcriptome in Mycobacterium tuberculosis-infected mice reveals\n  major differences in immune response pathways between TB-susceptible and resistant\n  hosts\n- transcription profiling by array\n- Mus musculus\n- '2014-12-16'\n- 12\n- unchecked\n- \nE-MTAB-3142:\n- Gene expression profiling of Mycobacterium tuberculosis strain CDC1551 treated with\n  experimental compounds\n- transcription profiling by array\n- Mycobacterium tuberculosis CDC1551\n- '2014-12-13'\n- 18\n- unchecked\n- \nE-GEOD-64065:\n- The Mycobacterium tuberculosis Clp Gene Regulator is Required for in vitro Reactivation\n  from Hypoxia-induced Dormancy\n- transcription profiling by array\n- Mycobacterium tuberculosis CDC1551\n- '2014-12-12'\n- 54\n- unchecked\n- \nE-GEOD-64045:\n- DosS Is Required for the Complete Virulence of Mycobacterium  tuberculosis in Mice\n  with Classical Granulomatous Lesions\n- transcription profiling by array\n- Mus musculus\n- '2014-12-11'\n- 24\n- unchecked\n- \nE-MTAB-2492:\n- ChIP-seq of Mycobacterium tuberculosis with anti-GlnR antibody to study the role\n  of the GlnR regulon in a nitrogen stress environment\n- ChIP-seq\n- Mycobacterium tuberculosis\n- '2014-12-01'\n- 4\n- unchecked\n- \nE-GEOD-62525:\n- Gene expression profiling identifies candidate biomarkers for active and latent\n  tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2014-10-21'\n- 42\n- unchecked\n- \nE-GEOD-60376:\n- Response of M. tuberculosis to 8 hour exposure to vitamin C\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2014-10-01'\n- 7\n- unchecked\n- \nE-GEOD-41088:\n- Adjuvant induced attenuation of excessive inflammation in mice infected with pandemic\n  H1N1 (H1N1pdm) virus\n- transcription profiling by array\n- Mus musculus\n- '2014-09-10'\n- 12\n- unchecked\n- \nE-GEOD-51881:\n- Comparative transcriptomics of Mycobacterium bovis and Mycobacterium marinum\n- other\n- Mycobacterium bovis\n- '2014-09-08'\n- 24\n- unchecked\n- \nE-GEOD-43337:\n- Impaired neutrophil recruitment in CXCL5 knockout mice during Mtb infection\n- transcription profiling by array\n- Mus musculus\n- '2014-09-02'\n- 14\n- unchecked\n- \nE-GEOD-58810:\n- A Ferritin Mutant Induces Protective Immunity against Virulent Mycobacterium tuberculosis\n  Infection\n- transcription profiling by array\n- Mus musculus\n- '2014-09-01'\n- 6\n- unchecked\n- \nE-GEOD-57736:\n- Gene expression comparison between Mycobacterium tuberculosis infected monocytes\n  from tuberculous and healthy elders\n- transcription profiling by array\n- Homo sapiens\n- '2014-08-29'\n- 15\n- unchecked\n- \nE-GEOD-59184:\n- Microarray analysis adherent peripheral blood mononuclear cells stimulated with\n  IL-10, IL-15, and IL-4\n- transcription profiling by array\n- Homo sapiens\n- '2014-08-20'\n- 32\n- unchecked\n- \nE-GEOD-59774:\n- Key hub and bottleneck genes differentiate the macrophage response to virulent and\n  attenuated Mycobacterium bovis\n- transcription profiling by array\n- Bos taurus\n- '2014-08-01'\n- 41\n- unchecked\n- \nE-GEOD-54421:\n- Evolutionary conserved mutations in PhoPR attenuate the virulence of animal-adapted\n  tuberculosis strains for humans\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-07-07'\n- 32\n- unchecked\n- \nE-GEOD-52020:\n- Mycobacterium tuberculosis transcriptional responses to acidic pH and carbon source\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2014-07-07'\n- 8\n- unchecked\n- \nE-GEOD-59086:\n- Mapping and manipulating the M. tuberculosis transcriptome using a transcription\n  factor overexpression-derived regulatory network\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2014-07-04'\n- 698\n- unchecked\n- \nE-GEOD-57028:\n- Transcriptomics of vitamin D treatment effects in Mycobacterium tuberculosis-infected\n  THP-1 cells\n- transcription profiling by array\n- Homo sapiens\n- '2014-07-01'\n- 14\n- unchecked\n- \nE-MTAB-2390:\n- Genomic mapping of cAMP receptor protein binding in relation to transcriptional\n  start sites in Mycobacterium tuberculosis\n- ChIP-seq\n- Mycobacterium tuberculosis\n- '2014-06-24'\n- 15\n- unchecked\n- \nE-GEOD-56561:\n- Immune response to MVA85A or placebo in BCG-vaccinated South African infants at\n  days 0 and 28 post-vaccination\n- transcription profiling by array\n- Homo sapiens\n- '2014-06-11'\n- 80\n- unchecked\n- \nE-GEOD-56559:\n- Immune response to MVA85A or placebo in BCG-vaccinated South African infants at\n  day 1 post-vaccination\n- transcription profiling by array\n- Homo sapiens\n- '2014-06-11'\n- 82\n- unchecked\n- \nE-GEOD-54241:\n- The PhoP-dependent ncRNA Mcr7 modulates the TAT secretion system in Mycobacterium\n  tuberculosis\n- ChIP-seq\n- Mycobacterium tuberculosis H37Rv\n- '2014-06-02'\n- 3\n- unchecked\n- \nE-GEOD-54240:\n- The PhoP-dependent ncRNA Mcr7 modulates the TAT secretion system in Mycobacterium\n  tuberculosis [RNA-Seq]\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2014-06-02'\n- 2\n- unchecked\n- \nE-GEOD-54239:\n- The PhoP-dependent ncRNA Mcr7 modulates the TAT secretion system in Mycobacterium\n  tuberculosis [ChIP-Seq]\n- ChIP-seq\n- Mycobacterium tuberculosis H37Rv\n- '2014-06-02'\n- 3\n- unchecked\n- \nE-GEOD-49188:\n- Autophagy regulator DRAM1 functions downstream of MYD88 in defense against tuberculosis\n- transcription profiling by array\n- Danio rerio\n- '2014-06-01'\n- 12\n- unchecked\n- \nE-GEOD-49187:\n- Autophagy regulator DRAM1 functions downstream of MYD88 in defense against tuberculosis\n  (array)\n- transcription profiling by array\n- Danio rerio\n- '2014-06-01'\n- 12\n- unchecked\n- \nE-GEOD-49186:\n- Autophagy regulator DRAM1 functions downstream of MYD88 in defense against tuberculosis\n  (RNA-seq)\n- RNA-seq of coding RNA\n- Danio rerio\n- '2014-06-01'\n- 5\n- unchecked\n- \nE-GEOD-16250:\n- PBMCs exposed to the Mycobacterium tuberculosis H37Ra strain\n- transcription profiling by array\n- Homo sapiens\n- '2014-05-28'\n- 6\n- unchecked\n- \nE-GEOD-57948:\n- Mycobacterium tuberculosis Lsr2 is a global transcriptional regulator required for\n  adaptation to changing oxygen levels and virulence\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-05-24'\n- 16\n- unchecked\n- \nE-GEOD-57572:\n- Mechanisms of protection of a novel murine cytomegalovirus vaccine vector against\n  Mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2014-05-13'\n- 8\n- unchecked\n- \nE-GEOD-42606:\n- Genome-wide transcriptional profiling of human PBMCs stimulated with Candida albicans\n  and non-fungal inflammatory stimuli\n- transcription profiling by array\n- Homo sapiens\n- '2014-05-01'\n- 299\n- unchecked\n- \nE-GEOD-39941:\n- Genome wide transcriptional profiling of HIV positive and negative children with\n  active tuberculosis, latent TB infection and other diseases\n- transcription profiling by array\n- Homo sapiens\n- '2014-05-01'\n- 491\n- unchecked\n- \nE-GEOD-39940:\n- Genome wide transcriptional profiling of HIV positive and negative children with\n  active tuberculosis, latent TB infection and other diseases from South Africa and\n  Malawi\n- transcription profiling by array\n- Homo sapiens\n- '2014-05-01'\n- 334\n- unchecked\n- \nE-GEOD-39939:\n- Genome wide transcriptional profiling of HIV positive and negative children with\n  active tuberculosis, latent TB infection and other diseases from Kenya\n- transcription profiling by array\n- Homo sapiens\n- '2014-05-01'\n- 157\n- unchecked\n- \nE-GEOD-39163:\n- MicroRNA miR-223 constrains lethal inflammation during Mycobacterium tuberculosis\n  infection\n- transcription profiling by array\n- Homo sapiens\n- '2014-04-21'\n- 22\n- unchecked\n- \nE-GEOD-51085:\n- 'M. tuberculosis H37Rv: mutant expressing foreign peptide SL3 Vs control H37Rv'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-04-10'\n- 2\n- unchecked\n- \nE-GEOD-55647:\n- Gene expression analysis of Mycobacterium tuberculosis high-persister (hip) mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-04-07'\n- 26\n- unchecked\n- \nE-GEOD-47640:\n- Transcriptome of phosphomimetic and phosphoablative kasB mutants of Mycobacterium\n  tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-04-01'\n- 9\n- unchecked\n- \nE-GEOD-49760:\n- Transcriptional profiling of Mycobacterium tuberculosis H37Rv in whole blood from\n  HIV- and HIV+ individuals\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2014-03-31'\n- 24\n- unchecked\n- \nE-GEOD-56153:\n- Genome-Wide Expression Profiling Identifies Type 1 Interferon Response Pathways\n  in Active Tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2014-03-25'\n- 71\n- unchecked\n- \nE-GEOD-55817:\n- The Mycobacterium tuberculosis Rv2745c Plays an Important Role in Responding to\n  Redox Stress\n- transcription profiling by array\n- Mycobacterium tuberculosis CDC1551\n- '2014-03-25'\n- 27\n- unchecked\n- \nE-GEOD-55979:\n- Folate Pathway Disruption Leads to Critical Depletion of Methionine Derivatives\n  in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2014-03-19'\n- 12\n- unchecked\n- \nE-GEOD-53254:\n- Differential expression of genes in the WT and hupB KO strain of Mycobacterium  tuberculosis\n  H37Rv upon iron limitation\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-03-18'\n- 3\n- unchecked\n- \nE-GEOD-54630:\n- Identification of latent tuberculosis infection-related microRNAs in human U937\n  macrophages expressing Mycobacterium tuberculosis Hsp16.3\n- transcription profiling by array\n- Homo sapiens\n- '2014-03-17'\n- 2\n- unchecked\n- \nE-GEOD-29536:\n- Whole Blood Transcriptional Modules generated on Illumina Hu-6 V2 Beadchips\n- transcription profiling by array\n- Homo sapiens\n- '2014-03-11'\n- 410\n- unchecked\n- \nE-GEOD-50835:\n- DNA methylation analysis of PBMC from HIV and HIV/TB co-infected patients\n- methylation profiling by array\n- Homo sapiens\n- '2014-03-05'\n- 40\n- unchecked\n- \nE-GEOD-50834:\n- Gene expression analysis of PBMC from HIV and HIV/TB co-infected patients\n- transcription profiling by array\n- Homo sapiens\n- '2014-03-05'\n- 44\n- unchecked\n- \nE-GEOD-43749:\n- Global Gene expression data from Mycobacterium tuberculosis treated with new TB\n  drug named Bedaquiline\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2014-03-03'\n- 17\n- unchecked\n- \nE-BUGS-123:\n- Transcription profiling by tiling array of Antimicrobial Treatment Improves Mycobacterial\n  Survival in Non-Permissive Growth Conditions\n- transcription profiling by array\n- Mycobacterium bovis\n- '2014-02-28'\n- 78\n- unchecked\n- \nE-GEOD-55183:\n- Genome-wide characterization of a novel necrotic granuloma model of latent tuberculosis\n  infection and reactivation in mice\n- transcription profiling by array\n- Mus musculus\n- '2014-02-20'\n- 4\n- unchecked\n- \nE-GEOD-54992:\n- Expression data from peripheral blood\n- transcription profiling by array\n- Homo sapiens\n- '2014-02-15'\n- 39\n- unchecked\n- \nE-GEOD-54442:\n- Effect of Etanercept on Active Pulmonary Tuberculosis in Rabbits\n- transcription profiling by array\n- Oryctolagus cuniculus\n- '2014-01-28'\n- 24\n- unchecked\n- \nE-GEOD-54289:\n- 'Mycobacterium tuberculosis: Control Vs db-cAMP treated cells'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-01-23'\n- 3\n- unchecked\n- \nE-GEOD-53143:\n- A Genomic Portrait of the Genetic Architecture and Regulatory Impact of microRNA\n  Expression in Response to Infection (functional investigation of the role of miR-29)\n- transcription profiling by array\n- Homo sapiens\n- '2014-01-17'\n- 36\n- unchecked\n- \nE-GEOD-49951:\n- A Genomic Portrait of the Genetic Architecture and Regulatory Impact of microRNA\n  Expression in Response to Infection\n- transcription profiling by array\n- Homo sapiens\n- '2014-01-17'\n- 142\n- unchecked\n- \nE-GEOD-50210:\n- IpsA, a novel transcriptional regulator required for inositol derived lipid formation\n  in Corynebacteria and Mycobacteria\n- transcription profiling by array\n- Corynebacterium glutamicum ATCC 13032\n- '2014-01-13'\n- 3\n- unchecked\n- \nE-GEOD-53843:\n- Expression profiling of extensively drug-resistant tuberculosis isolates and H37Rv\n  exposed to anti-TB compounds\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2014-01-07'\n- 12\n- unchecked\n- \nE-GEOD-48132:\n- Aryl hydrocarbon receptor senses bacterial pigmented virulence factors and orchestrates\n  anti-bacterial defenses (part 2)\n- transcription profiling by array\n- Homo sapiens\n- '2014-01-01'\n- 12\n- unchecked\n- \nE-GEOD-48130:\n- Aryl hydrocarbon receptor senses bacterial pigmented virulence factors and orchestrates\n  anti-bacterial defenses (part 1)\n- transcription profiling by array\n- Mus musculus\n- '2014-01-01'\n- 8\n- unchecked\n- \nE-GEOD-46268:\n- Gene expression profile of human monocytes stimulated with all-trans retinoic acid\n  (ATRA) or 1,25a-dihydroxyvitamin D3 (1,25D3)\n- transcription profiling by array\n- Homo sapiens\n- '2013-12-31'\n- 12\n- unchecked\n- \nE-GEOD-44848:\n- Type I IFN signaling promotes local inflammation in pulmonary tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2013-12-31'\n- 12\n- unchecked\n- \nE-GEOD-50050:\n- A Novel Gene Regulates Vesiculogenesis and Immunomodulation in Mycobacterium tuberculosis\n- RNA-seq of coding RNA\n- Mus musculus\n- '2013-12-03'\n- 8\n- unchecked\n- \nE-MTAB-1616:\n- RNA-seq of coding RNA of starved and exponentially grown M. tuberculosis cultures\n  to investigate genome-wide transcriptional start sites\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2013-11-22'\n- 12\n- unchecked\n- \nE-GEOD-52551:\n- M. tuberculosis Rv3263 Knockout\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2013-11-21'\n- 4\n- unchecked\n- \nE-GEOD-50160:\n- Transcriptional Response of Mycobacterium tuberculosis CDC1551 Rv0516c::Tn to treatment\n  with 140 mM NaCl for 1 hr\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-11-15'\n- 4\n- unchecked\n- \nE-GEOD-50159:\n- Transcriptional Response of Mycobacterium tuberculosis CDC1551 to treatment with\n  140 mM NaCl for 1 hr\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-11-15'\n- 4\n- unchecked\n- \nE-GEOD-52338:\n- Expression data from peritoneal macrophages stimulated with trehalose-6,6'-dimycolate\n  (TDM)\n- transcription profiling by array\n- Mus musculus\n- '2013-11-14'\n- 12\n- unchecked\n- \nE-GEOD-34624:\n- Differentially regulated genes induced in Mycobacterium by in vitro acid-nitrosative\n  multi-stress\n- transcription profiling by array\n- Mycobacterium smegmatis str. MC2 155\n- '2013-11-05'\n- 2\n- unchecked\n- \nE-GEOD-34623:\n- Differentially regulated genes induced in Mycobacterium tuberculosis by in vitro\n  acid-nitrosative multi-stress\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-11-05'\n- 1\n- unchecked\n- \nE-GEOD-34622:\n- Differentially regulated genes induced in Mycobacterium smegmatis by in vitro acid-nitrosative\n  multi-stress\n- transcription profiling by array\n- Mycobacterium smegmatis str. MC2 155\n- '2013-11-05'\n- 2\n- unchecked\n- \nE-BUGS-146:\n- Transcription profiling by array of overexpression of the Rv0805 phosphodiesterase\n  elicits a cAMP-independent transcriptional response\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-11-02'\n- 6\n- unchecked\n- \nE-GEOD-42834:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 356\n- unchecked\n- \nE-GEOD-42832:\n- Microarray study using whole blood and purified leucocyte populations from healthy\n  controls and patients with tuberculosis or sarcoidosis with tuberculosis and sarcoidosis\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 90\n- unchecked\n- \nE-GEOD-42831:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer (sarcoidosis)\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 17\n- unchecked\n- \nE-GEOD-42830:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer (training)\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 95\n- unchecked\n- \nE-GEOD-42827:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer (pneumonia treated)\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 10\n- unchecked\n- \nE-GEOD-42826:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer (test)\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 102\n- unchecked\n- \nE-GEOD-42825:\n- Human whole blood microarray study to compare patients with tuberculosis, sarcoidosis,\n  pneumonia, and lung cancer (validation)\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-31'\n- 42\n- unchecked\n- \nE-GEOD-37250:\n- Genome-wide transcriptional profiling of HIV positive and negative adults with active\n  tuberculosis, latent TB infection and other diseases\n- transcription profiling by array\n- Homo sapiens\n- '2013-10-23'\n- 537\n- unchecked\n- \nE-GEOD-51037:\n- M. tuberculosis (Mtb) Produces Nitrite in Human Macrophages in Physiologic Oxygen\n  to Impact Mycobacterial ATP Consumption and Gene Expression\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2013-10-21'\n- 6\n- unchecked\n- \nE-GEOD-37973:\n- Discovery of the genes controlled by the second messenger cyclic di-GMP in Mycobacterium\n  tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-10-09'\n- 5\n- unchecked\n- \nE-MTAB-1446:\n- RNA-seq of M. tuberculosis to investigate genotype-phenotype diversity amongst clinical\n  isolates\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2013-09-19'\n- 13\n- unchecked\n- \nE-GEOD-40941:\n- Transcriptome analysis of M.tuberculosis using RNA-seq indicates WhiB6 repression\n  of dormancy associated genes\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis CDC1551\n- '2013-09-18'\n- 24\n- unchecked\n- \nE-MTAB-1667:\n- RNA-seq of coding RNA from Mycobacterium tuberculosis H37Rv overexpressing HigB\n  compared to the empty vector control strain to investigate the role of the HigB\n  toxin\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2013-09-16'\n- 2\n- unchecked\n- \nE-GEOD-47673:\n- TPL-2;ERK1/2 signaling promotes host resistance against intracellular bacterial\n  infection by negative regulation of type I interferon production [Set 2]\n- transcription profiling by array\n- Mus musculus\n- '2013-09-05'\n- 132\n- unchecked\n- \nE-GEOD-47672:\n- TPL-2;ERK1/2 signaling promotes host resistance against intracellular bacterial\n  infection by negative regulation of type I interferon production [Set 1]\n- transcription profiling by array\n- Mus musculus\n- '2013-09-05'\n- 26\n- unchecked\n- \nE-GEOD-49947:\n- Early innate immunity determines outcome of Mycobacterium tuberculosis pulmonary\n  infection in rabbits\n- transcription profiling by array\n- Oryctolagus cuniculus\n- '2013-08-17'\n- 8\n- unchecked\n- \nE-GEOD-48164:\n- Genome-wide mapping of CarD, RNAPs, and RNAPb on the Mycobacterium smegmatis genome\n  using Chromatin Immunoprecipitation Sequencing\n- ChIP-seq\n- Mycobacterium smegmatis\n- '2013-08-01'\n- 7\n- unchecked\n- \nE-GEOD-48027:\n- Host directed activity of Pyrazinamide in Mycobacterium tuberculosis infection\n- transcription profiling by array\n- Mus musculus\n- '2013-06-28'\n- 16\n- unchecked\n- \nE-GEOD-48237:\n- Innate and antigen-specific cytotoxic cells and Paradoxical HIV-associated Tuberculosis\n  Immune reconstitution inflammatory syndrome (TB-IRIS)\n- transcription profiling by array\n- Homo sapiens\n- '2013-06-24'\n- 14\n- unchecked\n- \nE-GEOD-23429:\n- Mycobacteria-Dependent Expression of microRNA-142-3p Reduces WASP Family Proteins\n  and Controls Phagocytosis\n- transcription profiling by array\n- Mus musculus\n- '2013-06-16'\n- 6\n- unchecked\n- \nE-GEOD-47863:\n- RNAseq Mycobacterium Tuberculosis\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis H37Rv\n- '2013-06-13'\n- 4\n- unchecked\n- \nE-GEOD-47834:\n- Mycobacterium tuberculosis ESX-3 conditional mutant expression\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-06-12'\n- 4\n- unchecked\n- \nE-MEXP-3805:\n- Transcription profiling by array of human monocyte-derived macrophages infected\n  with Mycobacterium tuberculosis (H37Rv strain)\n- transcription profiling by array\n- Homo sapiens\n- '2013-06-01'\n- 12\n- unchecked\n- \nE-GEOD-45811:\n- A validated microarray platform for Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-06-01'\n- 28\n- unchecked\n- \nE-GEOD-42090:\n- The innate and adaptive immune response to BCG stimulation in splenocytes taken\n  from C57BL/6 mice\n- transcription profiling by array\n- Mus musculus\n- '2013-06-01'\n- 16\n- unchecked\n- \nE-GEOD-42293:\n- Vitamin C Stimulon in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-05-24'\n- 3\n- unchecked\n- \nE-GEOD-42151:\n- TCA1 Stimulon in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-05-24'\n- 6\n- unchecked\n- \nE-GEOD-37392:\n- Pellicle Stimulon in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-05-24'\n- 3\n- unchecked\n- \nE-BUGS-135:\n- Transcription profiling by array of adenylylation of mycobacterial Glnk (PII) protein\n  induced by nitrogen limitation\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-05-10'\n- 6\n- unchecked\n- \nE-GEOD-46432:\n- Analysis of the effects of the methyltransferase encoded by Rv3263  on gene expression\n  in M. tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-04-27'\n- 9\n- unchecked\n- \nE-GEOD-46212:\n- Mycobacterium tuberculosis microarray to screen anti-tuberculosis compounds\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-04-24'\n- 13\n- unchecked\n- \nE-BUGS-134:\n- Transcription profiling by array of longitudinal clinical isolates of Mycobacterium\n  tuberculosis exhibiting rapid accumulation of drug resistance\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-04-24'\n- 8\n- unchecked\n- \nE-GEOD-46281:\n- RNA-seq analysis of Mycobacterium avium TMC724 vs. M. avium 104 non-coding and coding\n  transcriptome\n- RNA-seq of coding RNA\n- Mycobacterium avium\n- '2013-04-23'\n- 2\n- unchecked\n- \nE-BUGS-139:\n- Transcription profiling by array of Rifampicin-induced transcriptome response in\n  rifampicin-resistant Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-04-21'\n- 48\n- unchecked\n- \nE-GEOD-44825:\n- Study of the association of DNAhsp65 immunotherapy and conventional drugs in experimental\n  tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2013-04-08'\n- 12\n- unchecked\n- \nE-MTAB-1374:\n- Transcription profiling by array of Mycobacterium tuberculosis CDC1551 treated with\n  0.25M NaCl vs untreated controls\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2013-04-05'\n- 5\n- unchecked\n- \nE-GEOD-45439:\n- Whole-transcriptome, high-throughput RNA sequence analysis of the bovine macrophage\n  response to Mycobacterium bovis infection in vitro\n- RNA-seq of coding RNA\n- Bos taurus\n- '2013-03-26'\n- 28\n- unchecked\n- \nE-MEXP-3589:\n- Transcription profiling by array of human blood samples taken from patients with\n  critical Chronic Obstructive Pulmonary Disease (COPD)\n- transcription profiling by array\n- Homo sapiens\n- '2013-03-12'\n- 32\n- unchecked\n- \nE-GEOD-43700:\n- Microarray analysis of IL-10 stimulated adherent peripheral blood mononuclear cells\n- transcription profiling by array\n- Homo sapiens\n- '2013-03-05'\n- 8\n- unchecked\n- \nE-GEOD-41055:\n- A predictive signature gene set for discriminating active from latent TB in Warao\n  Amerindian children\n- transcription profiling by array\n- Homo sapiens\n- '2013-02-05'\n- 27\n- unchecked\n- \nE-GEOD-43645:\n- Expression analysis of Mycobacterium avium subsp. paratuberculosis K-10 within macrophage\n  cell line\n- transcription profiling by array\n- Mycobacterium avium subsp. paratuberculosis K-10\n- '2013-01-22'\n- 10\n- unchecked\n- \nE-GEOD-43466:\n- Reconstruction of the Mycobacterium tuberculosis Regulatory Network and Deconstruction\n  of the Hypoxic Response\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2013-01-12'\n- 125\n- unchecked\n- \nE-GEOD-36998:\n- Mycobacterium tuberculosis Requires Phosphate-Responsive Gene Regulation to Resist\n  Host Immunity\n- transcription profiling by array\n- Mycobacterium tuberculosis str. Erdman = ATCC 35801\n- '2013-01-01'\n- 11\n- unchecked\n- \nE-GEOD-41401:\n- Responses of Monocytes derived macrophages from TB-infected and TB-free cattles\n  to in vitro M.bovis challenge\n- transcription profiling by array\n- Bos taurus\n- '2012-12-31'\n- 12\n- unchecked\n- \nE-GEOD-35484:\n- Acetate Fermentation facilitates survival of Mtb when respiration is inhibited\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2012-12-31'\n- 6\n- unchecked\n- \nE-GEOD-29507:\n- Gene Expression Profiling of Tuberculous Meningitis coinfected with HIV\n- transcription profiling by array\n- Homo sapiens\n- '2012-12-31'\n- 9\n- unchecked\n- \nE-GEOD-43182:\n- 'The Intracellular Life of Mycobacterium avium subsp. paratuberculosis During Macrophage\n  Stress: A Key Role for the Alternative Sigma Factor, SigH'\n- RNA-seq of coding RNA\n- Mycobacterium avium subsp. paratuberculosis K-10\n- '2012-12-29'\n- 8\n- unchecked\n- \nE-GEOD-30273:\n- 'The transcriptional profile of Langhans-like multinucleated giant macrophages:\n  Collapse of the inflammatory and immune responses'\n- transcription profiling by array\n- Homo sapiens\n- '2012-12-07'\n- 12\n- unchecked\n- \nE-GEOD-40846:\n- High-resolution transcriptome and genome-wide dynamics of RNA polymerase and NusA\n  in Mycobacterium tuberculosis (RNA-seq)\n- RNA-seq of coding RNA\n- Mycobacterium tuberculosis\n- '2012-12-01'\n- 3\n- unchecked\n- \nE-GEOD-40845:\n- High-resolution transcriptome and genome-wide dynamics of RNA polymerase and NusA\n  in Mycobacterium tuberculosis (ChIP-seq)\n- ChIP-seq\n- Mycobacterium tuberculosis\n- '2012-12-01'\n- 10\n- unchecked\n- \nE-GEOD-32237:\n- Transcriptional profile of pathogenic and non-pathogenic in vitro generated mycobacterial\n  cell wall deficient forms\n- transcription profiling by array\n- Mycobacterium avium subsp. paratuberculosis\n- '2012-11-29'\n- 3\n- unchecked\n- \nE-GEOD-32236:\n- Differentially regulated genes induced by in vitro generated Mycobacterium tuberculosis\n  cell wall deficient forms\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2012-11-29'\n- 1\n- unchecked\n- \nE-GEOD-42273:\n- Defining Gene Signatures for Protective Immunity to Tuberculosis in the Chinese\n  Cynomolgus Macaque Model\n- transcription profiling by array\n- Macaca fascicularis\n- '2012-11-15'\n- 95\n- unchecked\n- \nE-GEOD-32447:\n- Development of oligonucleotide microarray to study global gene expression profile\n  in guinea pigs in response to tuberculosis infection\n- transcription profiling by array\n- Cavia porcellus\n- '2012-10-01'\n- 4\n- unchecked\n- \nE-GEOD-40719:\n- Gene expression analysis of peripheral blood mononuclear cells prior to and following\n  vaccination of human volunteers with the novel TB vaccine candidate MVA85A\n- transcription profiling by array\n- Homo sapiens\n- '2012-09-28'\n- 96\n- unchecked\n- \nE-GEOD-27984:\n- PPD stimulated PBMCs from tuberculosis patients, latent infectious individuals and\n  healthy controls\n- transcription profiling by array\n- Homo sapiens\n- '2012-09-19'\n- 12\n- unchecked\n- \nE-GEOD-40917:\n- Expression Analysis of WR99210-treated Mycobacterium tuberculosis H37Rv\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2012-09-18'\n- 9\n- unchecked\n- \nE-GEOD-36238:\n- Tuberculosis Patients Blood Gene Expression Through Treatment (cured and end-of-treatment\n  patients)\n- transcription profiling by array\n- Homo sapiens\n- '2012-08-09'\n- 18\n- unchecked\n- \nE-GEOD-31348:\n- Tuberculosis Patients Blood Gene Expression Through Treatment\n- transcription profiling by array\n- Homo sapiens\n- '2012-08-09'\n- 135\n- unchecked\n- \nE-GEOD-27882:\n- Development of gene expression signatures for latent and clinical tuberculosis (TB)\n- transcription profiling by array\n- Homo sapiens\n- '2012-08-06'\n- 4\n- unchecked\n- \nE-GEOD-37840:\n- Mycobacterium tuberculosis whiB4 mutant expression\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2012-07-23'\n- 3\n- unchecked\n- \nE-GEOD-35362:\n- Infection of bone marrow derived macrophages with M. tuberculosis CDC1551\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2012-07-11'\n- 16\n- unchecked\n- \nE-GEOD-39219:\n- Spontaneous Latency in a Rabbit Model of Pulmonary Tuberculosis\n- transcription profiling by array\n- Oryctolagus cuniculus\n- '2012-07-10'\n- 12\n- unchecked\n- \nE-GEOD-31368:\n- Profiling proteome-scale antibody responses to M. tuberculosis\n- proteomic profiling by array\n- Homo sapiens\n- '2012-07-05'\n- 567\n- unchecked\n- \nE-GEOD-30722:\n- Profiling proteome-scale antibody responses to M. tuberculosis proteins in TB suspect's\n  sera\n- proteomic profiling by array\n- Homo sapiens\n- '2012-07-05'\n- 411\n- unchecked\n- \nE-GEOD-30721:\n- Profiling proteome-scale antibody responses to M. tuberculosis proteins in sera\n  of macaques infected with M. tuberculosis\n- proteomic profiling by array\n- Macaca fascicularis\n- '2012-07-05'\n- 156\n- unchecked\n- \nE-GEOD-19838:\n- Gene expression profiles of M. tuberculosis constitutively expressing the transcriptional\n  regulator DosR (Rv3133c)\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2012-06-12'\n- 20\n- unchecked\n- \nE-GEOD-37823:\n- LIX11 vs H37Rv under Log vs stationary phase growth\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2012-06-01'\n- 5\n- unchecked\n- \nE-TABM-1157:\n- Transcriptional profiling of in vivo immune responses to mycobacteria using the\n  tuberculin skin test\n- transcription profiling by array\n- Homo sapiens\n- '2012-05-13'\n- 33\n- unchecked\n- \nE-GEOD-34608:\n- Gene and microRNA expression in pulmonary tuberculosis and sarcoidosis\n- transcription profiling by array\n- Homo sapiens\n- '2012-04-14'\n- 68\n- unchecked\n- \nE-GEOD-35149:\n- Virulence regulator EspR of Mycobacterium tuberculosis is a nucleoid-associated\n  protein\n- ChIP-seq\n- Mycobacterium tuberculosis\n- '2012-04-02'\n- 3\n- unchecked\n- \nE-GEOD-36686:\n- The IRF3 dependent response of macrophages to M. tuberculosis infection\n- transcription profiling by array\n- Mus musculus\n- '2012-03-31'\n- 10\n- unchecked\n- \nE-GEOD-36345:\n- mRNA degradation in Mycobacterium tuberculosis\n- other\n- Mycobacterium smegmatis str. MC2 155\n- '2012-03-08'\n- 87\n- unchecked\n- \nE-GEOD-36344:\n- mRNA degradation in Mycobacterium tuberculosis with DosR ectopically induced\n- other\n- Mycobacterium tuberculosis H37Rv\n- '2012-03-08'\n- 30\n- unchecked\n- \nE-GEOD-36343:\n- mRNA degradation in Mycobacterium tuberculosis during cold and hypoxic stress\n- other\n- Mycobacterium tuberculosis H37Rv\n- '2012-03-08'\n- 24\n- unchecked\n- \nE-GEOD-36341:\n- mRNA degradation in Mycobacterium tuberculosis under aerobic conditions\n- other\n- Mycobacterium tuberculosis H37Rv\n- '2012-03-08'\n- 24\n- unchecked\n- \nE-GEOD-33752:\n- Mycobacterium tuberculosis Growth After Aerobic Expression of the DosR Regulon\n- transcription profiling by tiling array\n- Mycobacterium tuberculosis H37Rv\n- '2012-01-31'\n- 6\n- unchecked\n- \nE-GEOD-33058:\n- Transcriptional profiling of disease progression in bovine tuberculosis and the\n  identification of potential diagnostic biomarkers\n- transcription profiling by array\n- Mus musculus\n- '2012-01-31'\n- 25\n- unchecked\n- \nE-GEOD-35231:\n- Mycobacterium tuberculosis CDC1551 WT/sigI mutant\n- transcription profiling by array\n- Mycobacterium tuberculosis CDC1551\n- '2012-01-30'\n- 2\n- unchecked\n- \nE-BUGS-122:\n- Transcription profiling by array of Mycobacterium tuberculosis grown in the presence\n  of ZnSO4\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2012-01-27'\n- 6\n- unchecked\n- \nE-GEOD-35080:\n- Genome-wide Definition of the SigF Regulon in Mycobacterium tuberculosis\n- transcription profiling by tiling array\n- Mycobacterium tuberculosis H37Rv\n- '2012-01-20'\n- 18\n- unchecked\n- \nE-GEOD-34922:\n- Genome-wide Definition of the SigF Regulon in Mycobacterium tuberculosis (Expression)\n- transcription profiling by tiling array\n- Mycobacterium tuberculosis H37Rv\n- '2012-01-20'\n- 14\n- unchecked\n- \nE-GEOD-34919:\n- Genome-wide Definition of the SigF Regulon in Mycobacterium tuberculosis (ChIP-chip)\n- ChIP-chip by tiling array\n- Mycobacterium tuberculosis H37Rv\n- '2012-01-20'\n- 4\n- unchecked\n- \nE-GEOD-23508:\n- Suppressor of cytokine signaling-1 influences bacterial clearance and pathology\n  during the infection with Mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2012-01-18'\n- 15\n- unchecked\n- \nE-GEOD-33309:\n- Global gene expression of bovine monocyte-derived macrophages in response to in\n  vitro challenge with Mycobacterium bovis\n- transcription profiling by array\n- Bos taurus\n- '2011-12-31'\n- 49\n- unchecked\n- \nE-GEOD-34588:\n- Deciphering the genetic architecture of variation in the immune response to Mycobacterium\n  tuberculosis infection (genotype)\n- genotyping by array\n- Homo sapiens\n- '2011-12-30'\n- 68\n- unchecked\n- \nE-GEOD-32249:\n- Transcriptome analysis of the Tap efflux pump mutant in Mycobacterium bovis BCG\n- transcription profiling by array\n- Mycobacterium bovis BCG\n- '2011-12-30'\n- 8\n- unchecked\n- \nE-GEOD-33094:\n- Kinetics of progressive pulmonary cavitary TB disease in rabbits\n- transcription profiling by array\n- Oryctolagus cuniculus\n- '2011-12-07'\n- 16\n- unchecked\n- \nE-GEOD-34151:\n- Deciphering the genetic architecture of variation in the immune response to Mycobacterium\n  tuberculosis infection\n- transcription profiling by array\n- Homo sapiens\n- '2011-12-06'\n- 259\n- unchecked\n- \nE-GEOD-33359:\n- Genome-wide transcriptional profiling of peripheral blood leukocytes from cattle\n  infected with Mycobacterium bovis\n- transcription profiling by array\n- Bos taurus\n- '2011-12-01'\n- 16\n- unchecked\n- \nE-GEOD-29628:\n- The Time-Series Transcriptomic Responses of THP-1 Cells to W-Beijing M. tuberculosis\n  Strains of different sublineages\n- transcription profiling by array\n- Homo sapiens\n- '2011-12-01'\n- 40\n- unchecked\n- \nE-GEOD-24968:\n- A Novel Copper Responsive Regulon in Mycobacterium tuberculosis strains mpA and\n  pafA\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-11-01'\n- 15\n- unchecked\n- \nE-GEOD-28623:\n- Pathway and functional association analysis of whole blood gene expression profiles\n  reveal functional networks underlying TB pathogenesis. [Agilent-014850]\n- transcription profiling by array\n- Homo sapiens\n- '2011-10-27'\n- 108\n- unchecked\n- \nE-GEOD-32718:\n- 'Mycobacterium tuberculosis H37Rv strains: Control vs. Linezolid'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-10-10'\n- 2\n- unchecked\n- \nE-TABM-1170:\n- Modulation of transcriptional and inflammatory responses in murine macrophages by\n  the Mycobacterium tuberculosis mammalian cell entry (Mce) 1 complex\n- transcription profiling by array\n- Mus musculus\n- '2011-10-05'\n- 39\n- unchecked\n- \nE-GEOD-32645:\n- The unique molecular signature of cortical tissue injury in Multiple Sclerosis\n- transcription profiling by array\n- Homo sapiens\n- '2011-10-05'\n- 12\n- unchecked\n- \nE-GEOD-30264:\n- Mycobacterium tuberculosis H37Rv (WT) versus Mut1 and Comp1\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2011-09-30'\n- 17\n- unchecked\n- \nE-MEXP-3521:\n- Transcription profiling by array of human dendritic cells and macrophages infected\n  with Mycobacterium tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2011-09-28'\n- 72\n- unchecked\n- \nE-GEOD-32157:\n- 'Mycobacterium tuberulosis H37Rv strains: Control vs. 5-chloro-8-hydroxyquinoline'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-09-15'\n- 2\n- unchecked\n- \nE-GEOD-32076:\n- 'Mycobacterium tuberulosis H37Rv strains: Control vs. Osthole'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-09-13'\n- 2\n- unchecked\n- \nE-BUGS-112:\n- Methionine Sulfoximine Resistance in Mycobacterium tuberculosis Is Due to a Single\n  Nucleotide Deletion Resulting in Increased Expression of the Major Glutamine Synthetase,\n  GlnA1\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-09-06'\n- 108\n- unchecked\n- \nE-GEOD-31769:\n- S. aureus expression properties of exponential ISP794 and isogenic norG mutant cells\n- transcription profiling by array\n- Staphylococcus aureus\n- '2011-09-01'\n- 6\n- unchecked\n- \nE-GEOD-29166:\n- Gene expression profiling of Mycobacterium tuberculosis H37Rv in response to compound\n  CDRI-5g\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-08-31'\n- 6\n- unchecked\n- \nE-GEOD-31734:\n- Mtb-mediated host transcriptional reponse is strain-specific\n- transcription profiling by array\n- Mus musculus\n- '2011-08-29'\n- 18\n- unchecked\n- \nE-GEOD-31732:\n- 'Mycobacterium tuberculosis H37Rv strains: Control vs. Lupulone'\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2011-08-29'\n- 2\n- unchecked\n- \nE-GEOD-30299:\n- Identification of the WhiB5 regulon in Mycobacterium tuberculosis H37Rv\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2011-08-14'\n- 16\n- unchecked\n- \nE-GEOD-19314:\n- Sarcoidosis-specific markers from whole blood gene expression\n- transcription profiling by array\n- Homo sapiens\n- '2011-08-10'\n- 66\n- unchecked\n- \nE-MTAB-427:\n- Mouse-Monkey Time-series\n- transcription profiling by array\n- Macaca_fascicularis\n- '2011-08-02'\n- 213\n- unchecked\n- \nE-GEOD-30950:\n- Human Natural Killer Cell activation by mycobacteria\n- transcription profiling by array\n- Homo sapiens\n- '2011-07-26'\n- 18\n- unchecked\n- \nE-GEOD-22854:\n- Transcriptional profiling of M. tuberculosis CDC1551 wild type vs aprABC null, aprBC\n  null, aprC null and phoP transposon mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-07-09'\n- 12\n- unchecked\n- \nE-GEOD-29731:\n- Exosomes isolated from M.tb infected cells modulate macrophage response to IFN-gamma\n- transcription profiling by array\n- Mus musculus\n- '2011-06-05'\n- 24\n- unchecked\n- \nE-GEOD-29190:\n- Comparative miRNA Expression Profiles in Individuals with Latent and Active Tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2011-05-10'\n- 15\n- unchecked\n- \nE-GEOD-25508:\n- Integrative Analysis of microRNA, mRNA and DNA Copy Number Data Reveals Asbestos-Related\n  Changes in Non-Small Cell Lung Cancer\n- transcription profiling by array\n- Homo sapiens\n- '2011-04-30'\n- 60\n- unchecked\n- \nE-MEXP-2962:\n- IRF8 REGULATES EXPRESSION OF ANTIGEN PROCESSING AND PRESENTATION PATHWAYS IN MYELOID\n  CELLS\n- transcription profiling by array\n- Mus musculus\n- '2011-04-27'\n- 24\n- unchecked\n- \nE-BUGS-111:\n- SigG does not control gene expression in response to DNA damage in Mycobacterium\n  tuberculosis H37Rv\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-04-15'\n- 58\n- unchecked\n- \nE-GEOD-27992:\n- PDE-4 inhibition alters gene expression and improves INH-mediated clearance of Mtb\n  in rabbit lungs\n- transcription profiling by array\n- Oryctolagus cuniculus\n- '2011-03-16'\n- 12\n- unchecked\n- \nE-BUGS-104:\n- Examining the basis of isoniazid tolerance in nonreplicating Mycobacterium tuberculosis\n  using transcriptional profiling\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2011-01-17'\n- 72\n- unchecked\n- \nE-GEOD-26305:\n- Genome-wide gene expression analysis for target genes to differentiate patients\n  with intestinal tuberculosis and Crohn’s disease\n- transcription profiling by array\n- Homo sapiens\n- '2011-01-04'\n- 6\n- unchecked\n- \nE-TABM-852:\n- Transcription profiling of diabetic vs non-diabetic human blood cells infected with\n  Burkholderia pseudomallei\n- transcription profiling by array\n- Homo sapiens\n- '2010-12-31'\n- 1\n- unchecked\n- \nE-GEOD-25534:\n- Tuberculosis patients, latent and uninfected controls; whole blood\n- transcription profiling by array\n- Homo sapiens\n- '2010-11-23'\n- 51\n- unchecked\n- \nE-GEOD-25505:\n- Gene expression analysis of gamma-M.tuberculosis-stimulated CD14hiCD16- and CD14loCD16+\n  monocytes\n- transcription profiling by array\n- Homo sapiens\n- '2010-11-23'\n- 4\n- unchecked\n- \nE-GEOD-25435:\n- Analysis of the microRNA that involved the tuberculosis or latent TB infection II\n- transcription profiling by array\n- Homo sapiens\n- '2010-11-18'\n- 9\n- unchecked\n- \nE-GEOD-23498:\n- A novel copper-responsive regulon in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-10-27'\n- 18\n- unchecked\n- \nE-BUGS-93:\n- Transcription profiling by array of Mycobacterium bovis and Mycobacterium tuberculosis\n  overexpressing overexpressing BCG3145 and Rv3124\n- transcription profiling by array\n- Mycobacterium bovis\n- '2010-10-11'\n- 92\n- unchecked\n- \nE-GEOD-13780:\n- Intracellular expression pattern of recombinant Mtb strain TB294 overexpressing\n  sigma factor A\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-10-08'\n- 4\n- unchecked\n- \nE-BUGS-96:\n- Transcription profiling by array of Mycobacterium tuberculosis clp gene regulator\n  (ClgR) mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-10-08'\n- 12\n- unchecked\n- \nE-GEOD-23947:\n- Characterization of regulatory mutants in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-09-29'\n- 12\n- unchecked\n- \nE-GEOD-24045:\n- 'Mycobacterium tuberulosis H37Rv strains: Control vs. Plumbagin'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-09-20'\n- 2\n- unchecked\n- \nE-GEOD-24035:\n- 'Mycobacterium tuberulosis H37Rv strains: Control vs. Chelerythrine'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-09-20'\n- 2\n- unchecked\n- \nE-GEOD-23713:\n- To compare the expression profile of CD8 T cells from mice vaccinated with Ad85A\n  via the intranasal (IN) or intradermal (ID) routes isolated from lungs or spleen\n- transcription profiling by array\n- Mus musculus\n- '2010-08-24'\n- 12\n- unchecked\n- \nE-GEOD-19774:\n- Characterization of Mycobacterium smegmatis SigF regulon\n- transcription profiling by array\n- Mycobacterium smegmatis str. MC2 155\n- '2010-08-20'\n- 8\n- unchecked\n- \nE-BUGS-86:\n- Transcription profiling by array of Mycobacterium tuberculosis virulent and attenuated\n  strains infecting macrophages\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-08-16'\n- 52\n- unchecked\n- \nE-GEOD-22098:\n- Whole blood transcriptional profiles of patients with active tuberculosis (TB) and\n  other inflammatory and infectious diseases\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 274\n- unchecked\n- \nE-GEOD-19491:\n- Blood Transcriptional Profiles in Human Active and Latent Tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 498\n- unchecked\n- \nE-GEOD-19443:\n- Blood Transcriptional Profiles of Active TB (UK Test Set Separated)\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 44\n- unchecked\n- \nE-GEOD-19442:\n- Blood Transcriptional Profiles of TB in South Africa\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 51\n- unchecked\n- \nE-GEOD-19439:\n- Blood Transcriptional Profiles in Active and Latent Tuberculosis UK (Training Set)\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 42\n- unchecked\n- \nE-GEOD-19435:\n- Transcriptional profiles in Blood of patients with Tuberculosis - Longitudinal Study\n- transcription profiling by array\n- Homo sapiens\n- '2010-08-11'\n- 33\n- unchecked\n- \nE-GEOD-21590:\n- Reaeration timecourse from a defined hypoxia model\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-28'\n- 33\n- unchecked\n- \nE-GEOD-23014:\n- Comprehensive profiling of the early lung immune responses in the mouse model of\n  tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2010-07-21'\n- 16\n- unchecked\n- \nE-BUGS-107:\n- Transcription profiling by array of Mycobacterium tuberculosis to analyse the regulatory\n  role of the HigA antitoxin\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-16'\n- 48\n- unchecked\n- \nE-GEOD-19433:\n- Profiling antibody responses to M. tuberculosis proteins in TB suspects’ sera using\n  full-proteome microarrays\n- proteomic profiling by array\n- Homo sapiens\n- '2010-07-13'\n- 625\n- unchecked\n- \nE-GEOD-21114:\n- Mycobacterium tuberculosis Complex Clinical Isolates exhibit unique gene expression\n  profiles in vitro and inside macrophages\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-09'\n- 116\n- unchecked\n- \nE-GEOD-21113:\n- Intracellular transcriptional adaptation of Mycobacterium tuberculosis complex (MTC)\n  clinical isolates inside activated murine macrophages\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-09'\n- 34\n- unchecked\n- \nE-GEOD-21112:\n- Intracellular transcriptional adaptation of Mycobacterium tuberculosis complex (MTC)\n  clinical isolates inside resting murine macrophages\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-09'\n- 34\n- unchecked\n- \nE-GEOD-21111:\n- Basal in vitro transcriptomes of Mycobacterium tuberculosis complex (MTC) clinical\n  isolates\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-07-08'\n- 48\n- unchecked\n- \nE-MEXP-2773:\n- Transcription profiling by array of M. tuberculosis H37Rv wildtype and ctpV knockout\n  exposed to copper\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-06-26'\n- 4\n- unchecked\n- \nE-GEOD-15976:\n- Sigma factor B (sigB) response to stress conditions (0.05% SDS and 5mM Diamide)\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-06-25'\n- 36\n- unchecked\n- \nE-GEOD-17191:\n- Implications of high level pseudogene transcription in Mycobacterium leprae\n- transcription profiling by array\n- Mycobacterium leprae\n- '2010-06-24'\n- 4\n- unchecked\n- \nE-GEOD-15608:\n- Functional Genomics Reveals Extended Roles of the Mycobacterium tuberculosis Stress\n  Response Factor sigmaH\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-06-24'\n- 12\n- unchecked\n- \nE-GEOD-15539:\n- THP-1 cells infected with the clinical isolates of extensively drug-resistant and\n  drug sensitive tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2010-06-20'\n- 4\n- unchecked\n- \nE-GEOD-13978:\n- Cholesterol's effect on M. tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-06-20'\n- 12\n- unchecked\n- \nE-GEOD-13246:\n- Expressionprofiling of a glnR-mutant of Mycobacterium tuberculosis during culture\n  on nitrate\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2010-06-20'\n- 8\n- unchecked\n- \nE-GEOD-18652:\n- ChIP-chip of HA-tagged Lsr2 in Mycobacterium tuberculosis and Mycobacterium smegmatis\n- ChIP-chip by tiling array\n- Mycobacterium smegmatis\n- '2010-06-19'\n- 4\n- unchecked\n- \nE-GEOD-20050:\n- Gene expression profiles of caseous human pulmonary TB granulomas derived from TB\n  patients\n- transcription profiling by array\n- Homo sapiens\n- '2010-06-08'\n- 6\n- unchecked\n- \nE-GEOD-8639:\n- Regulation of the Mycobacterium tuberculosishypoxic response gene encoding alpha-crystallin\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-06-05'\n- 6\n- unchecked\n- \nE-GEOD-19052:\n- Identification of genes differentially regulated upon infection of Thp-1 cells with\n  H37Rv\n- transcription profiling by array\n- Homo sapiens\n- '2010-05-27'\n- 8\n- unchecked\n- \nE-GEOD-6209:\n- The global transcriptional profile of Mycobacterium tuberculosis during human macrophages\n  infection\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-27'\n- 11\n- unchecked\n- \nE-GEOD-12382:\n- Secreted transcription factor controls Mycobacterium tuberculosis virulence\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-25'\n- 24\n- unchecked\n- \nE-GEOD-12381:\n- Comparative analysis of the gene expression profiles of M.tuberculosis espR (Rv3849)\n  transposon and knockout mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-25'\n- 6\n- unchecked\n- \nE-GEOD-12380:\n- Gene expression profile of M.tuberculosis espR (Rv3849) mutants containing N- or\n  C-terminal mutations in the espR gene\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-25'\n- 7\n- unchecked\n- \nE-GEOD-7963:\n- Mycobacterium tuberculosis and macrophage response\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-25'\n- 33\n- unchecked\n- \nE-GEOD-7962:\n- Sigma factor E of Mycobacterium tuberculosis controls the expression of bacterial\n  components that modulate macrophages\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-25'\n- 23\n- unchecked\n- \nE-GEOD-7871:\n- The sigma factor E of Mycobacterium tuberculosis modulates the inflammatory response\n  of macrophages\n- unknown experiment type\n- Mus musculus\n- '2010-05-25'\n- 26\n- unchecked\n- \nE-GEOD-7870:\n- The sigma factor E of Mycobacterium tuberculosis modulates the inflammatory response\n  of human THP1 cells\n- unknown experiment type\n- Homo sapiens\n- '2010-05-25'\n- 10\n- unchecked\n- \nE-GEOD-21963:\n- DosS responds to a reduced electron transport system to induce the Mycobacterium\n  tuberculosis DosR regulon\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2010-05-22'\n- 5\n- unchecked\n- \nE-GEOD-21932:\n- DosR-regulon genes induction in Mycobacterium bovis BCG under aerobic conditions\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-20'\n- 22\n- unchecked\n- \nE-GEOD-15977:\n- Analysis of the microRNA that involved the tuberculosis or latent TB infection\n- transcription profiling by array\n- Homo sapiens\n- '2010-05-19'\n- 6\n- unchecked\n- \nE-GEOD-16146:\n- The response of Mycobacterium tuberculosis to reactive oxygen and nitrogen species\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-18'\n- 80\n- unchecked\n- \nE-GEOD-14005:\n- Transcriptional responses of Mycobacterium tuberculosis to lung surfactant\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-18'\n- 48\n- unchecked\n- \nE-GEOD-13998:\n- Transcriptional analysis of RelE family toxin overexpression in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-18'\n- 32\n- unchecked\n- \nE-GEOD-15164:\n- Mycobacterium bovis transcriptional response to nitric oxide\n- transcription profiling by array\n- Mycobacterium bovis\n- '2010-05-17'\n- 4\n- unchecked\n- \nE-GEOD-17234:\n- Transcriptional profile comparison of M. tuberculosis PDIM spontaneous mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-16'\n- 6\n- unchecked\n- \nE-GEOD-17232:\n- Genomic comparison of M. tuberculosis PDIM spontaneous mutants\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-16'\n- 4\n- unchecked\n- \nE-GEOD-16626:\n- Mycobacterium tuberculosis gene expression in response to thioridazine (THZ)\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-16'\n- 18\n- unchecked\n- \nE-GEOD-15642:\n- Gene expression profiling of M tuberculosis BCG strain during extended stationary\n  and resuscitation phase of growth\n- transcription profiling by array\n- Mycobacterium bovis BCG\n- '2010-05-16'\n- 4\n- unchecked\n- \nE-GEOD-15437:\n- 'Mycobacterium smegmatis: CarD depletion (mgm1703) vs Control (mgm1701)'\n- transcription profiling by array\n- Mycobacterium smegmatis\n- '2010-05-16'\n- 3\n- unchecked\n- \nE-GEOD-15328:\n- Specificity of the zebrafish host transcriptome response to acute and chronic mycobacterial\n  infection\n- transcription profiling by array\n- Danio rerio\n- '2010-05-15'\n- 39\n- unchecked\n- \nE-GEOD-10336:\n- Gene Expression profiling of M. bovis BCG strain under hypoxia\n- transcription profiling by array\n- Mycobacterium bovis BCG\n- '2010-05-15'\n- 2\n- unchecked\n- \nE-GEOD-18909:\n- Nicotinamide Starvation of Mycobacteria Defective for de novo NAD Biosynthesis\n- transcription profiling by array\n- Mycobacterium bovis\n- '2010-05-14'\n- 6\n- unchecked\n- \nE-GEOD-18575:\n- Maltose-1-Phosphate Stress Stimulon in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2010-05-14'\n- 3\n- unchecked\n- \nE-GEOD-17477:\n- Expresson from human THP-1 stimulated with IFN-g and/or infected with TB\n- transcription profiling by array\n- Homo sapiens\n- '2010-03-09'\n- 16\n- unchecked\n- \nE-GEOD-19237:\n- Early response of bovine alveolar macrophages to infection with live and heat-killed\n  Mycobacterium bovis\n- transcription profiling by array\n- Bos taurus\n- '2010-01-30'\n- 32\n- unchecked\n- \nE-MTAB-90:\n- Transcription profiling of mouse IFNg-primed C57BL/6 and C3H.BL6-sst1 bone-marrow\n  macrophages infected with mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2010-01-07'\n- 24\n- unchecked\n- \nE-GEOD-19148:\n- Interferon-γ-responsive non-hematopoietic cells regulate the immune response to\n  Mycobacterium tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2009-11-24'\n- 2\n- unchecked\n- \nE-GEOD-16618:\n- Effect of phenylalanine-rich peptide on growth and survival of Mycobacterium tuberculosis\n  H37Rv (Mtb)\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-11-10'\n- 12\n- unchecked\n- \nE-GEOD-17587:\n- M. tuberculosis transcriptional profile of delta pepD strain vs wild-type strain\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-10-29'\n- 5\n- unchecked\n- \nE-GEOD-18426:\n- Characterization of mycobacterial oligopeptide permease system\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-10-06'\n- 31\n- unchecked\n- \nE-GEOD-17706:\n- 'Mycobacterium tuberculosis TraSH experiment: Growth in wild type C57BL/6J versus\n  iNOS-/- mice'\n- other\n- Mycobacterium tuberculosis\n- '2009-08-20'\n- 26\n- unchecked\n- \nE-BUGS-91:\n- Transcription profiling of Mycobacterium tuberculosis using a transposon mutagenesis\n  approach to elucidate pe/ppe regulation\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-08-18'\n- 12\n- unchecked\n- \nE-GEOD-17640:\n- Bioactive Pyridine-N-oxide Disulfides from Allium stipitatum\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-08-15'\n- 4\n- unchecked\n- \nE-GEOD-14782:\n- Mycobacterium marinum chronic infection of adult zebrafish\n- transcription profiling by array\n- Danio rerio\n- '2009-06-29'\n- 4\n- unchecked\n- \nE-GEOD-16811:\n- The unique roles of DosT and DosS in DosR regulon induction and Mycobacterium tuberculosis\n  dormancy\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2009-06-26'\n- 36\n- unchecked\n- \nE-MEXP-2202:\n- Transcription profiling of Mycobacterium tuberculosis H37Rv wild type and deletion\n  mutants for mce3R gene to investigate the expression of a regulon involved in lipid\n  metabolism\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-06-17'\n- 16\n- unchecked\n- \nE-GEOD-13670:\n- Transcription profiling of human S. aureus-exposed macrophages\n- transcription profiling by array\n- Homo sapiens\n- '2009-05-02'\n- 30\n- unchecked\n- \nE-BUGS-83:\n- Transcription profiling of Mycobacterium bovis to determine genetic requirements\n  for fast and slow growth in Mycobacteria\n- transcription profiling by array\n- Mycobacterium bovis\n- '2009-04-28'\n- 70\n- unchecked\n- \nE-GEOD-15540:\n- 'Mycobacterium tuberculosis clinical isolates in China: extensively drug-resistant\n  tuberculosis vs drug sensitive one'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-04-04'\n- 1\n- unchecked\n- \nE-BUGS-80:\n- Transcription profiling of Mycobacterium tuberculosis treated with benzothiazinones\n  which kill M. tuberculosis by blocking arabinan synthesis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-03-19'\n- 24\n- unchecked\n- \nE-BUGS-54:\n- Transcription profiling of Mycobacterium tuberculosis - a bayesian change point\n  model for differential gene expression patterns of the DosR regulon\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2009-03-19'\n- 54\n- unchecked\n- \nE-GEOD-11199:\n- Transcription profiling by array of human macrophages from tuberculosis patients\n  stimulated with M. tuberculosis whole cell lysate\n- transcription profiling by array\n- Homo sapiens\n- '2009-02-28'\n- 24\n- unchecked\n- \nE-MEXP-1942:\n- Transcription profiling of mouse lung from C57BL6 and DBA2 parental strains and\n  D2.B6-Chr7 and D2.B6-Chr19 congenic mice following aerosol infection with Mycobacterium\n  tuberculosis for 30 and 70 days\n- transcription profiling by array\n- Mus musculus\n- '2009-02-20'\n- 36\n- unchecked\n- \nE-GEOD-10530:\n- Card9 dependent activation of macrophages by TDB\n- transcription profiling by array\n- Mus musculus\n- '2009-01-31'\n- 8\n- unchecked\n- \nE-GEOD-14316:\n- Transcription profiling of mouse lung from a strain overexpressing IL-10 under control\n  of the macrophage-specific CD68 promoter (macIL-10tg mice) after Mycobacterium tuberculosis\n  infection\n- transcription profiling by array\n- Mus musculus\n- '2009-01-17'\n- 14\n- unchecked\n- \nE-BUGS-64:\n- Transcription profiling of Mycobacterium bovis AN5 tuberculin production strain\n- transcription profiling by array\n- Staphylococcus aureus\n- '2009-01-16'\n- 46\n- unchecked\n- \nE-MEXP-1899:\n- Transcription profiling by array of lungs from mice infected with tuberculosis\n- transcription profiling by array\n- Mus musculus\n- '2008-12-17'\n- 9\n- unchecked\n- \nE-BUGS-56:\n- Transcription profiling of C. difficile following antibiotic stress\n- transcription profiling by array\n- Clostridium difficile\n- '2008-11-18'\n- 40\n- unchecked\n- \nE-GEOD-9946:\n- Comparison of stimulatory and inhibitory dendritic cell subsets reveals new role\n  of DC in granulomatous infection\n- transcription profiling by array\n- Homo sapiens\n- '2008-11-07'\n- 12\n- unchecked\n- \nE-MEXP-944:\n- Transcription profiling of Mycobacterium tuberculosis infected mice treated or non-treated\n  with DNA-HSP65 vaccine treatment\n- transcription profiling by array\n- Mus musculus\n- '2008-11-01'\n- 12\n- unchecked\n- \nE-BUGS-60:\n- Quantification of global transcription patterns in prokaryotes using spotted microarrays\n- transcription profiling by array\n- Mycobacterium bovis\n- '2008-09-30'\n- 114\n- unchecked\n- \nE-BUGS-66:\n- Comparative genomic hybridization of Beijing and non-Beijing Myocobacterium tuberculosis\n  isolates from Myanmar\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-09-26'\n- 44\n- unchecked\n- \nE-BUGS-63:\n- Transcription profiling of Mycobacterium tuberculosis after treatment with ciprofloxacin\n  to investigate the SOS DNA repair response\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-09-26'\n- 48\n- unchecked\n- \nE-GEOD-12379:\n- Gene expression profile of M.tuberculosis espR (Rv3849) mutant complemented with\n  an N-terminal Flag espR gene\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-08-08'\n- 8\n- unchecked\n- \nE-GEOD-12302:\n- Transcription profile of an azole resistant mutant of Mycobacterium truberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-07-31'\n- 3\n- unchecked\n- \nE-GEOD-11696:\n- Gene expression profile of M.tuberculosis espR (Rv3849) mutant\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-07-04'\n- 9\n- unchecked\n- \nE-GEOD-10198:\n- Transcription profiling of human peripheral blood derived dendritic cells response\n  to mycobacterial ManLAM\n- transcription profiling by array\n- Homo sapiens\n- '2008-06-18'\n- 6\n- unchecked\n- \nE-GEOD-8921:\n- Transcription profiling of human TLR2/1 stimulated human monocytes with the Mycobacterium\n  tuberculosis derived 19kDa lipopeptide reveals Toll-like receptor triggering of\n  a vitamin D-mediated human antimicrobial response\n- transcription profiling by array\n- Homo sapiens\n- '2008-06-17'\n- 50\n- unchecked\n- \nE-GEOD-3837:\n- Transcription profiling of mouse MH-S cell line with methylglyoxal induces apoptosis\n  and immune response\n- transcription profiling by array\n- Mus musculus\n- '2008-06-12'\n- 12\n- unchecked\n- \nE-GEOD-11095:\n- Dose response of carbon monoxide treatment of M. tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-05-29'\n- 6\n- unchecked\n- \nE-GEOD-11096:\n- Role of M. tuberculosis dosS and dosT in CO sensing\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-05-28'\n- 34\n- unchecked\n- \nE-GEOD-10897:\n- Role of M. tuberculosis in CO sensing\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-05-28'\n- 40\n- unchecked\n- \nE-GEOD-11315:\n- BCG vaccine strains lack narK2 and narX induction and exhibit altered phenotypes\n  during dormancy\n- unknown experiment type\n- Mycobacterium bovis\n- '2008-05-03'\n- 30\n- unchecked\n- \nE-GEOD-10391:\n- In vitro dormancy achieved by multiple stresses in Mycobacterium tuberculosis\n- transcription profiling by array\n- Mycobacterium tuberculosis H37Rv\n- '2008-05-01'\n- 75\n- unchecked\n- \nE-GEOD-7461:\n- Transcriptional Activity in Lymph Nodes During the Initiation and Progression of\n  Autoimmune Encephalomyelitis\n- unknown experiment type\n- Mus musculus\n- '2008-04-03'\n- 72\n- unchecked\n- \nE-BUGS-52:\n- Transcription profiling of Mycobacterium tuberculosis grown in vitro and obtained\n  from sputum to investigate the effect of whether they contain lipid bodies\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-04-02'\n- 68\n- unchecked\n- \nE-BUGS-61:\n- Transcription profiling of Mycobacterium tuberculosis wild type and BCG strains\n  after knock out of the global transcriptional regulator, CRP\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-03-12'\n- 12\n- unchecked\n- \nE-BUGS-42:\n- Microarray analysis of defined Mycobacterium tuberculosis populations using RNA\n  amplification strategies\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-03-12'\n- 248\n- unchecked\n- \nE-GEOD-9331:\n- Defined hypoxic model timecourse of H37Rv and H37Rv:deltadosR\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-02-20'\n- 52\n- unchecked\n- \nE-BUGS-59:\n- 'Characterisation of two in vivo expressed methyltransferases of the Mycobacterium\n  tuberculosis complex: antigenicity and genetic regulation'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-01-09'\n- 36\n- unchecked\n- \nE-BUGS-58:\n- Transcription profiling of Mycobacterium tuberculosis infected human dendritic cells\n  and macrophages and M. tuberculosis grown aerobically to investigate host-pathogen\n  cross-talk\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2008-01-04'\n- 88\n- unchecked\n- \nE-GEOD-360:\n- Transcription profiling of human macrophages and dendritic cells exposed to phylogenetically\n  distinct parasites\n- transcription profiling by array\n- Homo sapiens\n- '2007-12-13'\n- 28\n- unchecked\n- \nE-MEXP-404:\n- Transcription profiling of Arabidopsis roots from transgenic arabidopsis lines expressing\n  the p25 protein of beet necrotic yellow vein virus\n- transcription profiling by array\n- Arabidopsis thaliana\n- '2007-12-08'\n- 12\n- unchecked\n- \nE-MEXP-857:\n- Transcription profiling of brain samples from human control and schizophrenia patients\n  who were treated with either typical, atypical or no antipsychotic medication\n- transcription profiling by array\n- Homo sapiens\n- '2007-12-06'\n- 16\n- unchecked\n- \nE-GEOD-6083:\n- Inflammatory and immune responses in lymph nodes of Iberian red deer infected with\n  Mycobacterium bovis\n- unknown experiment type\n- Cervus elaphus hispanicus\n- '2007-10-17'\n- 3\n- unchecked\n- \nE-BUGS-37:\n- Transcription profiling of Mycobacterium bovis and Mycobacterium tuberculosis to\n  identify key gene expression differences\n- transcription profiling by array\n- Mycobacterium bovis\n- '2007-10-11'\n- 236\n- unchecked\n- \nE-MARS-7:\n- Transcription profiling of human mononuclear cells after treatment with suppressor\n  carbohydrates produced by CD8+ gd T cells in response to Mycobacterium tuberculosis\n- transcription profiling by array\n- Homo sapiens\n- '2007-10-06'\n- 10\n- unchecked\n- \nE-SMDB-4099:\n- Transcription profiling of Mycobacterium tuberculosis wild type and Rv3133c/DosR\n  mutants grown in hypoxic conditions\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-29'\n- 12\n- unchecked\n- \nE-SMDB-4062:\n- Transcription profiling of Mycobacterium tuberculosis treated with nitric oxide\n  to investigate the effect on latency\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-29'\n- 131\n- unchecked\n- \nE-BUGS-49:\n- 'Mycobacterial cells have dual nickel-cobalt sensors: sequence-relationships and\n  metal-sites of metal-responsive repressors are not congruent'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-17'\n- 51\n- unchecked\n- \nE-TABM-317:\n- Transcription profiling of Mycobacterium tuberculosis wild type, ideR mutant and\n  ideR complemented mutants strains grown in iron-sufficient or iron-deficient media\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-12'\n- 18\n- unchecked\n- \nE-TABM-316:\n- Transcription profiling of Mycobacterium tuberculosis wild type and sigH mutant\n  strains after exposure to the thiol-specific oxidizing agent diamide\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-12'\n- 15\n- unchecked\n- \nE-TABM-313:\n- Transcription profiling of Mycobacterium tuberculosis wild type and sigE mutant\n  strains after exposure to stress induced by SDS\n- \n- Mycobacterium tuberculosis\n- '2007-09-12'\n- 15\n- unchecked\n- \nE-TABM-312:\n- Transcription profiling of Mycobacterium tuberculosis grown at reduced oxygen tension\n  to identify regulators of the hypoxic response\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-12'\n- 6\n- unchecked\n- \nE-BUGS-44:\n- Comparative genomic hybridization of the dominant strains of Mycobacterium tuberculosis\n  in a UK South Asian community\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-09-06'\n- 40\n- unchecked\n- \nE-SMDB-4101:\n- Transcription profiling of Mycobacterium tuberculosis to study stationary phase\n  and dormancy gene expression\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-08-24'\n- 55\n- unchecked\n- \nE-GEOD-8839:\n- Inhibition of Respiration by Nitric Oxide Induces a Mycobacterium tuberculosis Dormancy\n  Program\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-08-21'\n- 131\n- unchecked\n- \nE-GEOD-8732:\n- Role of IdeR in Iron-Dependent Gene Expression, Iron Metabolism, and Oxidative Stress\n  Response\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-08-08'\n- 18\n- unchecked\n- \nE-GEOD-8689:\n- Role of the extracytoplasmic-function sigma Factor sigmaH in Mycobacterium tuberculosis\n  global gene expression\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-08-03'\n- 15\n- unchecked\n- \nE-GEOD-8664:\n- 'The Mycobacterium tuberculosis ECF sigma Factor sE: role in global gene expression\n  and survival in macrophages'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-08-02'\n- 15\n- unchecked\n- \nE-BUGS-35:\n- Transcription profiling of Mycobacterium tuberculosis grown under iron-limitation\n  in continuous culture\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-06-25'\n- 48\n- unchecked\n- \nE-BUGS-43:\n- Transcription profiling of five strains of Mycobacterium bovis in order to understand\n  the evolution, attenuation and variable protective efficacy of BCG vaccines\n- transcription profiling by array\n- Mycobacterium bovis\n- '2007-03-20'\n- 110\n- unchecked\n- \nE-BUGS-2:\n- Dissection of the heat-shock response in Mycobacterium tuberculosis using mutants\n  and microarrays\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-03-07'\n- 27\n- unchecked\n- \nE-BUGS-31:\n- Transcription profiling of Mycobacterium bovis with pYUB412 and pRD1-2F9 genes knocked-in\n  to investigate the ESX-1 secretion system\n- transcription profiling by array\n- Mycobacterium bovis\n- '2007-01-30'\n- 8\n- unchecked\n- \nE-BUGS-21:\n- Transcription profiling of and Rv3676 deletion strain of Mycobacterium tuberculosis\n  vs wild type\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2007-01-30'\n- 14\n- unchecked\n- \nE-MEXP-552:\n- Transcription profiling of Mycobacterium tuberculosis H37Rv and the isogenic mprA::Kmr\n  mutant\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2006-03-01'\n- 17\n- unchecked\n- \nE-GEOD-3999:\n- 'Comparative expression studies of a complex phenotype: cord formation in Mycobacterium\n  tuberculosis'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2006-01-09'\n- 40\n- unchecked\n- \nE-SMDB-2867:\n- 'Transcription profiling of a complex phenotype: cord formation in Mycobacterium\n  tuberculosis'\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2005-11-03'\n- 40\n- unchecked\n- \nE-GEOD-3201:\n- Gene expression diversity among Mycobacterium tuberculosis clinical isolates\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2005-08-26'\n- 48\n- unchecked\n- \nE-SMDB-2885:\n- Transcription profiling of Mycobacterium tuberculosis 12 clinical isolates\n- transcription profiling by array\n- Mycobacterium tuberculosis\n- '2005-08-23'\n- 48\n- unchecked\n- \nE-MEXP-405:\n- Transcription profiling of zebrafish at the late stage of chronic tuberculosis due\n  to Mycobacterium marinum infection\n- transcription profiling by array\n- Danio rerio\n- '2005-08-17'\n- 4\n- unchecked\n- \nE-GEOD-1642:\n- Transcriptional Responses of M. tuberculosis to inhibitors of metabolism\n- unknown experiment type\n- Mycobacterium tuberculosis H37Rv\n- '2004-09-01'\n- 437\n- unchecked\n- \n"], ["updated_at", "2017-07-03 00:58:20.195903"], ["id", 6]]
+  [1m[36m (15.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 882ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 00:58:20 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 00:58:46 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mL4xIZlGAXnr1Q2y50JGgDkwQWh/cQ5EKAHC2t0lYZdNmYKrVy3cJsqZoKfuUbvkER/bUvyRB4dADagYeQ+zJQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.4ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (38.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 83ms (Views: 48.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 04:04:00 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (10.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (23.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 04:04:09 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C9yUA6i4P6t5NTi0+kTrXZNtUj8aEztF4CPTBl2fkuTe+yeJZtPi9Fh5laHzVxY5u0LIBZnzMoaIL7nE+bVAVg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.4ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  [1m[36m (12.1ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (14.4ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (37.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 122ms (Views: 46.3ms | ActiveRecord: 28.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 04:07:56 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rw/D3e1hLYUlIPNfdqYbwt8MlWGhH7LB/ndd60VMkMiSKHBXIwrw2gRsXkp/team9yMPWyL/uwKWezcp4WZCeg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-BUGS-142", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677", "4966"], "reasons"=>["dg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "B", "", "", "", ""], "re_length"=>"10", "commit_save"=>"save_back"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')
+  [1m[36mGeosearchresult Load (0.2ms)[0m  [1mSELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1[0m
+  [1m[35mGeosearchresult Load (0.3ms)[0m  SELECT "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.4ms)
+
+NameError (undefined local variable or method `geo_keyword' for #<UsersController:0x007f5d6c945ae0>):
+  app/controllers/users_controller.rb:117:in `save_search'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 04:09:16 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rw/D3e1hLYUlIPNfdqYbwt8MlWGhH7LB/ndd60VMkMiSKHBXIwrw2gRsXkp/team9yMPWyL/uwKWezcp4WZCeg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-BUGS-155", "E-BUGS-142", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677", "4966"], "reasons"=>["dg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "B", "", "", "", ""], "re_length"=>"10", "commit_save"=>"save_back"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.2ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "geosearchresults" SET "data_hash" = ?, "updated_at" = ? WHERE "geosearchresults"."id" = ?[0m  [["data_hash", "---\n'5819':\n- GSE65517\n- 'Metastatic breast cancer and sepsis: monocytes'\n- Homo sapiens\n- 2015/02/03\n- '13'\n- unchecked\n- dg\n'5634':\n- GSE45675\n- High multiplicity mycobacterial infections of macrophages in vitro\n- Mus musculus\n- 2014/03/31\n- '4'\n- unchecked\n- ''\n'5436':\n- GSE57275\n- Metformin effect on Mycobacterium tuberculosis-infected lung\n- Mus musculus\n- 2014/12/02\n- '14'\n- unchecked\n- ''\n'5030':\n- GSE54992\n- 'Anti-TB chemotherapy effect on peripheral blood mononuclear cells from active tuberculosis\n  patients: time course'\n- Homo sapiens\n- 2014/02/15\n- '27'\n- unchecked\n- ''\n'4967':\n- GSE48027\n- 'Pyrazinamide effect on pulmonary tuberculosis model : time course'\n- Mus musculus\n- 2013/06/28\n- '16'\n- unchecked\n- ''\n'4966':\n- GSE54992\n- 'Active tuberculosis: peripheral blood mononuclear cells'\n- Homo sapiens\n- 2014/02/15\n- '21'\n- checked\n- ''\n'4965':\n- GSE43749\n- 'Bedaquiline treatment: time course'\n- Mycobacterium tuberculosis H37Rv\n- 2014/03/03\n- '17'\n- unchecked\n- ''\n'4931':\n- GSE13670\n- 'Macrophage response to to Staphylococcus aureus infection in vitro: time course'\n- Homo sapiens\n- 2009/04/23\n- '30'\n- unchecked\n- ''\n'4860':\n- GSE46268\n- All-trans retinoic acid (ATRA) vitamin A and 1,25-dihydroxyvitamin D3 (1,25D3) vitamin\n  D stimulated peripheral blood monocytes\n- Homo sapiens\n- 2013/12/31\n- '12'\n- unchecked\n- ''\n'4786':\n- GSE50834\n- 'HIV and tuberculosis co-infection: peripheral blood mononuclear cell'\n- Homo sapiens\n- 2014/03/05\n- '44'\n- unchecked\n- ''\n'4781':\n- GSE52819\n- Mycobacterium tuberculosis H37Rv-infected macrophages response to vitamin D\n- Homo sapiens\n- 2013/11/28\n- '12'\n- unchecked\n- ''\n'4551':\n- GSE43700\n- Interleukin-10 effect on peripheral blood mononuclear cells\n- Homo sapiens\n- 2013/03/05\n- '8'\n- unchecked\n- ''\n'4258':\n- GSE29628\n- 'THP-1 macrophage-like cells response to W-Beijing Mycobacterium tuberculosis strains:\n  time course'\n- Homo sapiens\n- 2011/12/01\n- '40'\n- unchecked\n- ''\n'4257':\n- GSE23014\n- 'Early lung immune response in tuberculosis: time course'\n- Mus musculus\n- 2010/07/21\n- '16'\n- unchecked\n- ''\n'4256':\n- GSE20050\n- Caseous tuberculosis granulomas comparison with normal lung parenchyma\n- Homo sapiens\n- 2010/06/02\n- '7'\n- unchecked\n- ''\n'3540':\n- GSE11199\n- Macrophages from tuberculosis infected subjects response to M. tuberculosis cell\n  lysate ex vivo\n- Homo sapiens\n- 2009/02/23\n- '24'\n- unchecked\n- B\n'2954':\n- GSE8921\n- 'Mycobacterium tuberculosis-derived lipopeptide effect on monocytes and dendritic\n  cells: time course'\n- Homo sapiens\n- 2007/09/01\n- '50'\n- unchecked\n- ''\n'2677':\n- GSE7588\n- Capreomycin effect on Mycobacterium tuberculosis\n- Mycobacterium tuberculosis; Mycobacterium tuberculosis H37Rv\n- 2007/04/25\n- '4'\n- unchecked\n- ''\n'2183':\n- GSE3408\n- M-CSF and GM-CSF differentiated macrophages response to bacillus Calmette-Guerin\n  (Subset C)\n- Homo sapiens\n- 2005/10/05\n- '7'\n- unchecked\n- ''\n'2182':\n- GSE3408\n- M-CSF and GM-CSF differentiated macrophages response to bacillus Calmette-Guerin\n  (Subset B)\n- Homo sapiens\n- 2005/10/05\n- '7'\n- unchecked\n- ''\n'2180':\n- GSE3408\n- M-CSF and GM-CSF differentiated macrophages response to bacillus Calmette-Guerin\n  (Subset A)\n- Homo sapiens\n- 2005/10/05\n- '7'\n- unchecked\n- \n'1552':\n- GSE3201\n- Mycobacterium tuberculosis clinical isolates\n- Mycobacterium tuberculosis\n- 2005/08/26\n- '48'\n- unchecked\n- \n'326':\n- GSE365\n- DNA repair mechanisms in mycobacteria\n- Mycobacterium tuberculosis\n- 2003/04/18\n- '28'\n- unchecked\n- \n'200073877':\n- GSE73877\n- Transcriptomic analysis of Mtb H37Rrv and MtbΔwhiB4 upon treatment with 0.25 mM\n  CHP\n- Mycobacterium tuberculosis H37Rv\n- 2017/04/24\n- '11'\n- unchecked\n- \n'200097958':\n- GSE97958\n- Global gene expression profile of H37Rv (Mtb) vs ∆mtrB\n- Mycobacterium tuberculosis H37Rv\n- 2017/04/20\n- '4'\n- unchecked\n- \n'200094007':\n- GSE94007\n- TaqMan Human miRNA array profile of Mycobacterium tuberculosis H37Rv infected THP-1\n  differentiated macrophages cells.\n- Homo sapiens\n- 2017/04/20\n- '2'\n- unchecked\n- \n'200093316':\n- GSE93316\n- Transcriptome analysis of mycobacteria in sputum samples of pulmonary tuberculosis\n  patients\n- Mycobacterium tuberculosis; uncultured bacterium\n- 2017/04/18\n- '20'\n- unchecked\n- \n'200097835':\n- GSE97835\n- Unique Chemokine Profiles of Lung Tissue Distinguish Post-chemotherapeutic Persistent\n  and Chronic Tuberculosis in a Mouse Model\n- Mus musculus\n- 2017/04/15\n- '9'\n- unchecked\n- \n'200086184':\n- GSE86184\n- Effect of addition of cysteine to isoniazid treatment of Mycobacterium tuberculosis\n- Mycobacterium tuberculosis\n- 2017/03/27\n- '3'\n- unchecked\n- \n'200077711':\n- GSE77711\n- Transcriptional Response of Mycobacterium tuberculosis to Arabinomannan-specific\n  Immune Sera\n- Mycobacterium tuberculosis H37Rv; Mycobacterium tuberculosis\n- 2017/03/09\n- '3'\n- unchecked\n- \n'200078233':\n- GSE78233\n- Genome-wide analysis of Mtb-infected THP1 cells in response to resveratrol treatment\n- Homo sapiens\n- 2017/02/23\n- '9'\n- unchecked\n- \n'200092495':\n- GSE92495\n- 'Seq-Well: A portable, low-cost platform for single-cell RNA-seq of low-input samples'\n- Homo sapiens; Mus musculus\n- 2017/02/17\n- '7'\n- unchecked\n- \n'200084076':\n- GSE84076\n- Host blood trancriptional profiles during Mycobacterium tuberculosis infection.\n- Homo sapiens\n- 2017/02/10\n- '36'\n- unchecked\n- \n'200094116':\n- GSE94116\n- Predicting susceptibility to tuberculosis based on gene expression profiling in\n  dendritic cells\n- Homo sapiens\n- 2017/01/31\n- '50'\n- unchecked\n- \n'200085357':\n- GSE85357\n- Genome-wide distribution of topoisomerase I and DNA gyrase is directed by transcription\n  induced supercoiling\n- Mycobacterium tuberculosis H37Ra; Mycobacterium tuberculosis H37Rv\n- 2017/01/31\n- '5'\n- unchecked\n- \n'200089552':\n- GSE89552\n- Transcriptional Profiling of Dysregulated lncRNAs in B cells Response to Active\n  Tuberculosis\n- Homo sapiens\n- 2017/01/30\n- '6'\n- unchecked\n- \n'200089830':\n- GSE89830\n- Transcriptional profiling of Mycobacterium tuberculosis Mmpl3 conditional mutant\n- Mycobacterium tuberculosis\n- 2017/01/25\n- '6'\n- unchecked\n- \n'200083271':\n- GSE83271\n- Analysis of gene expression signatures between bone marrow derived dendritic cells\n  generated from Wild type or DCIR(Clec4a2) knockout mice infected or not with Mycobacterium\n  tuberculosis\n- Mus musculus\n- 2017/01/10\n- '24'\n- unchecked\n- \n'200083814':\n- GSE83814\n- Transcriptional changes during Mycobacterium tuberculosis reactivation from persistence\n- Mycobacterium tuberculosis H37Rv\n- 2016/12/31\n- '15'\n- unchecked\n- \n'200076566':\n- GSE76566\n- Chemical inhibitors of the Mycobacterium tuberculosis DosRST two-component regulatory\n  system\n- Mycobacterium tuberculosis\n- 2016/12/19\n- '16'\n- unchecked\n- \n'200090858':\n- GSE90858\n- 'M.tuberculosis H37Rv: Control vs. anti-TB compound treated'\n- Mycobacterium tuberculosis\n- 2016/12/06\n- '4'\n- unchecked\n- \n'200070291':\n- GSE70291\n- Stress profile elicited by trehalose-6-phosphate accumulation in Mycobacterium tuberculosis\n- Mycobacterium tuberculosis\n- 2016/11/21\n- '6'\n- unchecked\n- \n'200089555':\n- GSE89555\n- De Novo Fatty Acid Synthesis Drives Early CD4 Memory T Cell Differentiation from\n  Effector T cells\n- Mus musculus\n- 2016/11/05\n- '14'\n- unchecked\n- \n'200083456':\n- GSE83456\n- The transcriptional signature of active tuberculosis reflects symptom status in\n  extra-pulmonary and pulmonary tuberculosis\n- Homo sapiens\n- 2016/11/04\n- '202'\n- unchecked\n- \n'200072435':\n- GSE72435\n- Expression data from C57BL/6 mouse bone-marrow derived macrophages\n- Mus musculus\n- 2016/11/01\n- '6'\n- unchecked\n- \n'200074323':\n- GSE74323\n- CsoR is essential for maintaining copper homeostasis in Mycobacterium tuberculosis\n- Mycobacterium tuberculosis\n- 2016/11/01\n- '4'\n- unchecked\n- \n'200084152':\n- GSE84152\n- Early whole blood transcriptional signatures are associated with severity of lung\n  inflammation in cynomolgus macaques with Mycobacterium tuberculosis infection\n- Macaca fascicularis; Homo sapiens\n- 2016/10/27\n- '470'\n- unchecked\n- \n'200074050':\n- GSE74050\n- Developing gene signature against Mycobacterium bovis infection in Cattle\n- Bos primigenius; Bos taurus; Bos indicus; Bubalus bubalis\n- 2016/10/25\n- '8'\n- unchecked\n- \n'200081913':\n- GSE81913\n- Macrophage Epithelial Reprogramming Underlies Mycobacterial Granuloma Formation\n  and Promotes Infection\n- Danio rerio\n- 2016/10/18\n- '12'\n- unchecked\n- \n'200088801':\n- GSE88801\n- Primary macrophages and J774 cells respond differently to infection with Mycobacterium\n  tuberculosis\n- Mus musculus\n- 2016/10/18\n- '36'\n- unchecked\n- \n'200087801':\n- GSE87801\n- Maternal BCG scar is associated with enhanced infant proinflammatory responses\n- Homo sapiens\n- 2016/10/12\n- '104'\n- unchecked\n- \n'200086141':\n- GSE86141\n- Mycobacterium tuberculosis Persister Stimulon\n- Mycobacterium tuberculosis\n- 2016/09/23\n- '3'\n- unchecked\n- \n'200079733':\n- GSE79733\n- Gene expression data from Mycobacterium tuberculosis-infected WT and miR-155-/-\n  bone-marrow derived macrophages\n- Mus musculus\n- 2016/09/14\n- '27'\n- unchecked\n- \n'200079732':\n- GSE79732\n- Gene expression data from Mycobacterium tuberculosis-infected WT and miR-155-/-\n  bone-marrow derived macrophages [validation]\n- Mus musculus\n- 2016/09/14\n- '12'\n- unchecked\n- \n'200079731':\n- GSE79731\n- Gene expression data from Mycobacterium tuberculosis-infected WT and miR-155-/-\n  bone-marrow derived macrophages [timecourse]\n- Mus musculus\n- 2016/09/14\n- '15'\n- unchecked\n- \n'200066883':\n- GSE66883\n- 'Ketogenesis: An Achilles'' heel of starvation-selected persistent mycobacteria'\n- Mycobacterium bovis BCG str. Pasteur 1173P2\n- 2016/08/25\n- '15'\n- unchecked\n- \n'200061531':\n- GSE61531\n- Gene expression based profiling of Mycobacterium tuberculosis infected primary murine\n  osteoclasts.\n- Mus musculus\n- 2016/08/15\n- '7'\n- unchecked\n- \n'200077556':\n- GSE77556\n- Impact of mutations in rv2887, putative transcriptional repressor, on gene expression\n  in Mycobacterium tuberculosis.\n- Mycobacterium tuberculosis\n- 2016/07/01\n- '6'\n- unchecked\n- \n'200083812':\n- GSE83812\n- Mycobacterium tuberculosis Phosphate Uptake System Component PstA2 is Not Required\n  for Gene Regulation or Virulence\n- Mycobacterium tuberculosis H37Rv; Mycobacterium tuberculosis CDC1551; Mycobacterium\n  tuberculosis str. Erdman = ATCC 35801\n- 2016/06/29\n- '6'\n- unchecked\n- \n'200083677':\n- GSE83677\n- Transcriptional profile of Beijing/East-Asian Mycobacterium tuberculosis isolates\n- Mycobacterium tuberculosis\n- 2016/06/24\n- '6'\n- unchecked\n- \n'200083379':\n- GSE83379\n- Mapping epigenetic changes to the host cell genome induced by Burkholderia pseudomallei\n  reveals pathogen-specific and pathogen-generic signatures of infection\n- Homo sapiens\n- 2016/06/16\n- '18'\n- unchecked\n- \n'200083188':\n- GSE83188\n- Pharmacologic inhibition of host phosphodiesterase-4 improves isoniazid mediated\n  clearance of Mycobacterium tuberculosis\n- Mus musculus\n- 2016/06/10\n- '12'\n- unchecked\n- \n'200076499':\n- GSE76499\n- Transcriptomic approaches in the zebrafish model for tuberculosis – insights into\n  host- and pathogen-specific determinants of the innate immune response\n- Danio rerio\n- 2016/06/01\n- '72'\n- unchecked\n- \n'200072745':\n- GSE72745\n- Transcriptional Response of Mycobacterium tuberculosis to Growth without Detergent\n- Mycobacterium tuberculosis\n- 2016/05/31\n- '3'\n- unchecked\n- \n'200081926':\n- GSE81926\n- Nonpathogenic SIV and Pathogenic HIV Infections Associate with Disparate Innate\n  Cytokine Signatures in Response to M. bovis BCG\n- Cercocebus atys; Homo sapiens; Macaca mulatta\n- 2016/05/27\n- '44'\n- unchecked\n- \n'200081746':\n- GSE81746\n- Gene expression profiling of tuberculosis patients from India\n- Homo sapiens\n- 2016/05/24\n- '8'\n- unchecked\n- \n'200078894':\n- GSE78894\n- Comparison of gene expression in M. tuberculosis TrxB2-DUC mutant treated or not\n  with atc and DTT\n- Mycobacterium tuberculosis H37Rv\n- 2016/05/12\n- '12'\n- unchecked\n- \n'200072330':\n- GSE72330\n- Comparison of gene expression in M. tuberculosis TrxB2 mutants\n- Mycobacterium tuberculosis H37Rv\n- 2016/05/12\n- '20'\n- unchecked\n- \n'200072329':\n- GSE72329\n- Comparison of gene expression in M. tuberculosis TrxB2-DUC mutant treated or not\n  with atc\n- Mycobacterium tuberculosis H37Rv\n- 2016/05/12\n- '11'\n- unchecked\n- \n'200072328':\n- GSE72328\n- Comparison of gene expression in M. tuberculosis TrxB2-TetON-tetO-WT mutant treated\n  or not with atc\n- Mycobacterium tuberculosis H37Rv\n- 2016/05/12\n- '9'\n- unchecked\n- \n'200072459':\n- GSE72459\n- Transcriptional Response of Mycobacterium tuberculosis H37Rv to Bedaquiline\n- Mycobacterium tuberculosis\n- 2016/05/05\n- '33'\n- unchecked\n- \n'200074282':\n- GSE74282\n- Deletion of nuoG in recombinant BCG vaccine against TB\n- Mus musculus\n- 2016/05/03\n- '48'\n- unchecked\n- \n'200080817':\n- GSE80817\n- NapM, a new nucleoid-associated protein, broadly regulates gene expression and affects\n  mycobacterialresistance to anti-tuberculosis drugs\n- Mycobacterium smegmatis str. MC2 155\n- 2016/04/30\n- '6'\n- unchecked\n- \n'200068337':\n- GSE68337\n- A Lysosomal In Vitro Exposure (LivE) Model to Identify Pathways Critical for Mycobacterium\n  tuberculosis Intracellular Persistence\n- Mycobacterium tuberculosis CDC1551\n- 2016/04/27\n- '15'\n- unchecked\n- \n'200066578':\n- GSE66578\n- Helminth-induced arginase-1 exacerbates lung inflammation and disease severity in\n  tuberculosis.  \n- Mus musculus\n- 2016/04/22\n- '6'\n- unchecked\n- \n'200077848':\n- GSE77848\n- Expression analysis of M. tb H37Rv after treatment with DTT for 3 hrs\n- Mycobacterium tuberculosis H37Rv\n- 2016/04/14\n- '6'\n- unchecked\n- \n'200076703':\n- GSE76703\n- Temporal Expression of Peripheral Blood Leukocyte Biomarkers in a Macaca fascicularis\n  Primary Infection Model of Tuberculosis\n- Macaca fascicularis; Homo sapiens\n- 2016/03/31\n- '90'\n- unchecked\n- \n'200067035':\n- GSE67035\n- Profiling gene expression in M. tuberculosis under different in vitro conditions.\n- Mycobacterium tuberculosis HN878; Mycobacterium tuberculosis H37Rv\n- 2016/03/30\n- '35'\n- unchecked\n- \n'200079362':\n- GSE79362\n- 'A blood RNA signature for tuberculosis disease risk: a prospective cohort study'\n- Homo sapiens\n- 2016/03/22\n- '355'\n- unchecked\n- \n'200077885':\n- GSE77885\n- The macrophage IRF8-IRF1 regulome is required for protection against infections,\n  and is associated with chronic inflammation (RNA-Seq)\n- Mus musculus\n- 2016/03/07\n- '12'\n- unchecked\n- \n'200077884':\n- GSE77884\n- The macrophage IRF8-IRF1 regulome is required for protection against infections,\n  and is associated with chronic inflammation (ChIP-Seq)\n- Mus musculus\n- 2016/03/07\n- '17'\n- unchecked\n- \n'200078706':\n- GSE78706\n- RNAseq Reveals Virulence-Specific Host Responses to M. tuberculosis infection\n- Mus musculus\n- 2016/03/01\n- '9'\n- unchecked\n- \n'200062942':\n- GSE62942\n- Elucidating the effects of the macrophage environment on the efficacy of anti-mycobacterial\n  drugs\n- Mycobacterium tuberculosis CDC1551; Mycobacterium tuberculosis\n- 2016/02/21\n- '40'\n- unchecked\n- \n'200071066':\n- GSE71066\n- Genomic and transcriptomic analysis of the streptomycin-dependent Mycobacterium\n  tuberculosis 18b\n- Mycobacterium tuberculosis\n- 2016/02/17\n- '12'\n- unchecked\n- \n'200075847':\n- GSE75847\n- Expression analysis of Mycobacterium tuberculosis H37Rv biofilm after treatment\n  with DTT ( Reduced) for 29 hrs\n- Mycobacterium tuberculosis; Mycobacterium tuberculosis H37Rv\n- 2016/02/08\n- '6'\n- unchecked\n- \n'200064335':\n- GSE64335\n- Mycobacterium tuberculosis H37Ra-infected macrophages response to T0901317\n- Homo sapiens\n- 2016/01/31\n- '6'\n- unchecked\n- \n'200076873':\n- GSE76873\n- Monocyte Transcriptional Networks are Associated with Tuberculin Skin Test Status\n  in Uganda\n- Homo sapiens\n- 2016/01/15\n- '56'\n- unchecked\n- \n'200062423':\n- GSE62423\n- Dissecting the immunogenicity of RD1-recombinant live tuberculosis vaccine candidates\n  studying host-pathogen interaction in human primary dendritic cells\n- Homo sapiens\n- 2016/01/01\n- '24'\n- unchecked\n- \n'200053640':\n- GSE53640\n- MtrA is involved in progression of Mycobacterium tuberculosis cell cycle\n- Mycobacterium tuberculosis H37Ra; Mycobacterium tuberculosis\n- 2015/12/31\n- '18'\n- unchecked\n- \n'200074687':\n- GSE74687\n- Adjunctive therapy with a phosphodiesterase-4 inhibitor improves INH response to\n  pulmonary tuberculosis\n- Oryctolagus cuniculus\n- 2015/12/21\n- '8'\n- unchecked\n- \n'200070812':\n- GSE70812\n- 'MntR(Rv2788): a transcriptional regulator that controls manganese homeostasis in\n  Mycobacterium tuberculosis.'\n- Mycobacterium tuberculosis\n- 2015/12/08\n- '6'\n- unchecked\n- \n'200061579':\n- GSE61579\n- Transcriptomic analysis of Mtb H37Rv and MtbΔwhiB3 at pH 4.5\n- Mycobacterium tuberculosis H37Rv\n- 2015/12/02\n- '7'\n- unchecked\n- \n'200071200':\n- GSE71200\n- Mycobacterium tuberculosis H37Rv transcriptional response to antibacterial agents\n- Mycobacterium tuberculosis\n- 2015/11/11\n- '106'\n- unchecked\n- \n'200068206':\n- GSE68206\n- Cathepsin K Contributes to Cavitation and Collagen Turnover in Pulmonary Tuberculosis\n- Oryctolagus cuniculus\n- 2015/11/03\n- '36'\n- unchecked\n- \n'200074196':\n- GSE74196\n- Genetic and Acquired Lysosomal Disorders Drive Susceptibility to Tuberculosis by\n  Compromising Macrophage Migration\n- Danio rerio\n- 2015/10/21\n- '2'\n- unchecked\n- \n'200062506':\n- GSE62506\n- RNA sequencing provides exquisite insight into the manipulation of the alveolar\n  macrophage by tubercle bacilli\n- Bos taurus\n- 2015/10/10\n- '78'\n- unchecked\n- \n'200069680':\n- GSE69680\n- PAD4 Inhibition is Sufficient for the Amelioration of Collagen-Induced Arthritis\n- Mus musculus; Homo sapiens\n- 2015/10/08\n- '21'\n- unchecked\n- \n'200058411':\n- GSE58411\n- Blood Transcriptional Signature of hyperinflammation in HIV-associated Tuberculosis\n- Homo sapiens\n- 2015/10/05\n- '107'\n- unchecked\n- \n'200073654':\n- GSE73654\n- Mucosal vaccination with attenuated Mycobacterium tuberculosis induces strong central\n  memory responses and protects against tuberculosis\n- Homo sapiens; Macaca mulatta\n- 2015/10/02\n- '6'\n- unchecked\n- \n'200045386':\n- GSE45386\n- Comparison of M. tuberculosis and M. bovis BCG in diluted whole blood cultures\n- Homo sapiens\n- 2015/09/10\n- '3'\n- unchecked\n- \n"], ["updated_at", "2017-07-03 04:09:16.256410"], ["id", 2]]
+  [1m[35m (14.8ms)[0m  commit transaction
+Redirected to https://ds-summer-geethik.c9users.io/searchAll
+Completed 302 Found in 171ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 04:09:16 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (24.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 04:09:22 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aMURLOMjur7pPcZOpZONswHWMZ4jwDvFQt09xeDBG6i94qKmLUhn4chxa1usgHDXKfmrpKAgMgYq0VcHROvJGg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.4ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (31.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 72ms (Views: 41.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-07-03 04:09:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eV87VNPJGfWq9jggvxUnH1H188gdcnd4Btcq6Vu4tLmseIjeHaLEqou6lTW2Btp7edpp8p6Sfrtu20Ar/5JmCw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "selected_keys_save"=>["E-MTAB-5218", "E-GEOD-77556", "E-GEOD-83812", "E-GEOD-83677"], "reasons"=>["dgdfd", "", "", "", "", "", "", "", "", ""]}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (0.2ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.3ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (39.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 89ms (Views: 49.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-07-03 04:31:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (45.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 104ms (Views: 89.5ms | ActiveRecord: 0.7ms)
