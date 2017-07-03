@@ -102,11 +102,11 @@ class UsersController < ApplicationController
         @storage_geo = Hash.new
         i=0
         @result_datasets.each do |k,v|
-          if (!params[:selected_keys_save].nil? and params[:selected_keys_save].include?(k))
-            @storage_geo[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
+          if (!params[:selected_keys_save_geo].nil? and params[:selected_keys_save_geo].include?(k))
+            @storage_geo[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons_geo][i]]
           else
             # if v[5]!="checked"
-            @storage_geo[k] = [v[0],v[1],v[2],v[3],v[4],"unchecked",params[:reasons][i]]
+            @storage_geo[k] = [v[0],v[1],v[2],v[3],v[4],"unchecked",params[:reasons_geo][i]]
             #else
             # @storage[k] = [v[0],v[1],v[2],v[3],v[4],"checked",params[:reasons][i]]
             #end

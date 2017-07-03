@@ -303,13 +303,13 @@
                         <checkbox id="Relevance">
                         <%if !v[5].nil? and v[5]=="checked" %>
                           
-                          <%= check_box_tag 'selected_keys_save',k, k-%>
+                          <%= check_box_tag 'selected_keys_save_geo[]',k, k-%>
                         <% else %>
-                          <%=check_box_tag 'selected_keys_save',k-%>
+                          <%=check_box_tag 'selected_keys_save_geo[]',k-%>
                         <% end %>  
                       </td>
                       <td > 
-                        <textarea id="reason_notes", name="reasons[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
+                        <textarea id="reason_notes_geo", name="reasons_geo[]"><%if !v[6].nil? %><%=v[6]%><%end%></textarea> 
                       </td>
                     </tr>
                       <%end %> 
