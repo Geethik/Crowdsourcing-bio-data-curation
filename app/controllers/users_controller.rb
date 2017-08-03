@@ -125,7 +125,7 @@ class UsersController < ApplicationController
       #debugger
       @previous_results = Savesearchresult.where("keyword=? AND filter_exper=? AND filter_tech=?",n_keyword,@attr_exper,@attr_tech)
       #p @previous_results.count
-      if @previous_results.count > 10000
+      if @previous_results.count > 0
         @users =  @previous_results.first.data_hash
         #p @users
       else

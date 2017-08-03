@@ -21,33 +21,39 @@ Given I am on the "login page"
     
 Scenario: Search ArrayExpress page by filter
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
   And I should see "Search Datasets"
-  Then I fill in "Search ArrayExpress by keyword" with "tuberculosis"
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "Array Express"
+  Then I should see "Experiment type"
   And I select "RNA assay" from "Experiment type"
   And I select "Sequencing assay" from "Technology type"
-  And I press "Search Array Express"
-  And I should see "E-GEOD-76499"
-  And the "Organism" of "E-GEOD-76499" should be "Danio rerio"
-  And the "Assays" of "E-GEOD-76499" should be "72"
+  And I press "Search database"
+  And I should see "E-MTAB-5287"
+  And the "Organism" of "E-MTAB-5287" should be "Homo sapiens"
+  And the "Assays" of "E-MTAB-5287" should be "84"
   
 Scenario: Search ArrayExpress page by keyword
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
-  And I fill in "Search ArrayExpress by keyword" with "eye"
-  And I press "Search Array Express"
-  And I should see "E-MTAB-5563"
-  And the "Assays" of "E-MTAB-5563" should be "35"
+  And I fill in "Search by Keyword" with "eye"
+  And I check "Array Express"
+  Then I should see "Experiment type"
+  And I press "Search database"
+  And I should see "E-MTAB-4097"
+  And the "Assays" of "E-MTAB-4097" should be "148"
 
 Scenario: Search ArrayExpress by only filters (sad path)
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
+  And I check "Array Express"
+  Then I should see "Experiment type"
   And I select "RNA assay" from "Experiment type"
   And I select "Sequencing assay" from "Technology type"
-  And I press "Search Array Express"
-  And I should see "Invalid search"
+  And I press "Search database"
+  And I should see "Invalid search! Please enter the search term"
   
 

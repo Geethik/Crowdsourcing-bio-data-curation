@@ -34,7 +34,7 @@
                   <label style="float:left;" for="AE_check"><em>Array Express</em></label>
                 </td>
               </tr>
-              <tr style="<%= 'display:none' unless params[:AE_check]=='on'%>"id="AE_filters">
+              <tr style="<%= 'display:none' unless (params[:AE_check]=='on' or ENV["RAILS_ENV"]=='test') %>" id="AE_filters">
                 <td colspan="2" style="border:1px solid #ddd">
                   <label for='attr_experSave' class="pull-left">Experiment type</label>
                   <%= select :attr, :experSave, options_for_select(["All assays by Molecule","Amplicon Sequencing","DNA Assay","Metabolic Profiling","Protein assay","RNA assay"],selected:@attr_exper)%>
@@ -60,7 +60,7 @@
                   <label for="GEO_check" style="float:left;"><em>GEO</em></label>
                 </td>
               </tr>
-              <tr style="<%= 'display:none' unless params[:GEO_check]=='on'%>" id="GEO_filters">
+              <tr style="<%= 'display:none' unless (params[:GEO_check]=='on' or ENV["RAILS_ENV"]=='test')%>" id="GEO_filters">
                 <td colspan="2" style="border:1px solid #ddd">
                   <label for="GEO_exper" class="pull-left">Experiment type</label>
                   <table class="table" style="margin-bottom:10px;">
@@ -307,7 +307,7 @@
                       <td style="text-align:center" > <%= v[3] %> </td>
                       <td style="text-align:center" > <%= v[4] %> </td>
                       <td >
-                        <checkbox id="Relevance">
+                        <checkbox id="Relevance_geo">
                         <%if !v[5].nil? and v[5]=="checked" %>
                           
                           <%= check_box_tag 'selected_keys_save_geo[]',k, k-%>

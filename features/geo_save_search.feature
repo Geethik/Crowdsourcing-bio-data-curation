@@ -2,7 +2,7 @@ Feature: Save Search for datasets via GEO
   
   As a user
   So that I can save the search for datasets based on GEO
-  I want to save GEO for datasets 
+  I want to save the search results for GEO database 
   
 Background: Users in database
   
@@ -21,46 +21,51 @@ Given I am on the "login page"
 
 Scenario: Reviewing Saved Searches
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
   And I should see "Search Datasets"
-  Then I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
   And I should see "GSE65517"
-  When I check "Relevance" of "GSE65517" 
+  When I check "Relevance_geo" of "GSE65517"
   And I write "Howdy!" in the text box of "GSE65517"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
   
-  Then I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
   Then I should see "GSE65517"
-  And "Relevance" of "GSE65517" should be checked
+  And "Relevance_geo" of "GSE65517" should be checked
   And I should see "Howdy!" in text box of "GSE65517"
   
-Scenario: Modifying a previous search
+Scenario: Modifying a previous saved search
  Given I am on the profile page
   And I follow "Search Dataset"
   Then I should be on the SearchAll page
   And I should see "Search Datasets"
-  Then I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
   And I should see "GSE65517"
-  When I check "Relevance" of "GSE65517"
+  When I check "Relevance_geo" of "GSE65517"
   And I write "Howdy!" in the text box of "GSE65517"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
   
-  Then I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
-  Then "Relevance" of "GSE65517" should be checked
-  When I uncheck "Relevance" of "GSE65517"
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
+  Then "Relevance_geo" of "GSE65517" should be checked
+  When I uncheck "Relevance_geo" of "GSE65517"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
   
-  Then I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
-  Then "Relevance" of "GSE65517" should not be checked
+  Then I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
+  Then "Relevance_geo" of "GSE65517" should not be checked

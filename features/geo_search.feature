@@ -21,19 +21,21 @@ Given I am on the "login page"
     
 Scenario: Search GEO page by keyword
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
-  And I fill in "Search GEO by keyword" with "tuberculosis"
-  And I press "Search GEO"
+  And I fill in "Search by Keyword" with "tuberculosis"
+  And I check "GEO"
+  And I press "Search database"
   And I should see "GSE65517"
   And the "No. of Samples" of "GSE65517" should be "13"
 
-Scenario: Search ArrayExpress by only filters (sad path)
+Scenario: Search GEO without keyword (sad path)
   Given I am on the profile page
-  And I follow "Search Dataset"
+  And I follow "Search Datasets"
   Then I should be on the SearchAll page
-  And I fill in "Search GEO by keyword" with ""
-  And I press "Search GEO"
-  And I should see "Invalid search"
+  And I fill in "Search by Keyword" with ""
+  And I check "GEO"
+  And I press "Search database"
+  And I should see "Invalid search! Please enter the search term"
   
 
