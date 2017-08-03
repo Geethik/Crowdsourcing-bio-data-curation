@@ -1,0 +1,27 @@
+I"2(function() {
+  jQuery(function() {
+    return $("table.special").dataTable();
+  });
+
+  jQuery(function() {
+    return $('#AE_check').change(function() {
+      if (this.checked) {
+        return $('#AE_filters').fadeIn('slow');
+      } else {
+        return $('#AE_filters').fadeOut('slow');
+      }
+    });
+  });
+
+  jQuery(function() {
+    return $('#GEO_check').change(function() {
+      if (this.checked) {
+        return $('#GEO_filters').fadeIn('slow');
+      } else {
+        return $('#GEO_filters').fadeOut('slow');
+      }
+    });
+  });
+
+}).call(this);
+:ET

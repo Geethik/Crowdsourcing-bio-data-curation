@@ -20124,3 +20124,457 @@ Processing by UsersController#save_search as HTML
   Rendered layouts/_header.html.erb (1.0ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 49870ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:09:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (38.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 68.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:09:56 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yGnPmXb/S1tW4GqhZLJ2pzgCPT2eszuxpaM/Kv8AShJWaCq0lWCHJq+68YGm8iylObKjX/yiJF0XYnwuoZjEtA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 5385ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-08-03 07:10:05 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (2.4ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-08-03 07:12:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 50ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-08-03 07:12:31 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:12:35 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:12:44 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4mT2zr5ykCWMLA1AI3agTHMQcXzCoO9Rjvg2A6g+Sdh8ZRPjXe1cWHV2lmDhNvpOcqDvHqCx8L08OXUH9qbHfg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1332ms (Views: 15.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-08-03 07:17:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 56ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-08-03 07:17:08 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:17:10 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:17:15 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vS14vt++x4Yw6UYneHkjHgJvItXfwtyc+iPpVId2ZJs9VDPGOE3Y+GZPjhfob6Oebki6TVuFJ7BKcyhDIVXNA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  [1m[35mSavesearchresult Load (0.4ms)[0m  SELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1
+  Rendered users/searchAll.html.erb within layouts/application (27.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 63ms (Views: 35.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:17:57 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YRAMTBTv7VF/e6JSh0esJzuQ77WR50iXeGL9dh3QD+j/Eelh93AhLIYhOXJFB/YlOiBx1/P2V3vKo75yQ0iBTg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.3ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (28.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:19:20 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (18.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:19:24 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcr/3YP7CcoVB45BnYECDtN1w3TerOdMrjtqtNYCP2kryxrwYGTFt+xdFWFfwVgM0sVdFry9+KAc+imwiJqxzw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13952ms (Views: 21.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:21:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NbJTJgcTpm27ZDwCnD7BnCaTaO5WstlRr1wYMwTxNyers7YL5IxqEEI+pyJefpueJyP2jDSjxr0dnVs3Wmm5gQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (22.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (46.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 13907ms (Views: 92.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:21:54 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"94XO1Z2Uk9vpiesWTHJwDvHz6QqYA9+EMF+pyD93x/tphCv4fgtfphDTcDaOMioM8EN3aPoSwGiCnurMYe9JXQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  [1m[36mSavesearchresult Load (0.4ms)[0m  [1mSELECT  "savesearchresults".* FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')  ORDER BY "savesearchresults"."id" ASC LIMIT 1[0m
+  Rendered users/searchAll.html.erb within layouts/application (45.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (19.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 100ms (Views: 75.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:32:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (41.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 83ms (Views: 72.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:32:24 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GU6sy69tcdjXKSOHhxAHICs1Cg7gZUFXJE2uAdUh+LaHT0nmTPK9pS5zuKdFUF0iKoWUbIJ0XruWjO0Fi7l2EA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1430ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:38:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (47.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 80.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:38:31 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V1jVxP+lGcJNNWSQ50oVLhskRZ5Lt9ZFkPMLcmdxwCLJWTDpHDrVv7Rv/7AlCk8sGpTb/CmmyakiMkh2OelOhA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (6.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12482ms (Views: 14.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:38:52 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:39:09 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:39:52 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:40:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (47.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 108ms (Views: 90.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:40:31 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jqZKG+yyvshXZLAcFKNqwIPALHxtfa+wTGp6tRFpsp8O3wFjC0GhtgHCeCyEtepA7+e05Ok6VJz8Oruit0obA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (6.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13199ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:42:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (11.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (44.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 91ms (Views: 79.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:42:26 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RPQ0xavaLBBiBlYnof5cvWunhqTo1KSTlBhD1X5KKgna9dHoSEXgbZtczQdjvga/ahcYxorFu38m2QDRINKkrw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (6.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13875ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:48:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (15.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (56.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 113ms (Views: 98.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:48:51 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"47PI1IcVMB2TEatZkg1gzwveLuywnnm3+e/QH+jsyyN9si35ZIr8YGpLMHlQTTrNCm6wjtKPZltLLpMbtnRFhQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12546ms (Views: 16.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:54:32 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:54:36 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5eklCO/zl7k9Ug5piAOFJPyfAgxMk0T7s/+A0ACb5lx76MAlDGxbxMQIlUlKQ98m/S+cbi6CWxcBPsPUXgNo+g==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')
+  Rendered users/searchAll.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 14042ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:56:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (41.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 86ms (Views: 74.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:56:11 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ZuVn5qXmdrBK5FwdrKEfemFAGhNTnbizv00JCuK0i1HmnCyeQhVpzhxClC08t5/6DWeCi9faQ58PHcgdRJciw==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (6.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12258ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:56:29 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L7Hho9H7ZD+28yiv5aR78aP0CtgL5Ea2kNE4u25w2HuxsASOMmSoQk+ps48n5CHzokSUumn1WVoiEHu/MOhW3Q==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database", "DataTables_Table_0_length"=>"10", "reasons"=>["", "", "", "", "", "", "", "", "", ""]}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1410ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:57:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (41.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 84ms (Views: 73.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:57:32 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QESmpjDvC1ByoKkZkL705u2/0dzwb6zf1i6poK9CDSveRUOL03DHLYv6MjlS/q7k7A9PvpJ+szNk7+qk8dqDjQ==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_check"=>"on", "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (4.7ms)[0m  [1mSELECT COUNT(*) FROM "geosearchresults" WHERE (keyword='tuberculosis')[0m
+  [1m[35mGeosearchresult Load (4.6ms)[0m  SELECT  "geosearchresults".* FROM "geosearchresults" WHERE (keyword='tuberculosis')  ORDER BY "geosearchresults"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (12.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13534ms (Views: 20.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 50.24.132.134 at 2017-08-03 07:58:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://ds-summer-geethik.c9users.io/profile
+Completed 302 Found in 54ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/profile" for 50.24.132.134 at 2017-08-03 07:58:51 +0000
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFullsubmission Load (0.2ms)[0m  SELECT "fullsubmissions".* FROM "fullsubmissions" WHERE "fullsubmissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 41.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 07:58:53 +0000
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (10.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 07:58:59 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SWRg3NFJnwHzUghZM2df6+OvStaWSccyN+2YNQuW/tzXZYXxMtZTfAoIk3nxJwXp4h/UtPRY2N6FLNsxVQ5weg==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"DNA Assay", "techSave"=>"Sequencing assay"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='DNA Assay' AND filter_tech='Sequencing assay')[0m
+  Rendered users/searchAll.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 1035ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-08-03 07:59:02 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (2.5ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 08:00:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (41.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 74.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/searchAll" for 50.24.132.134 at 2017-08-03 08:01:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#searchAll as HTML
+  Rendered users/searchAll.html.erb within layouts/application (12.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (60.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 106ms (Views: 94.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/searchAll" for 50.24.132.134 at 2017-08-03 08:01:34 +0000
+Processing by UsersController#save_search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFHADcQcAiyviPC5G9L4P4HjrVctv15OyivAv7dN+xLuUCUgJ4POUVbSa5nZkqI9gFMzNU+uQaJ46oO76dV1tA==", "csearchBox"=>"tuberculosis", "AE_check"=>"on", "attr"=>{"experSave"=>"All assays by Molecule", "techSave"=>"All technologies"}, "GEO_exp_1"=>"on", "GEO_exp_2"=>"on", "GEO_exp_3"=>"on", "GEO_exp_4"=>"on", "GEO_org_1"=>"on", "GEO_org_2"=>"on", "submit"=>"Search database"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "savesearchresults" WHERE (keyword='tuberculosis' AND filter_exper='' AND filter_tech='')[0m
+  Rendered users/searchAll.html.erb within layouts/application (7.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12788ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/newcsv" for 50.24.132.134 at 2017-08-03 08:01:50 +0000
+Processing by UsersController#jsr as CSV
+  Rendered text template (0.0ms)
+Sent data  (2.1ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms)

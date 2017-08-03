@@ -125,7 +125,7 @@ class UsersController < ApplicationController
       #debugger
       @previous_results = Savesearchresult.where("keyword=? AND filter_exper=? AND filter_tech=?",n_keyword,@attr_exper,@attr_tech)
       #p @previous_results.count
-      if @previous_results.count > 0
+      if @previous_results.count > 10000
         @users =  @previous_results.first.data_hash
         #p @users
       else
@@ -187,7 +187,7 @@ if(@@reference == "GEO")
   end
 end
 else
- column_names = %w(Accession Name Type Organism Release_Date Assays Relevance Reason)
+ column_names = %w(Accession GSE_ID Name Type Organism Release_Date Assays Relevance Reason)
   csv_string = CSV.generate do |csv|
    
 
