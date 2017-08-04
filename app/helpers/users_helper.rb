@@ -97,7 +97,7 @@ def search_data_GEO(keyword,f1,f2,f3,f4,f5,f6)
         url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+" AND (\""+s1+
             "\"[Filter] OR \""+s2+"\"[Filter] OR \""+s3+"\"[Filter] OR \""+s4+"\"[Filter])&retmax=1000";  
       end
-      p url_1
+     # p url_1
       doc = Nokogiri::XML(open(url_1))
       all_ids = Array.new
       dataset_ids = Array.new
