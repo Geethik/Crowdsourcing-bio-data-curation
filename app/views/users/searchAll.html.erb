@@ -66,7 +66,11 @@
                   <table class="table" style="margin-bottom:10px;">
                     <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_exp_1" name="GEO_exp_1">
+                        <% if params[:GEO_exp_1]=="on" %>
+                          <input type="checkbox" checked id="GEO_exp_1" name="GEO_exp_1" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_exp_1" name="GEO_exp_1">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
                         <label for="GEO_exp_1" style="font-weight:normal;">Expression profiling by array</label>
@@ -74,7 +78,11 @@
                     </tr>
                     <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_exp_2" name="GEO_exp_2">
+                        <% if params[:GEO_exp_2]=="on" %>
+                          <input type="checkbox" checked id="GEO_exp_2" name="GEO_exp_2" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_exp_2" name="GEO_exp_2">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
                         <label for="GEO_exp_2" style="font-weight:normal;">Expression profiling by high throughput sequencing</label>
@@ -82,7 +90,11 @@
                     </tr>
                     <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_exp_3" name="GEO_exp_3">
+                        <% if params[:GEO_exp_3]=="on" %>
+                          <input type="checkbox" checked id="GEO_exp_3" name="GEO_exp_3" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_exp_3" name="GEO_exp_3">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
                         <label for="GEO_exp_3" style="font-weight:normal;">Non-coding RNA profiling by array</label>
@@ -90,10 +102,14 @@
                     </tr>
                     <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_exp_4" name="GEO_exp_4">
+                        <% if params[:GEO_exp_4]=="on" %>
+                          <input type="checkbox" checked id="GEO_exp_4" name="GEO_exp_4" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_exp_4" name="GEO_exp_4">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
-                        <label for="GEO_exp_4" style="font-weight:normal;">Non-coding RNA by high throughput sequencing</label>
+                        <label for="GEO_exp_4" style="font-weight:normal;">Non-coding RNA profiling by high throughput sequencing</label>
                       </td>
                     </tr>
                   </table>
@@ -101,7 +117,11 @@
                   <table class="table"  style="margin-bottom:10px;">
                      <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_org_1" name="GEO_org_1">
+                        <% if params[:GEO_org_1]=="on" %>
+                          <input type="checkbox" checked id="GEO_org_1" name="GEO_org_1" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_org_1" name="GEO_org_1">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
                         <label for="GEO_org_1" style="font-weight:normal;">Homo-sapiens</label>
@@ -109,7 +129,11 @@
                     </tr>
                      <tr>
                       <td width="15%" style="border:none;padding:0px;">
-                        <input type="checkbox" checked id="GEO_org_2" name="GEO_org_2">
+                        <% if params[:GEO_org_2]=="on" %>
+                          <input type="checkbox" checked id="GEO_org_2" name="GEO_org_2" value="on">
+                        <% else %>
+                          <input type="checkbox" id="GEO_org_2" name="GEO_org_2">
+                        <% end %>
                       </td>
                       <td style="border:none;padding:0px;text-align:left;">
                         <label for="GEO_org_2" style="font-weight:normal;">Mouse</label>

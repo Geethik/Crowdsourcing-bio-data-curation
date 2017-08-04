@@ -48,6 +48,12 @@ class UsersController < ApplicationController
   def searchAll
     #debugger
     #@poweradmin = current_user
+    params[:GEO_exp_1]="on"
+    params[:GEO_exp_2]="on"
+    params[:GEO_exp_3]="on"
+    params[:GEO_exp_4]="on"
+    params[:GEO_org_1]="on"
+    params[:GEO_org_2]="on"
   end
   
   def save_search
@@ -59,6 +65,12 @@ class UsersController < ApplicationController
     @ae_check =  params[:AE_check]
     @geo_check = params[:GEO_check]
     n_keyword = params[:csearchBox]
+    @f1 = params[:GEO_exp_1]
+    @f2 = params[:GEO_exp_2]
+    @f3 = params[:GEO_exp_3]
+    @f4 = params[:GEO_exp_4]
+    @f5 = params[:GEO_org_1]
+    @f6 = params[:GEO_org_2]
     
     if(@attr_exper=='All assays by Molecule')
           @attr_exper=''
@@ -83,12 +95,13 @@ class UsersController < ApplicationController
     end
     
     if @geo_check=='on'
-      @previous_results_geo =  Geosearchresult.where("keyword=?",n_keyword)
+      @previous_results_geo =  Geosearchresult.where("keyword=? AND filter_f1=? AND filter_f2=? AND filter_f3=? AND filter_f4=? AND filter_f5=? 
+              AND filter_f6=?",n_keyword,@f1,@f2,@f3,@f4,@f5,@f6)
         
-      if @previous_results_geo.count>0
+      if @previous_results_geo.count> 0
         @result_datasets = @previous_results_geo.first.data_hash
       else
-        @result_datasets = search_data_GEO(n_keyword)
+        @result_datasets = search_data_GEO(n_keyword,@f1,@f2,@f3,@f4,@f5,@f6)
         if @result_datasets==nil||@result_datasets.empty?
           flash[:warning] = "No more dataset"
           redirect_to search_save_path
@@ -114,7 +127,8 @@ class UsersController < ApplicationController
           i=i+1
         end
         p @storage_geo
-        Geosearchresult.where("keyword=?",n_keyword).first_or_create(keyword: n_keyword,data_hash: @storage_geo).update(data_hash: @storage_geo)
+        Geosearchresult.where("keyword=?",n_keyword).first_or_create(keyword: n_keyword,filter_f1: @f1,filter_f2: @f2,filter_f3: @f3, 
+                filter_f4: @f4, filter_f5: @f5, filter_f6: @f6,data_hash: @storage_geo).update(data_hash: @storage_geo)
         flash[:warning] = "Curated results saved successfully!"
         redirect_to search_save_path
         return

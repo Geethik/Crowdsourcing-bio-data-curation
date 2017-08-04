@@ -6,8 +6,34 @@ end
 
 And /^the "(.*)" of "(.*)" should be "(.*)"$/ do |field,accession,value|
     find('tr', text: accession).should have_content(value)
-    end
+end
 
+And /^the field "(.*)" should not be checked$/ do |field|
+    if(field=="Array Express")
+        find(:id, "AE_check").should eql?("unchecked")
+    end
+    if(field=="GEO")
+        find(:id, "GEO_check").should eql?("unchecked")
+    end
+end
+And /^the field "(.*)" should be checked$/ do |field|
+    if(field=="Array Express")
+        find(:id, "AE_check").should eql?("checked")
+    end
+    if(field=="GEO")
+        find(:id, "GEO_check").should eql?("checked")
+    end
+end
+
+And /^the filter "(.*)" should be checked$/  do |field|
+    field_checked = find_field(field)['checked']
+    field_checked.should eql?("checked")
+end
+
+And /^the filter "(.*)" should not be checked$/ do |field|
+    field_unchecked = find_field(field)['unchecked']
+    field_unchecked.should eql?("unchecked")
+end
 
 When /^I check "(.*)" of "(.*)"$/ do |field,accession|
     within('tr', text: accession) do

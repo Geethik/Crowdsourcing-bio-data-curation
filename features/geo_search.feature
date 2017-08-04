@@ -26,8 +26,8 @@ Scenario: Search GEO page by keyword
   And I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  And I should see "GSE65517"
-  And the "No. of Samples" of "GSE65517" should be "13"
+  And I should see "GSE54630"
+  And the "No. of Samples" of "GSE54630" should be "2"
 
 Scenario: Search GEO without keyword (sad path)
   Given I am on the profile page

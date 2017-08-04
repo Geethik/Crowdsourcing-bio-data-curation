@@ -57,9 +57,47 @@ module UsersHelper
     return data_result
   end    
     
-def search_data_GEO(keyword)
+def search_data_GEO(keyword,f1,f2,f3,f4,f5,f6)
+        s1=""
+        s2=""
+        s3=""
+        s4=""
+        s5=""
+        s6=""
+      if f1=="on"
+        s1 = "Expression profiling by array"
+      end
+      if f2=="on"
+        s2 = "Expression profiling by high throughput sequencing"
+      end
+      if f3=="on"
+        s3 = "Non-coding RNA profiling by array"
+      end
+      if f4=="on"
+        s4 = "Non-coding RNA profiling by high throughput sequencing"
+      end
+      if f5=="on"
+        s5 = "Homo sapiens"
+      end
+      if f6=="on"
+        s6 = "Mouse"
+      end
+      
       datasets = {}
-      url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+"&retmax=100";
+      if s5!="" and s6!=""
+        url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+" AND (\""+s5+"\"[Organism] OR \""+s6+"\"[Organism] AND (\""+s1+
+            "\"[Filter] OR \""+s2+"\"[Filter] OR \""+s3+"\"[Filter] OR \""+s4+"\"[Filter]))&retmax=1000";
+      elsif s5!=""
+        url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+" AND (\""+s5+"\"[Organism] AND (\""+s1+
+            "\"[Filter] OR \""+s2+"\"[Filter] OR \""+s3+"\"[Filter] OR \""+s4+"\"[Filter]))&retmax=1000";
+      elsif s6!=""
+        url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+" AND (\""+s6+"\"[Organism] AND (\""+s1+
+            "\"[Filter] OR \""+s2+"\"[Filter] OR \""+s3+"\"[Filter] OR \""+s4+"\"[Filter]))&retmax=1000";
+      else
+        url_1 = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term="+keyword+" AND (\""+s1+
+            "\"[Filter] OR \""+s2+"\"[Filter] OR \""+s3+"\"[Filter] OR \""+s4+"\"[Filter])&retmax=1000";  
+      end
+      p url_1
       doc = Nokogiri::XML(open(url_1))
       all_ids = Array.new
       dataset_ids = Array.new
@@ -68,7 +106,7 @@ def search_data_GEO(keyword)
           all_ids << id
       end
 
-      all_ids.each_slice(10) do |slice|
+      all_ids.each_slice(100) do |slice|
           batch_of_ids = Array.new
         slice.each do |id_1|
             batch_of_ids << id_1

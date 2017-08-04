@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501002624) do
+ActiveRecord::Schema.define(version: 20170804014740) do
 
   create_table "datasets", force: :cascade do |t|
     t.string   "name"
@@ -67,6 +67,12 @@ ActiveRecord::Schema.define(version: 20170501002624) do
     t.text     "data_hash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "filter_f1"
+    t.string   "filter_f2"
+    t.string   "filter_f3"
+    t.string   "filter_f4"
+    t.string   "filter_f5"
+    t.string   "filter_f6"
   end
 
   create_table "groups", force: :cascade do |t|

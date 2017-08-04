@@ -27,9 +27,9 @@ Scenario: Reviewing Saved Searches
   Then I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  And I should see "GSE65517"
-  When I check "Relevance_geo" of "GSE65517"
-  And I write "Howdy!" in the text box of "GSE65517"
+  And I should see "GSE54630"
+  When I check "Relevance_geo" of "GSE54630"
+  And I write "Howdy!" in the text box of "GSE54630"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
@@ -37,9 +37,9 @@ Scenario: Reviewing Saved Searches
   Then I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  Then I should see "GSE65517"
-  And "Relevance_geo" of "GSE65517" should be checked
-  And I should see "Howdy!" in text box of "GSE65517"
+  Then I should see "GSE54630"
+  And "Relevance_geo" of "GSE54630" should be checked
+  And I should see "Howdy!" in text box of "GSE54630"
   
 Scenario: Modifying a previous saved search
  Given I am on the profile page
@@ -49,9 +49,9 @@ Scenario: Modifying a previous saved search
   Then I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  And I should see "GSE65517"
-  When I check "Relevance_geo" of "GSE65517"
-  And I write "Howdy!" in the text box of "GSE65517"
+  And I should see "GSE54630"
+  When I check "Relevance_geo" of "GSE54630"
+  And I write "Howdy!" in the text box of "GSE54630"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
@@ -59,8 +59,8 @@ Scenario: Modifying a previous saved search
   Then I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  Then "Relevance_geo" of "GSE65517" should be checked
-  When I uncheck "Relevance_geo" of "GSE65517"
+  Then "Relevance_geo" of "GSE54630" should be checked
+  When I uncheck "Relevance_geo" of "GSE54630"
   And I press "Save and Back"
   Then I should be on the SearchAll page
   And I should see "Curated results saved successfully!"
@@ -68,4 +68,4 @@ Scenario: Modifying a previous saved search
   Then I fill in "Search by Keyword" with "tuberculosis"
   And I check "GEO"
   And I press "Search database"
-  Then "Relevance_geo" of "GSE65517" should not be checked
+  Then "Relevance_geo" of "GSE54630" should not be checked
